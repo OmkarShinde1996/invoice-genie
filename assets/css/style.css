@@ -9,6 +9,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.navbar-toggler{
+    border: none;
+    font-weight: bold;
+}
+
+.navbar-toggler:focus-visible{
+    border: none;
+}
+
 .btn{
     transition: transform 0.4s;
 }
@@ -51,7 +60,7 @@ h3 span{
 /* Home section */
 
 .home-section{
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
 }
 
@@ -268,3 +277,4 @@ h4{
     color: #1D2433;
     padding-bottom: 30px;
 }
+
