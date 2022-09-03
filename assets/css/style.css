@@ -275,6 +275,6 @@ h4{
 .bi-github{
     font-size: 40px;
     color: #1D2433;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+    background-color: transparent;
 }
-
