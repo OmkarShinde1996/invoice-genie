@@ -19,9 +19,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link mx-4" aria-current="page" href="#">Home</a>
-              <a class="nav-link mx-4" href="#">Features</a>
-              <a class="nav-link mx-4" href="#">Pricing</a>
+              <a class="nav-link mx-4" aria-current="page" href="#home">Home</a>
+              <a class="nav-link mx-4" href="#features">Features</a>
+              <a class="nav-link mx-4" href="#steps">Steps</a>
+              <a class="nav-link mx-4" href="#templates">Templates</a>
             </div>
             <div class="btn btn-primary mx-4">Create Invoice</div>
           </div>
@@ -29,7 +30,7 @@
       </nav>
     <!-- /Navbar -->
     <!-- Home -->
-    <div class="container-fluid home-section">
+    <div class="container-fluid home-section" id="home">
         <div class="row row-cols-1 row-cols-lg-2 my-0 mx-4 justify-content-around">
           <div class="col mx-4 my-4 py-4 ">
             <h1 class="heading display-2 h1 ">Online invoicing made easy</h1>
@@ -41,51 +42,101 @@
         </div>
     </div>
     <!-- /Home -->
+    <hr>
     <!-- Features Section -->
-    <div class="container text-center features-section">
+    <div class="container text-center features-section" id="features">
         <div class="row justify-content-center">
             <div class="features-heading">
                 <h1 class="heading display-5 h1">Features you get with InvoiceGenie.</h1>
             </div>
         </div>
         <div class="cards">
-            <div class="logo-container1 logoContainer mt-5"></div>
+            <div class="logo-container1 logoContainer mt-5"><i class="bi bi-3-circle-fill"></i></div>
             <h5 class="mt-4">Just 3 Steps</h5>
             <p>Generate & download your invoice in 3 steps.</p>
         </div>
 
         <div class="cards">
-            <div class="logo-container2 logoContainer mt-5"></div>
+            <div class="logo-container2 logoContainer mt-5"><i class="bi bi-receipt"></i></div>
             <h5 class="mt-4">Invoice Templates</h5>
             <p>Choose from verity of invoice templates.</p>
         </div>
 
         <div class="cards">
-            <div class="logo-container3 logoContainer mt-5"></div>
+            <div class="logo-container3 logoContainer mt-5"><i class="bi bi-emoji-smile-fill"></i></div>
             <h5 class="mt-4">Free to use</h5>
             <p>Download your invoices from anywhere for free.</p>
         </div>
     </div>
     <!-- /Features Section -->
-    
+    <hr>
     <!-- Invoice steps -->
-    <div class="container-fluid Invoice-steps-section">
-        <div class="row row-cols-1 row-cols-lg-2 my-0 mx-4 justify-content-center">
-            <div class="col mx-4">
-                
-            </div>
-          <div class="col headImage gy-5">
-            <div class="row">
-                <h1 class="heading display-5 h1">The easiest invoicing app you'll ever use</h1>
-                <p class="homeText pt-4">Make professional looking invoice in just 3 steps. You'll never go back to excel again to create invoices just give it a try.</p>
-                <div class="col">
-                    <div class="btn btn-primary my-4">Create invoice now</div>
+    <div class="container-fluid Invoice-steps-section" id="steps">
+        <div class="row row-cols-1 row-cols-lg-2 my-0 mx-4 justify-content-around">
+            <div class="col ms-4">
+                <div class="steps-container d-none d-md-block">
+                    <div class="steps">
+                        <i class="bi bi-1-circle"></i>
+                        <h4 class="display-6">Select template</h4>
+                    </div>
+                    <div class="steps">
+                        <i class="bi bi-2-circle"></i>
+                        <h4 class="display-6">Fill the invoice</h4>
+                    </div>
+                    <div class="steps">
+                        <i class="bi bi-3-circle"></i>
+                        <h4 class="display-6">Download</h4>
+                    </div>
+                    
                 </div>
             </div>
-          </div>
+            <div class="col headImage gy-5">
+                <div class="row">
+                    <h1 class="heading display-5 h1">The easiest invoicing app you'll ever use</h1>
+                    <p class="homeText pt-4">Make professional looking invoice in just 3 steps. You'll never go back to excel again to create invoices just give it a try.</p>
+                    <div class="col">
+                        <div class="btn btn-primary my-4">Create invoice now</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /Invoice steps -->
+    <hr>
+    <!-- Templates -->
+    <div class="container text-center features-section" id="templates">
+        <div class="row justify-content-center">
+            <div class="features-heading">
+                <h1 class="heading display-5 h1">Brows our Invoice Templates</h1>
+            </div>
+        </div>
+        <img src="./assets/images/template1.png" id="template"  alt="">
+        <img src="./assets/images/template2.png" id="template" alt="">
+        <img src="./assets/images/template3.png" id="template" alt="">
+        <img src="./assets/images/template5.png" id="template" alt="">
+        <img src="./assets/images/template6.png" id="template" alt="">
+        <img src="./assets/images/template7.png" id="template" alt="">
+    </div>
+    <!-- /Templates -->
+    <hr>
+    <!-- try button -->
+    <div class="container-fluid ready-section text-center">
+        <div class="text">
+            <h1 class="heading heading1 display-5 h1">
+                Ready to give it a try?
+            </h1>
+            <p class="homeText pt-1 pt-4 h5">Create a free invoice on the go and share it with your customers!</p>
+            <div class="btn btn-primary my-4">Create invoice now</div>
+        </div>
+    </div>
+    <!-- /try button -->
+    <hr>
+    <!-- footer -->
+    <div class="container-fluid footer-section text-center">
+        <a class="navbar-brand mx-4 my-2 footer-logo" href="#"><h3>Invoice<span>Genie</span>&#8482;</h3></a>
+        <a href="https://github.com/OmkarShinde1996/invoice-genie" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
+    <!-- /footer -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
