@@ -1,15 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+*,body{
     background: #F8FAFF;
+    /* background-color: aqua; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-/* .nav-link{
+/* Navigation bar */
+
+.nav-link{
     font-size: 20px;
+    font-weight: bold;
+}
+
+h3{
+    font-weight: bold;
+    color: #1D2433;
+}
+
+h3 span{
+    color: #407BFF;
 }
 
 .navbar-collapse{
@@ -19,4 +32,134 @@
 
 .btn{
     font-size: 20px;
-} */
+    border-radius: 10px;
+}
+
+/* Home section */
+
+.heading{
+    font-weight: bold;
+    color: #1D2433;
+}
+
+.headImage{
+    max-width: 700px;
+}
+
+p{
+    font-size: 17px;
+    color: #959899bb;
+    font-weight: bold;
+}
+
+small{
+    font-size:17px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.bi-patch-check-fill{
+    font-size: 17px;
+    color: #407BFF;
+}
+
+/* Features section */
+
+.features-section{
+    padding-top: 100px;
+}
+
+.features-heading{
+    max-width: 50%;
+}
+
+.cards{
+    border-radius: 30px;
+    border: 0.5px solid rgba(131, 131, 131, 0.178);
+    background-color: #fff;
+    -webkit-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+    -moz-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+    box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+}
+
+
+.logo-container1,.logo-container2,.logo-container3,.logo-container4{
+    width: 60px;
+    height: 60px;
+    /* background-color: #407BFF; */
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+.logo-container1{
+    background-color: #d4e2fdc4;
+}
+
+.logo-container2{
+    background-color: #adeee76e;
+}
+
+.logo-container3{
+    background-color: #fde4ebbd;
+}
+
+.logo-container4{
+    background-color: #c8fcc1bd;
+}
+
+h5{
+    background-color: transparent;
+    font-weight: bold;
+    color: #1D2433;
+}
+
+.cards p{
+    background-color: transparent;
+}
+
+/* Invoice Steps */
+
+.Invoice-steps-section{
+    padding-top: 100px;
+}
+
+.steps-container{
+    max-width: 100%;
+    border-radius: 30px;
+    background-color: #fff;
+    -webkit-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+    -moz-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+    box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+}
+
+.bi-1-circle,.bi-2-circle,.bi-3-circle{
+    font-size: 600%;
+    background-color: #fff;
+    margin-right: 30px;
+    color: #407BFF;
+}
+
+.icon-container{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: #fff;
+}
+
+.stepDesc-container{
+    background-color: #407BFF;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.step-heading{
+    background-color: transparent;
+}
+
+h4{
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.row{
+    background-color: transparent;
+}
