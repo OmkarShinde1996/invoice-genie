@@ -12,7 +12,7 @@
 /* Navigation bar */
 
 .nav-link{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -31,7 +31,7 @@ h3 span{
 }
 
 .btn{
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 10px;
 }
 
@@ -43,23 +43,23 @@ h3 span{
 }
 
 .headImage{
-    max-width: 700px;
+    max-width: 500px;
 }
 
 p{
-    font-size: 17px;
+    font-size: 15px;
     color: #959899bb;
     font-weight: bold;
 }
 
 small{
-    font-size:17px;
+    font-size:15px;
     font-weight: 900;
     margin-left: 10px;
 }
 
 .bi-patch-check-fill{
-    font-size: 17px;
+    font-size: 15px;
     color: #407BFF;
 }
 
@@ -113,8 +113,18 @@ h5{
     color: #1D2433;
 }
 
+.cards{
+    max-width: 300px;
+    display: inline-block;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
 .cards p{
     background-color: transparent;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* Invoice Steps */
