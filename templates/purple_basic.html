@@ -129,7 +129,7 @@
                     </div>
                     <!-- /from to details container -->
                     <!-- Options for columns in table -->
-                    <div class="container-fluid pb-5" id="home">
+                    <div class="container-fluid pb-3" id="home">
                         <div class="row column-options justify-content-center gy-3">
                             <div class="col-12 col-sm-3 col-md-3">
                                 <div class="set-tax px-4">
@@ -145,7 +145,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="none" name="fav_language" value="None"><label class="radio" for="none">None</label>
+                                                <input class="mx-2 radio" type="radio" id="none" name="fav_language" value="None" checked><label class="radio" for="none">None</label>
                                             </div>
                                             <div class="form-check text-start">
                                                 <input class="mx-2 radio" type="radio" id="gst" name="fav_language" value="GST"><label class="radio" for="gst">GST(India)</label>
@@ -185,15 +185,58 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-3 col-md-3">
-                                <div class="set-tax">
+                                <div class="set-tax px-4">
                                     <div class="button-column"><i class="bi bi-layout-three-columns me-2"></i>Edit/Add Columns</div>
                                 </div>
                             </div>
-                            
-                            
+                        </div>
+                        <div class="row justify-content-start mx-3">
+                            <div class="gst">
+                                <div class="form-check text-start">
+                                    <input class="mx-2 radio" type="radio" id="cgst" name="fav_language" value="CGST"><label class="radio" for="cgst">CGST</label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="mx-2 radio" type="radio" id="sgst" name="fav_language" value="SGST" checked><label class="radio" for="sgst">SGST</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- /Options for columns in table -->
+
+                    <!-- Table -->
+                    <div class="container table-responsive table-container justify-content-around py-2">
+                        <!-- Headers -->
+                        <div class="table-headers">
+                            <div class="items text-start mx-4">
+                                <h5 class="tb-header">Items</h5>
+                            </div>
+                            <div class="quantity text-start mx-4">
+                                <h5 class="tb-header">Quantity</h5>
+                            </div>
+                            <div class="rate text-start mx-4">
+                                <h5 class="tb-header">Rate</h5>
+                            </div>
+                            <div class="amount text-start mx-4">
+                                <h5 class="tb-header">Amount</h5>
+                            </div>
+                        </div>
+                        <!-- Table body -->
+                        <div class="table-body">
+                            <div class="items pt-3 text-start mx-4">
+                                <input type="text" value="" id="Item">
+                            </div>
+                            <div class="quantity pt-3 text-start mx-4">
+                                <input type="number" value="" id="quantity">
+                            </div>
+                            <div class="rate pt-3 text-start mx-4">
+                                <input type="number" value="" id="rate">
+                            </div>
+                            <div class="amount pt-3 text-start mx-4">
+                                <input type="number" value="" id="amount">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Table -->
                 </form>
             </div>
         </div>

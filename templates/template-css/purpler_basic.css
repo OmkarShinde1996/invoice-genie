@@ -274,6 +274,14 @@ input{
     margin: 0 auto;
 }
 
+.gst{
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;    
+    font-weight: bold;
+    padding-top: 10px;
+}
+
 .button-column, .button-tax{
     padding: 10px;
     background-color: #407BFF;
@@ -292,4 +300,39 @@ input[type = "radio"]{
     width: 17px;
     height: 17px;
     vertical-align: middle
+}
+
+/* Table */
+
+.table-container{
+    width: 97%;
+}
+
+.table-headers{
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #407BFF;
+    color: #fff;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.table-body{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.items{
+    width: 35%;
+}
+
+.quantity,.rate,.amount{
+    width: 15%;
+}
+
+.table-body input{
+    width: 100%;
 }
