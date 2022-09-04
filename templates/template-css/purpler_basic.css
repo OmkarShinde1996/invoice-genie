@@ -65,9 +65,9 @@ h3 span{
     max-width: 100%;
     border-radius: 10px;
     border: 1px solid #7e7a7a;
-    -webkit-box-shadow: -18px 21px 58px -29px rgba(101,119,235,1);
-    -moz-box-shadow: -18px 21px 58px -29px rgba(101,119,235,1);
-    box-shadow: -18px 21px 58px -29px rgba(101,119,235,1);
+    -webkit-box-shadow: 0px 0px 99px -53px rgba(101,119,235,1);
+    -moz-box-shadow: 0px 0px 99px -53px rgba(101,119,235,1);
+    box-shadow: 0px 0px 99px -53px rgba(101,119,235,1);
 }
 
 .form-container{
@@ -189,7 +189,7 @@ small{
 
 .custom-field:hover{
     color: #003fc7e8;
-
+    background-color: #66697011;
 }
 
 .invoice-info-det-btn i{
@@ -228,14 +228,21 @@ input{
     background-color: transparent;
 }
 
-.from-details input, .to-details input{
-    color: #407BFF;
+.from-details input, .to-details input, .table-body input{
+    color: #1D2433;
+    font-weight: 600;
+    font-size: 18px;
     width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     padding-top: 20px;
+}
+
+.from-details input::placeholder, .to-details input::placeholder, .table-body input::placeholder{
+    color: #7e7a7a8c;
+    font-weight: 500;
 }
 
 .city, .buttons{
@@ -252,6 +259,10 @@ input{
 }
 
 .custom-field{
+    max-width: 100%;
+    border: 2px dashed #7e7a7a63;
+    border-radius: 10px;
+    margin: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -310,6 +321,7 @@ input[type = "radio"]{
 
 .table-headers{
     height: 55px;
+    width: 1230px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -320,6 +332,7 @@ input[type = "radio"]{
 }
 
 .table-body{
+    width: 1230px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -327,6 +340,12 @@ input[type = "radio"]{
 
 .items{
     width: 35%;
+}
+
+.close{
+    color: rgba(255, 0, 0, 0.575);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .quantity,.rate,.amount{
