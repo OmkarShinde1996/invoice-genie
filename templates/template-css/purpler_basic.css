@@ -32,6 +32,7 @@ hr{
 
 /* Navigation bar */
 
+
 .nav-link{
     font-size: 16px;
     font-weight: bold;
@@ -62,8 +63,11 @@ h3 span{
     margin-top: 100px;
     /* max-height: 100%; */
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #7e7a7a;
+    -webkit-box-shadow: -18px 21px 58px -29px rgba(101,119,235,1);
+    -moz-box-shadow: -18px 21px 58px -29px rgba(101,119,235,1);
+    box-shadow: -18px 21px 58px -29px rgba(101,119,235,1);
 }
 
 .form-container{
@@ -277,5 +281,15 @@ input{
     color: #fff;
     font-size: 17px;
     font-weight: 500;
+    cursor: pointer;
 }
 
+.radio{
+    font-size: 17px;
+}
+
+input[type = "radio"]{
+    width: 17px;
+    height: 17px;
+    vertical-align: middle
+}
