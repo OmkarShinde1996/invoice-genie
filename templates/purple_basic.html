@@ -19,10 +19,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link mx-4" aria-current="page" href="#home">Home</a>
-              <a class="nav-link mx-4" href="#features">Features</a>
-              <a class="nav-link mx-4" href="#steps">Steps</a>
-              <a class="nav-link mx-4" href="#templates">Templates</a>
+              <a class="nav-link mx-4" aria-current="page" href="../index.html#home">Home</a>
+              <a class="nav-link mx-4" href="../index.html/#features">Features</a>
+              <a class="nav-link mx-4" href="../index.html/#steps">Steps</a>
+              <a class="nav-link mx-4" href="../index.html/#templates">Templates</a>
             </div>
             <div class="btn btn-primary mx-4">Save</div>
           </div>
@@ -74,7 +74,7 @@
                     <!-- from to details container -->
                     <div class="container-fluid home-section" id="home">
                         <div class="row row-cols-1 row-cols-lg-2 my-0 mx-xs-0 mx-md-2 justify-content-around">
-                            <div class="col px-4 from-container gy-2">
+                            <div class="col px-4 from-container gy-3">
                                 <div class="from text-start mx-md-2 py-sm-2">
                                     <h3 contentEditable="true" id="from">From</h3>
                                     <div class="from-details pt-2">
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col px-4 to-container gy-2">
+                            <div class="col px-4 to-container gy-3">
                                 <div class="to text-start mx-md-2 py-sm-2">
                                     <h3 contentEditable="true"  id="to">To</h3>
                                     <div class="to-details pt-2">
@@ -222,21 +222,33 @@
                         </div>
                         <!-- Table body -->
                         <div class="table-body">
-                            <div class="items pt-3 text-start mx-4">
-                                <input type="text" value="" id="Item">
+                            <div class="items text-start mx-4 text-wrap">
+                                <input type="text" value="" id="Item" placeholder="Item name">
                             </div>
-                            <div class="quantity pt-3 text-start mx-4">
-                                <input type="number" value="" id="quantity">
+                            <div class="quantity text-start mx-4">
+                                <input type="number" value="" id="quantity" placeholder="2">
                             </div>
-                            <div class="rate pt-3 text-start mx-4">
-                                <input type="number" value="" id="rate">
+                            <div class="rate text-start mx-4">
+                                <input type="number" value="" id="rate" placeholder="15">
                             </div>
-                            <div class="amount pt-3 text-start mx-4">
-                                <input type="number" value="" id="amount">
+                            <div class="amount text-start mx-4">
+                                <input type="number" value="" id="amount" placeholder="30">
+                            </div>
+                            <div class="close text-start" id="close-btn">
+                                <i class="bi bi-x-circle"></i>
                             </div>
                         </div>
                     </div>
                     <!-- /Table -->
+                    <!-- Add new line btn -->
+                    <div class="container text-center justify-content-around">
+                        <div class="add-new-line py-2">
+                            <div class="custom-field text-center" id="add-new-line">
+                                <i class="bi bi-plus-circle-fill pe-2"></i><span>Add New Line</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add new line btn -->
                 </form>
             </div>
         </div>
