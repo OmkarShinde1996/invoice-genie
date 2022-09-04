@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./template-css/purpler_basic.css">
+    <title>purple basic</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-4 my-2" href="#"><h3>Invoice<span>Genie</span></h3></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-columns-gap"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link mx-4" aria-current="page" href="#home">Home</a>
+              <a class="nav-link mx-4" href="#features">Features</a>
+              <a class="nav-link mx-4" href="#steps">Steps</a>
+              <a class="nav-link mx-4" href="#templates">Templates</a>
+            </div>
+            <div class="btn btn-primary mx-4">Save</div>
+          </div>
+        </div>
+    </nav>
+    <!-- /navbar -->
+
+    <!-- main container -->
+    <div class="container text-center invoice-form-section">
+        <div class="invoice-form">
+            <div class="form-container text-center">
+                <form action="#">
+                    <!-- Invoice title -->
+                    <div class="invoice-title-container">
+                        <span class="invoice-title">Invoice</span>
+                    </div>
+                    <!-- /Invoice title -->
+                    <!-- Invoice number, date, logo etc -->
+                    <div class="container-fluid home-section" id="home">
+                        <div class="row row-cols-1 row-cols-lg-2 justify-content-around invoice-info-container">
+                            <div class="col">
+                                <div class="invoice-details mx-md-4">
+                                    <div class="invoice-info py-2">
+                                        <div contentEditable="true" class="invoice-number invoice-info-det"><span>Invoice No.</span></div>
+                                        <div class="invoice-number-input"><input type="text" value="A00001"></div>
+                                    </div>
+                                    <div class="invoice-info py-2">
+                                        <div contentEditable="true" class="invoice-date invoice-info-det">Invoice Date</div>
+                                        <div class="invoice-date-input"><input type="text" value="September 04, 2022"></div>
+                                    </div>
+                                    <div class="invoice-info py-2">
+                                        <div class="invoice-date invoice-info-det-btn"><i class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>
+                                    </div>
+                                    <div class="invoice-info py-2">
+                                        <div class="invoice-date invoice-info-det-btn"><i class="bi bi-plus-circle-fill pe-2"></i><span>Add More Fields</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col headImage d-flex justify-content-center">
+                                <div class="invoice-logo-container">
+                                    <div class="invoice-logo">
+                                        <div class="btn btn-primary logo-btn">Upload logo here</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Invoice number, date, logo etc -->
+                    <!-- from to details container -->
+                    <div class="container-fluid home-section" id="home">
+                        <div class="row row-cols-1 row-cols-lg-2 my-0 mx-xs-0 mx-md-2 justify-content-around">
+                            <div class="col px-4 from-container gy-2">
+                                <div class="from text-start mx-md-2 py-sm-2">
+                                    <h3 contentEditable="true" id="from">From</h3>
+                                    <div class="from-details pt-2">
+                                        <input type="text" value="" placeholder="Country" id="from-country">
+                                        <input type="text" value="" placeholder="Your name or Your business name" id="from-name">
+                                        <div class="city">
+                                            <input class="me-4" type="text" value="" placeholder="Address" id="from-address">
+                                            <input type="text" value="" placeholder="City" id="from-city">
+                                        </div>
+                                        <input type="text" value="" placeholder="State" id="fromstate">
+                                        <div class="buttons">
+                                            <div class="email-btn invoice-info-det-btn">
+                                                <i class="bi bi-envelope-fill pe-2"></i><span>Add Email Id</span>
+                                            </div>
+                                            <div class="phone-btn invoice-info-det-btn">
+                                                <i class="bi bi-telephone-fill pe-2"></i><span>Add Phone Number</span>
+                                            </div>
+                                        </div>
+                                        <div class="custom-field text-center">
+                                            <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Custom Fields</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col px-4 to-container gy-2">
+                                <div class="to text-start mx-md-2 py-sm-2">
+                                    <h3 contentEditable="true"  id="to">To</h3>
+                                    <div class="to-details pt-2">
+                                        <input type="text" value="" placeholder="Country" id="to-country">
+                                        <input type="text" value="" placeholder="Your name or Your business name" id="to-name">
+                                        <div class="city">
+                                            <input class="me-4" type="text" value="" placeholder="Address" id="to-address">
+                                            <input type="text" value="" placeholder="City" id="to-city">
+                                        </div>
+                                        <input type="text" value="" placeholder="State" id="to-state">
+                                        <div class="buttons">
+                                            <div class="email-btn invoice-info-det-btn">
+                                                <i class="bi bi-envelope-fill pe-2"></i><span>Add Email Id</span>
+                                            </div>
+                                            <div class="phone-btn invoice-info-det-btn">
+                                                <i class="bi bi-telephone-fill pe-2"></i><span>Add Phone Number</span>
+                                            </div>
+                                        </div>
+                                        <div class="custom-field text-center">
+                                            <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Custom Fields</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /from to details container -->
+                    <!-- Options for columns in table -->
+                    <div class="container-fluid pb-5" id="home">
+                        <div class="row column-options justify-content-center gy-3">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <div class="set-tax px-4">
+                                    <div class="button-tax" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-percent me-2"></i>Set Tax</div>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                        ...
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6">
+                                <div class="set-tax">
+                                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
+                                        <option selected>Select Currancy</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <div class="set-tax">
+                                    <div class="button-column"><i class="bi bi-layout-three-columns me-2"></i>Edit/Add Columns</div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <!-- /Options for columns in table -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /main container -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="../assets/js/home.js"></script>
+</body>
+</html>
