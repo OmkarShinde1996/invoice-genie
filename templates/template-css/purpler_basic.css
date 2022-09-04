@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,body{
+    /* background: #F8FAFF; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-toggler{
+    border: none;
+    font-weight: bold;
+}
+
+.navbar-toggler:focus-visible{
+    border: none;
+}
+
+.btn{
+    transition: transform 0.4s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+hr{
+    color: #53535359;
+}
+
+
+/* Navigation bar */
+
+.nav-link{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h3{
+    font-weight: bold;
+    color: #1D2433;
+}
+
+h3 span{
+    color: #407BFF;
+}
+
+.navbar-collapse{
+    flex-grow: 0 !important;
+    justify-content: space-between;
+}
+
+.btn{
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+/* invoice-container */
+
+.invoice-form{
+    margin-top: 100px;
+    /* max-height: 100%; */
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #7e7a7a;
+}
+
+.form-container{
+    padding: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+/* invoice-form */
+
+.invoice-title-container{
+    padding-top: 50px;
+}
+
+.invoice-title{
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #7e7a7a50;
+}
+
+.invoice-logo-container{
+    text-align: end;
+    max-width: 100%;
+    max-height: 50%;
+    padding: 10px;
+    
+}
+
+.invoice-logo{
+    padding: 40px;
+    max-width: 100%;
+    max-height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #7e7a7a63;
+    border-radius: 10px;
+}
+
+.logo-btn{
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.invoice-details{
+    text-align: start;
+}
+
+.home-section{
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.heading{
+    font-weight: bold;
+    color: #1D2433;
+}
+
+.headImage{
+    max-width: 500px;
+}
+
+p{
+    font-size: 15px;
+    color: #959899bb;
+    font-weight: bold;
+}
+
+small{
+    font-size:15px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.bi-patch-check-fill{
+    font-size: 15px;
+    color: #407BFF;
+}
+
+.invoice-info{
+    display: flex;
+}
+
+.row>*{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.invoice-info-container{
+    padding-top: 40px;
+}
+
+.invoice-info{
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.invoice-info-det{
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom: 1px solid #7e7a7a54;
+}
+
+.invoice-info-det-btn, .custom-field{
+    color: #407BFF;
+    cursor: pointer;
+    font-weight: 600;
+    transition: ease;
+}
+
+.invoice-info-det-btn:hover{
+    color: #003fc7e8;
+}
+
+.custom-field:hover{
+    color: #003fc7e8;
+
+}
+
+.invoice-info-det-btn i{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+*:focus {
+    outline: none;
+    border-bottom: 1px solid #7e7a7a54;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid #7e7a7a54;
+}
+
+.form-select{
+    width: 90%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.from-details, .to-details{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.from, .to{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.h3{
+    background-color: transparent;
+}
+
+.from-details input, .to-details input{
+    color: #407BFF;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.city, .buttons{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.buttons{
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.custom-field{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bi-percent, .bi-layout-three-columns{
+    background-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.button{
+    font-size: 20px;
+}
+
+.column-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.button-column, .button-tax{
+    padding: 10px;
+    background-color: #407BFF;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+}
+
