@@ -321,7 +321,7 @@ input[type = "radio"]{
 
 .table-headers{
     height: 55px;
-    width: 1230px;
+    width: 1060px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -332,7 +332,7 @@ input[type = "radio"]{
 }
 
 .table-body{
-    width: 1230px;
+    width: 1060px;
     display: flex;
     align-items: center;
     justify-content: start;
