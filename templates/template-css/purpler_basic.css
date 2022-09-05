@@ -222,6 +222,24 @@ input{
     border-radius: 5px;
 }
 
+@media only screen and (max-width: 768px) {
+    .from, .to {
+      max-width: 100%;
+    }
+
+    .row>*{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .from, .to {
+      max-width: 100%;
+    }
+
+}
+
 h3{
     background-color: transparent;
     font-size: 20px;
@@ -320,7 +338,7 @@ input[type = "radio"]{
 
 .table-headers{
     height: 50px;
-    width: 965px;
+    /* width: 965px; */
     display: flex;
     align-items: center;
     justify-content: start;
@@ -331,11 +349,26 @@ input[type = "radio"]{
 }
 
 .table-body{
-    width: 965px;
+    /* width: 965px; */
     display: flex;
     align-items: center;
     justify-content: start;
     background-color: #cadbffa2;
+}
+
+@media only screen and (max-width: 768px) {
+    .table-headers, .table-body{
+        width: 965px;
+        height: 45px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .table-headers, .table-body{
+        width: 965px;
+        height: 45px;
+    }    
+
 }
 
 .items{
