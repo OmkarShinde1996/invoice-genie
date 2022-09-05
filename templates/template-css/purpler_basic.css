@@ -34,16 +34,16 @@ hr{
 
 
 .nav-link{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
-h3{
+h4{
     font-weight: bold;
     color: #1D2433;
 }
 
-h3 span{
+h4 span{
     color: #407BFF;
 }
 
@@ -53,22 +53,36 @@ h3 span{
 }
 
 .btn{
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 6px;
 }
 
 /* invoice-container */
 
+.invoice-form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .invoice-form{
-    margin-top: 100px;
-    /* max-height: 100%; */
-    max-width: 100%;
+    margin-top: 50px;
+    max-width: 90%;
     border-radius: 10px;
     border: 1px solid #7e7a7a;
     -webkit-box-shadow: 0px 0px 99px -53px rgba(101,119,235,1);
     -moz-box-shadow: 0px 0px 99px -53px rgba(101,119,235,1);
     box-shadow: 0px 0px 99px -53px rgba(101,119,235,1);
 }
+
+
+@media only screen and (max-width: 768px) {
+    .invoice-form {
+      max-width: 100%;
+    }
+}
+
 
 .form-container{
     padding: 10px;
@@ -84,7 +98,7 @@ h3 span{
 }
 
 .invoice-title{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     border-bottom: 1px solid #7e7a7a50;
 }
@@ -119,7 +133,7 @@ h3 span{
 }
 
 .home-section{
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 10px;
 }
 
@@ -132,30 +146,8 @@ h3 span{
     max-width: 500px;
 }
 
-p{
-    font-size: 15px;
-    color: #959899bb;
-    font-weight: bold;
-}
-
-small{
-    font-size:15px;
-    font-weight: 900;
-    margin-left: 10px;
-}
-
-.bi-patch-check-fill{
-    font-size: 15px;
-    color: #407BFF;
-}
-
 .invoice-info{
     display: flex;
-}
-
-.row>*{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 
 .invoice-info-container{
@@ -163,7 +155,7 @@ small{
 }
 
 .invoice-info{
-    max-width: 400px;
+    /* max-width: 400px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -171,7 +163,7 @@ small{
 }
 
 .invoice-info-det{
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bold;
     border-bottom: 1px solid #7e7a7a54;
 }
@@ -181,7 +173,12 @@ small{
     cursor: pointer;
     font-weight: 600;
     transition: ease;
+    font-size: 14px;
 }
+
+/* .invoice-number-input, .invoice-date-input{
+    font-size: 14px;
+} */
 
 .invoice-info-det-btn:hover{
     color: #003fc7e8;
@@ -194,7 +191,7 @@ small{
 
 .invoice-info-det-btn i{
     font-weight: bold;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 *:focus {
@@ -203,6 +200,7 @@ small{
 }
 
 input{
+    font-size: 14px;
     border: none;
     border-bottom: 1px solid #7e7a7a54;
 }
@@ -224,14 +222,15 @@ input{
     border-radius: 5px;
 }
 
-.h3{
+h3{
     background-color: transparent;
+    font-size: 20px;
 }
 
 .from-details input, .to-details input, .table-body input{
     color: #1D2433;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
     width: 90%;
     display: flex;
     align-items: center;
@@ -294,34 +293,34 @@ input{
 }
 
 .button-column, .button-tax{
-    padding: 10px;
+    padding: 5px;
     background-color: #407BFF;
     border-radius: 7px;
     color: #fff;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
 }
 
 .radio{
-    font-size: 17px;
+    font-size: 14px;
 }
 
 input[type = "radio"]{
-    width: 17px;
-    height: 17px;
+    width: 14px;
+    height: 14px;
     vertical-align: middle
 }
 
 /* Table */
 
 .table-container{
-    width: 97%;
+    width: 100%;
 }
 
 .table-headers{
-    height: 55px;
-    width: 1060px;
+    height: 50px;
+    width: 965px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -332,10 +331,11 @@ input[type = "radio"]{
 }
 
 .table-body{
-    width: 1060px;
+    width: 965px;
     display: flex;
     align-items: center;
     justify-content: start;
+    background-color: #cadbffa2;
 }
 
 .items{
@@ -354,4 +354,6 @@ input[type = "radio"]{
 
 .table-body input{
     width: 100%;
+    background-color: transparent;
+    margin-bottom: 5px;
 }
