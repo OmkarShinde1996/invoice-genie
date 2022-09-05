@@ -32,7 +32,6 @@ hr{
 
 /* Navigation bar */
 
-
 .nav-link{
     font-size: 14px;
     font-weight: bold;
@@ -57,6 +56,34 @@ h4 span{
     border-radius: 6px;
 }
 
+/* Home section */
+
+.heading{
+    font-weight: bold;
+    color: #1D2433;
+}
+
+.headImage{
+    max-width: 450px;
+}
+
+p{
+    font-size: 14px;
+    color: #959899bb;
+    font-weight: bold;
+}
+
+small{
+    font-size:14px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.bi-patch-check-fill{
+    font-size: 14px;
+    color: #407BFF;
+}
+
 /* invoice-container */
 
 .invoice-form-section{
@@ -68,6 +95,7 @@ h4 span{
 
 .invoice-form{
     margin-top: 50px;
+    margin-bottom: 50px;
     max-width: 90%;
     border-radius: 10px;
     border: 1px solid #7e7a7a;
@@ -88,7 +116,7 @@ h4 span{
     padding: 10px;
     max-width: 100%;
     max-height: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* invoice-form */
@@ -132,18 +160,28 @@ h4 span{
     text-align: start;
 }
 
+
+
 .home-section{
-    padding-top: 30px;
+    /* padding-top: 30px; */
     padding-bottom: 10px;
 }
 
-.heading{
-    font-weight: bold;
-    color: #1D2433;
+.column-1{
+    padding-top: 50px;
 }
 
-.headImage{
-    max-width: 500px;
+@media only screen and (max-width: 768px) {
+    .column-1{
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .column-1{
+        padding-top: 0;
+    }
+
 }
 
 .invoice-info{
@@ -176,9 +214,6 @@ h4 span{
     font-size: 14px;
 }
 
-/* .invoice-number-input, .invoice-date-input{
-    font-size: 14px;
-} */
 
 .invoice-info-det-btn:hover{
     color: #003fc7e8;
@@ -277,11 +312,11 @@ h3{
 
 .custom-field{
     max-width: 100%;
-    border: 2px dashed #7e7a7a63;
-    border-radius: 10px;
+    border: 1px dashed #7e7a7a63;
+    border-radius: 5px;
     margin: 30px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .bi-percent, .bi-layout-three-columns{
@@ -389,4 +424,163 @@ input[type = "radio"]{
     width: 100%;
     background-color: transparent;
     margin-bottom: 5px;
+}
+
+/* total and invoice notes container */
+
+.invoice-notes-container{
+    max-width: 100%;
+    width: 60%;
+}
+
+.total-amount-container{
+    max-width: 100%;
+    width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+    .invoice-notes-container{
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .total-amount-container{
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .invoice-notes-container{
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .total-amount-container{
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+.custom-field-container{
+    max-width: 50%;
+    border: 1px dashed #7e7a7a63;
+    border-radius: 5px;
+    /* margin-left: 10px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #407BFF;
+    cursor: pointer;
+    font-weight: 600;
+    transition: ease;
+    font-size: 13px;
+}
+
+.custom-field-container:hover{
+    color: #003fc7e8;
+    background-color: #66697011;
+}
+
+.total-container,.sub-total-container,.discount-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sub-total-container h3, .sub-total-container span, .discount-container h3,.discount-container span{
+    align-items: center;
+    font-size: 16px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+}
+
+.h5, h5{
+    font-size: 15px !important;
+}
+
+p{
+    font-size: 14px;
+}
+
+.bank-details{
+    max-width: 80%;
+}
+
+.bank-info-det{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.invoice-notes-container h3{
+    font-size: 17px;
+    font-weight: bold;
+    color: #407BFF;
+}
+
+@media only screen and (max-width: 768px) {
+    .total-invoice-con .row{
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .total-invoice-con .row{
+        flex-direction: column-reverse;
+    }
+
+}
+
+/* save and continue button */
+.save-and-continue-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+/* ready-section */
+
+.ready-section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.text,.heading1,.pt-1{
+    color: #fff;
+    background-color: #1D2433;
+
+}
+
+.text{
+    max-width: 100%;
+    padding: 40px
+}
+
+/* footer-section */
+.bi-github{
+    font-size: 25px;
+    color: #1D2433;
+    margin-bottom: 30px;
+    background-color: transparent;
+}
+
+.h3{
+    font-weight: 1000;
+    color: #1D2433;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+h3 span{
+    color: #407BFF;
 }
