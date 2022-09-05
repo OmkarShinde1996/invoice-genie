@@ -13,7 +13,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand mx-4 my-2" href="#"><h3>Invoice<span>Genie</span></h3></a>
+            <a class="navbar-brand mx-4 my-2" href="#"><h4>Invoice<span>Genie</span></h4></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-columns-gap"></i>
           </button>
@@ -37,7 +37,7 @@
                 <form action="#">
                     <!-- Invoice title -->
                     <div class="invoice-title-container">
-                        <span class="invoice-title">Invoice</span>
+                        <span contentEditable="true" class="invoice-title">Invoice</span>
                     </div>
                     <!-- /Invoice title -->
                     <!-- Invoice number, date, logo etc -->
@@ -74,7 +74,7 @@
                     <!-- from to details container -->
                     <div class="container-fluid home-section" id="home">
                         <div class="row row-cols-1 row-cols-lg-2 my-0 mx-xs-0 mx-md-2 justify-content-around">
-                            <div class="col px-4 from-container gy-3">
+                            <div class="col from-container gy-3">
                                 <div class="from text-start mx-md-2 py-sm-2">
                                     <h3 contentEditable="true" id="from">From</h3>
                                     <div class="from-details pt-2">
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col px-4 to-container gy-3">
+                            <div class="col to-container gy-3">
                                 <div class="to text-start mx-md-2 py-sm-2">
                                     <h3 contentEditable="true"  id="to">To</h3>
                                     <div class="to-details pt-2">
@@ -131,52 +131,23 @@
                     <!-- Options for columns in table -->
                     <div class="container-fluid pb-3" id="home">
                         <div class="row column-options justify-content-center gy-3">
-                            <div class="col-12 col-sm-3 col-md-3">
-                                <div class="set-tax px-4">
-                                    <div class="button-tax" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-percent me-2"></i>Set Tax</div>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Set Tax</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="none" name="fav_language" value="None" checked><label class="radio" for="none">None</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="gst" name="fav_language" value="GST"><label class="radio" for="gst">GST(India)</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="vat" name="fav_language" value="VAT"><label class="radio" for="vat">VAT</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="ppn" name="fav_language" value="PPN"><label class="radio" for="ppn">PPN</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="sst" name="fav_language" value="SST"><label class="radio" for="sst">SST</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="hst" name="fav_language" value="HST"><label class="radio" for="hst">HST</label>
-                                            </div>
-                                            <div class="form-check text-start">
-                                                <input class="mx-2 radio" type="radio" id="tax" name="fav_language" value="TAX"><label class="radio" for="tax">TAX</label>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary modal-submit-btn" data-bs-dismiss="modal">Save changes</button>
-                                        </div>
-                                    </div>
-                                    </div>
+                            <div class="col-12 col-sm-4 col-md-4">
+                                <div class="set-tax">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <option selected>Set Tax</option>
+                                        <option value="1">None</option>
+                                        <option value="2">GST</option>
+                                        <option value="3">VAT</option>
+                                        <option value="3">PPN</option>
+                                        <option value="3">SST</option>
+                                        <option value="3">HST</option>
+                                        <option value="3">TAX</option>
+                                      </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6">
+                            <div class="col-12 col-sm-4 col-md-4">
                                 <div class="set-tax">
-                                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                         <option selected>Select Currancy</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -184,18 +155,18 @@
                                       </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-3 col-md-3">
+                            <div class="col-12 col-sm-4 col-md-4">
                                 <div class="set-tax px-4">
-                                    <div class="button-column"><i class="bi bi-layout-three-columns me-2"></i>Edit/Add Columns</div>
+                                    <div class="button-column"><i class="bi bi-layout-three-columns me-2"></i>Add Columns</div>
                                 </div>
                             </div>
                         </div>
                         <div class="row justify-content-start mx-3">
                             <div class="gst">
-                                <div class="form-check text-start">
+                                <div class="form-check text-start d-none">
                                     <input class="mx-2 radio" type="radio" id="cgst" name="fav_language" value="CGST"><label class="radio" for="cgst">CGST</label>
                                 </div>
-                                <div class="form-check text-start">
+                                <div class="form-check text-start d-none">
                                     <input class="mx-2 radio" type="radio" id="sgst" name="fav_language" value="SGST" checked><label class="radio" for="sgst">SGST</label>
                                 </div>
                             </div>
@@ -207,34 +178,34 @@
                     <div class="container table-responsive table-container justify-content-around py-2">
                         <!-- Headers -->
                         <div class="table-headers">
-                            <div class="items text-start mx-4">
+                            <div class="items text-start mx-2">
                                 <h5 class="tb-header">Items</h5>
                             </div>
-                            <div class="quantity text-start mx-4">
+                            <div class="quantity text-start mx-2">
                                 <h5 class="tb-header">Quantity</h5>
                             </div>
-                            <div class="rate text-start mx-4">
+                            <div class="rate text-start mx-2">
                                 <h5 class="tb-header">Rate</h5>
                             </div>
-                            <div class="amount text-start mx-4">
+                            <div class="amount text-start mx-2">
                                 <h5 class="tb-header">Amount</h5>
                             </div>
                         </div>
                         <!-- Table body -->
                         <div class="table-body">
-                            <div class="items text-start mx-4 text-wrap">
+                            <div class="items text-start text-wrap mx-2">
                                 <input type="text" value="" id="Item" placeholder="Item name">
                             </div>
-                            <div class="quantity text-start mx-4">
+                            <div class="quantity text-start mx-2">
                                 <input type="number" value="" id="quantity" placeholder="2">
                             </div>
-                            <div class="rate text-start mx-4">
+                            <div class="rate text-start mx-2">
                                 <input type="number" value="" id="rate" placeholder="15">
                             </div>
-                            <div class="amount text-start mx-4">
+                            <div class="amount text-start mx-2">
                                 <input type="number" value="" id="amount" placeholder="30">
                             </div>
-                            <div class="close text-start" id="close-btn">
+                            <div class="close text-start mx-2" id="close-btn">
                                 <i class="bi bi-x-circle"></i>
                             </div>
                         </div>
