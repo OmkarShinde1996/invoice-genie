@@ -72,9 +72,18 @@
                                         <div contentEditable="true" class="invoice-date invoice-info-det" id="invoice-date">Invoice Date</div>
                                         <div class="invoice-date-input"><input type="text" value="September 04, 2022" id="invoice-date-value"></div>
                                     </div>
+                                    <!-- show when Add Due Date btn clicked -->
                                     <div class="invoice-info py-2 d-none">
                                         <div class="due-date invoice-info-det" id="due-date">Due Date</div>
                                         <div class="due-date-input"><input type="text" value="September 10, 2022" id="due-date-value"></div>
+                                    </div>
+                                    <!-- show when Add More Fields btn clicked -->
+                                    <div class="add-new-info" id="add-new-info">
+                                        <!-- show when Add More Fields btn clicked -->
+                                        <div class="invoice-info py-2 d-none" id="add-info">
+                                            <div class=""><input type="text" value="" id="" placeholder="Title"></div>
+                                            <div class=""><input type="text" value="" id="" placeholder="Text"></div>
+                                        </div>
                                     </div>
                                     <div class="invoice-info py-2" id="add-due-date-btn">
                                         <div class="invoice-date invoice-info-det-btn"><i class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>
@@ -108,7 +117,17 @@
                                             <input class="me-4" type="text" value="" placeholder="City" id="from-city">
                                             <input type="text" value="" placeholder="Zip" id="from-zip">
                                         </div>
-                                        <input type="text" value="" placeholder="State" id="fromstate">
+                                        <input type="text" value="" placeholder="State" id="from-state">
+                                        <!-- Email & Phone no. show when btn clicked -->
+                                        <input class="d-none" type="email" value="" placeholder="Email Id" id="from-email">
+                                        <input class="d-none" type="number" value="" placeholder="Phone Number" id="from-mobile">
+                                        <!-- GST & PAN fields show when btn clicked -->
+                                        <input class="d-none" type="text" value="" placeholder="GST No." id="from-gst">
+                                        <input class="d-none" type="text" value="" placeholder="PAN No." id="from-pan">
+                                        <!-- New field show when btn clicked -->
+                                        <div id="add-new-from-field">
+                                            <input class="d-none" type="text" value="" placeholder="Text" id="from-text">
+                                        </div>
                                         <div class="buttons">
                                             <div class="email-btn invoice-info-det-btn" id="from-add-email">
                                                 <i class="bi bi-envelope-fill pe-2"></i><span>Add Email Id</span>
@@ -143,6 +162,16 @@
                                             <input type="text" value="" placeholder="Zip code" id="to-zip">
                                         </div>
                                         <input type="text" value="" placeholder="State" id="to-state">
+                                        <!-- Email & Phone no. show when btn clicked -->
+                                        <input class="d-none" type="email" value="" placeholder="Email Id" id="to-email">
+                                        <input class="d-none" type="number" value="" placeholder="Phone Number" id="to-mobile">
+                                        <!-- GST & PAN fields show when btn clicked -->
+                                        <input class="d-none" type="text" value="" placeholder="GST No." id="to-gst">
+                                        <input class="d-none" type="text" value="" placeholder="PAN No." id="to-pan">
+                                        <!-- New field show when btn clicked -->
+                                        <div id="add-new-to-field">
+                                            <input class="d-none" type="text" value="" placeholder="Text" id="to-text">
+                                        </div>
                                         <div class="buttons">
                                             <div class="email-btn invoice-info-det-btn" id="to-add-email">
                                                 <i class="bi bi-envelope-fill pe-2"></i><span>Add Email Id</span>
@@ -217,39 +246,50 @@
 
                     <!-- Table -->
                     <div class="container table-responsive table-container justify-content-around py-2">
-                        <!-- Headers -->
-                        <div class="table-headers">
-                            <div class="items text-start mx-2">
-                                <h5 class="tb-header" id="items">Items</h5>
-                            </div>
-                            <div class="quantity text-start mx-2">
-                                <h5 class="tb-header" id="quantities">Quantity</h5>
-                            </div>
-                            <div class="rate text-start mx-2">
-                                <h5 class="tb-header" id="rates">Rate</h5>
-                            </div>
-                            <div class="amount text-start mx-2">
-                                <h5 class="tb-header" id="amounts">Amount</h5>
-                            </div>
-                        </div>
-                        <!-- Table body -->
-                        <div class="table-body">
-                            <div class="items text-start text-wrap mx-2">
-                                <input type="text" value="" id="Item" placeholder="Item name">
-                            </div>
-                            <div class="quantity text-start mx-2">
-                                <input type="number" value="" id="quantity" placeholder="2">
-                            </div>
-                            <div class="rate text-start mx-2">
-                                <input type="number" value="" id="rate" placeholder="15">
-                            </div>
-                            <div class="amount text-start mx-2">
-                                <input type="number" value="" id="amount" placeholder="30">
-                            </div>
-                            <div class="close text-start mx-2" id="close-btn">
-                                <i class="bi bi-x-circle"></i>
-                            </div>
-                        </div>
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="text-start" scope="col">#</th>
+                                    <th class="text-start" scope="col">Items</th>
+                                    <th class="text-start" scope="col">Quantity</th>
+                                    <th class="text-start" scope="col">Rate</th>
+                                    <th class="text-start" scope="col">Amount</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <input type="text" value="" id="item" placeholder="Item name">
+                                    </td>
+                                    <td>
+                                        <input type="number" value="" id="quantity" placeholder="Quantity">
+                                    </td>
+                                    <td>
+                                        <input type="number" value="" id="rate" placeholder="Rate">
+                                    </td>
+                                    <td>
+                                        <input type="number" value="" id="amount" placeholder="Amount">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <input type="text" value="" id="item" placeholder="Item name">
+                                    </td>
+                                    <td>
+                                        <input type="number" value="" id="quantity" placeholder="Quantity">
+                                    </td>
+                                    <td>
+                                        <input type="number" value="" id="rate" placeholder="Rate">
+                                    </td>
+                                    <td>
+                                        <input type="number" value="" id="amount" placeholder="Amount">
+                                    </td>
+                                  </tr>
+                            </tbody>
+                          </table>
+                        
                     </div>
                     <!-- /Table -->
                     <!-- Add new line btn -->
