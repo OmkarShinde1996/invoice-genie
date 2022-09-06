@@ -240,7 +240,7 @@ small{
 }
 
 input{
-    font-size: 14px;
+    font-size: 12px;
     border: none;
     border-bottom: 1px solid #7e7a7a54;
 }
@@ -372,6 +372,7 @@ input[type = "radio"]{
 
 /* Table */
 
+
 .table-dark{
     --bs-table-bg: #407BFF;
     --bs-table-border-color: none;
@@ -386,6 +387,21 @@ input[type = "radio"]{
     color: rgb(255, 72, 72);
     cursor: pointer;
 }
+
+
+
+input{
+    display: flex;
+    justify-content: start;
+    margin-top: 8px;
+}
+
+
+th{
+    font-size: 14px;
+    font-weight: 400;
+}
+
 
 .table-headers{
     height: 50px;
