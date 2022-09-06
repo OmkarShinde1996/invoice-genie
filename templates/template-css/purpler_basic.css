@@ -382,6 +382,11 @@ input[type = "radio"]{
     width: 100%;
 }
 
+.delete-icon{
+    color: rgb(255, 72, 72);
+    cursor: pointer;
+}
+
 .table-headers{
     height: 50px;
     /* width: 965px; */
