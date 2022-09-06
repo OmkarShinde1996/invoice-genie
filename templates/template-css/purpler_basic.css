@@ -372,6 +372,12 @@ input[type = "radio"]{
 
 /* Table */
 
+.table-dark{
+    --bs-table-bg: #407BFF;
+    --bs-table-border-color: none;
+}
+
+
 .table-container{
     width: 100%;
 }
