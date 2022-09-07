@@ -81,31 +81,32 @@
                                     <div class="invoice-info py-2">
                                         <div contentEditable="true" class="invoice-date invoice-info-det"
                                             id="invoice-date">Invoice Date</div>
-                                        <div class="invoice-date-input"><input type="text" value="September 04, 2022"
+                                        <div class="invoice-date-input"><input type="date" value="September 04, 2022"
                                                 id="invoice-date-value"></div>
                                     </div>
                                     <!-- show when Add Due Date btn clicked -->
-                                    <div class="invoice-info py-2 d-none">
+                                    <div class="invoice-info py-2 d-none" id="due-date-div">
                                         <div class="due-date invoice-info-det" id="due-date">Due Date</div>
-                                        <div class="due-date-input"><input type="text" value="September 10, 2022"
+                                        <div class="due-date-input"><input type="date" value="September 10, 2022"
                                                 id="due-date-value"></div>
                                     </div>
                                     <!-- show when Add More Fields btn clicked -->
                                     <div class="add-new-info" id="add-new-info">
                                         <!-- show when Add More Fields btn clicked -->
-                                        <div class="invoice-info py-2 d-none" id="add-info">
+                                        <!-- <div class="invoice-info py-2" id="add-info">
                                             <div class=""><input type="text" value="" id="" placeholder="Title"></div>
                                             <div class=""><input type="text" value="" id="" placeholder="Text"></div>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <div class="invoice-info py-2" id="add-due-date-btn">
+                                    <div class="invoice-info py-2" onclick="showDueDateField()" id="add-due-date-btn">
                                         <div class="invoice-date invoice-info-det-btn"><i
                                                 class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>
                                     </div>
                                     <div class="invoice-info py-2" id="add-more-fields-btn">
-                                        <div class="invoice-date invoice-info-det-btn"><i
-                                                class="bi bi-plus-circle-fill pe-2"></i><span>Add More Fields</span>
-                                        </div>
+                                        <div class="invoice-date invoice-info-det-btn" onclick="addNewInfoField()"><i
+                                                class="bi bi-plus-circle-fill pe-2"></i><span>Add More Fields</span></div>
+                                        <div class="invoice-date invoice-info-det-btn d-none" id="remove-info-field" onclick="removeLastInfoField()"><i
+                                                class="bi bi-plus-circle-fill pe-2"></i><span>Remove Last Field</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -126,10 +127,10 @@
                                 <div class="from text-start mx-md-2 py-sm-2">
                                     <h3 contentEditable="true" id="from">From</h3>
                                     <div class="from-details pt-2">
-                                        <input type="text" value="" placeholder="Country" id="from-country">
                                         <input type="text" value="" placeholder="Your name or Your business name"
                                             id="from-name">
                                         <input type="text" value="" placeholder="Address" id="from-address">
+                                        <input type="text" value="" placeholder="Country" id="from-country">
                                         <div class="city">
                                             <input class="me-4" type="text" value="" placeholder="City" id="from-city">
                                             <input type="text" value="" placeholder="Zip" id="from-zip">
@@ -149,24 +150,24 @@
                                                 id="from-text">
                                         </div>
                                         <div class="buttons">
-                                            <div class="email-btn invoice-info-det-btn" id="from-add-email">
-                                                <i class="bi bi-envelope-fill pe-2"></i><span>Add Email Id</span>
+                                            <div class="email-btn invoice-info-det-btn">
+                                                <i class="bi bi-envelope-fill pe-2"></i><span id="from-add-email" onclick="showFromEmailField()">Add Email Id</span>
                                             </div>
-                                            <div class="phone-btn invoice-info-det-btn" id="from-add-phone">
-                                                <i class="bi bi-telephone-fill pe-2"></i><span>Add Phone Number</span>
-                                            </div>
-                                        </div>
-                                        <div class="buttons">
-                                            <div class="email-btn invoice-info-det-btn" id="from-add-gst">
-                                                <i class="bi bi-plus-circle-fill pe-2"></i><span>Add GST No.</span>
-                                            </div>
-                                            <div class="phone-btn invoice-info-det-btn" id="from-add-pan">
-                                                <i class="bi bi-plus-circle-fill pe-2"></i><span>Add PAN No.</span>
+                                            <div class="phone-btn invoice-info-det-btn">
+                                                <i class="bi bi-telephone-fill pe-2"></i><span id="from-add-phone" onclick="showFromPhoneField()">Add Phone Number</span>
                                             </div>
                                         </div>
-                                        <div class="custom-field text-center" id="from-add-custom-fields">
+                                        <div class="buttons pb-3">
+                                            <div class="email-btn invoice-info-det-btn">
+                                                <i class="bi bi-plus-circle-fill pe-2"></i><span id="from-add-gst" onclick="showFromGstField()">Add GST No.</span>
+                                            </div>
+                                            <div class="phone-btn invoice-info-det-btn">
+                                                <i class="bi bi-plus-circle-fill pe-2"></i><span id="from-add-pan" onclick="showFromPanField()">Add PAN No.</span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="custom-field text-center" id="from-add-custom-fields">
                                             <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Custom Fields</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -174,10 +175,10 @@
                                 <div class="to text-start mx-md-2 py-sm-2">
                                     <h3 contentEditable="true" id="to">To</h3>
                                     <div class="to-details pt-2">
-                                        <input type="text" value="" placeholder="Country" id="to-country">
-                                        <input type="text" value="" placeholder="Your name or Your business name"
+                                        <input type="text" value="" placeholder="Client's name or Client's business name"
                                             id="to-name">
                                         <input type="text" value="" placeholder="Address" id="to-address">
+                                        <input type="text" value="" placeholder="Country" id="to-country">
                                         <div class="city">
                                             <input class="me-4" type="text" value="" placeholder="City" id="to-city">
                                             <input type="text" value="" placeholder="Zip code" id="to-zip">
@@ -196,24 +197,24 @@
                                             <input class="d-none" type="text" value="" placeholder="Text" id="to-text">
                                         </div>
                                         <div class="buttons">
-                                            <div class="email-btn invoice-info-det-btn" id="to-add-email">
-                                                <i class="bi bi-envelope-fill pe-2"></i><span>Add Email Id</span>
+                                            <div class="email-btn invoice-info-det-btn" onclick="">
+                                                <i class="bi bi-envelope-fill pe-2"></i><span id="to-add-email" onclick="showToEmailField()">Add Email Id</span>
                                             </div>
-                                            <div class="phone-btn invoice-info-det-btn" id="to-add-phone">
-                                                <i class="bi bi-telephone-fill pe-2"></i><span>Add Phone Number</span>
-                                            </div>
-                                        </div>
-                                        <div class="buttons">
-                                            <div class="email-btn invoice-info-det-btn" id="to-add-gst">
-                                                <i class="bi bi-plus-circle-fill pe-2"></i><span>Add GST No.</span>
-                                            </div>
-                                            <div class="phone-btn invoice-info-det-btn" id="to-add-pan">
-                                                <i class="bi bi-plus-circle-fill pe-2"></i><span>Add PAN No.</span>
+                                            <div class="phone-btn invoice-info-det-btn">
+                                                <i class="bi bi-telephone-fill pe-2"></i><span id="to-add-phone" onclick="showToPhoneField()">Add Phone Number</span>
                                             </div>
                                         </div>
-                                        <div class="custom-field text-center" id="to-add-custom-fields">
+                                        <div class="buttons pb-3">
+                                            <div class="email-btn invoice-info-det-btn">
+                                                <i class="bi bi-plus-circle-fill pe-2"></i><span id="to-add-gst" onclick="showToGstField()">Add GST No.</span>
+                                            </div>
+                                            <div class="phone-btn invoice-info-det-btn">
+                                                <i class="bi bi-plus-circle-fill pe-2"></i><span id="to-add-pan" onclick="showToPanField()">Add PAN No.</span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="custom-field text-center" id="to-add-custom-fields">
                                             <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Custom Fields</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -286,6 +287,15 @@
 
             </div>
             <!-- /Table -->
+            <!-- Add new line btn -->
+            <div class="container text-center justify-content-around">
+                <div class="add-new-line">
+                    <div class="custom-field text-center" id="add-new-item-line" onclick='addRow()'>
+                        <i class="bi bi-plus-circle-fill pe-2"></i><span>Add New Line</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add new line btn -->
             <!-- Add/Delete Row/Column buttons -->
             <div class="container text-center justify-content-center py-2">
                 <div class="row gy-2 justify-content-center mx-1">
@@ -307,15 +317,6 @@
                 </div>
             </div>
             <!-- /Add/Delete Row/Column buttons -->
-            <!-- Add new line btn -->
-            <div class="container text-center justify-content-around">
-                <div class="add-new-line">
-                    <div class="custom-field text-center" id="add-new-item-line" onclick='addRow()'>
-                        <i class="bi bi-plus-circle-fill pe-2"></i><span>Add New Line</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Add new line btn -->
             <!-- total and invoice notes container -->
             <div class="container-fluid total-invoice-con home-section">
                 <div class="row row-cols-1 row-cols-lg-2 my-0 mx-xs-0 mx-md-2 justify-content-between">
