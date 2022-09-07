@@ -84,6 +84,7 @@
                                         <div class="invoice-date-input"><input type="date" value="September 04, 2022"
                                                 id="invoice-date-value"></div>
                                     </div>
+                                    
                                     <!-- show when Add Due Date btn clicked -->
                                     <div class="invoice-info py-2 d-none" id="due-date-div">
                                         <div class="due-date invoice-info-det" id="due-date">Due Date</div>
@@ -91,13 +92,10 @@
                                                 id="due-date-value"></div>
                                     </div>
                                     <!-- show when Add More Fields btn clicked -->
-                                    <div class="add-new-info" id="add-new-info">
-                                        <!-- show when Add More Fields btn clicked -->
-                                        <!-- <div class="invoice-info py-2" id="add-info">
-                                            <div class=""><input type="text" value="" id="" placeholder="Title"></div>
-                                            <div class=""><input type="text" value="" id="" placeholder="Text"></div>
-                                        </div> -->
+                                    <div id="invoice-info-details">
+
                                     </div>
+                                    <!-- Buttons -->
                                     <div class="invoice-info py-2" onclick="showDueDateField()" id="add-due-date-btn">
                                         <div class="invoice-date invoice-info-det-btn"><i
                                                 class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>
@@ -321,7 +319,7 @@
             <div class="container-fluid total-invoice-con home-section">
                 <div class="row row-cols-1 row-cols-lg-2 my-0 mx-xs-0 mx-md-2 justify-content-between">
                     <div class="col invoice-notes-container gy-3">
-                        <div class="custom-field-container text-center my-2" id="add-bank-details">
+                        <div class="custom-field-container text-center my-2" id="add-bank-details" onclick="showBankDetails()">
                             <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Bank Details</span>
                         </div>
                         <!-- Bank details -->
@@ -361,7 +359,7 @@
                             </div>
                         </div>
                         <!-- Terms and conditions -->
-                        <div class="custom-field-container text-center my-2" id="add-terms-conditions">
+                        <div class="custom-field-container text-center my-2" id="add-terms-conditions" onclick="showTermsConditions()">
                             <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Terms & Conditions</span>
                         </div>
                         <div class="terms-con text-start d-none" id="terms-con">
@@ -374,12 +372,12 @@
                             </div>
                         </div>
                         <!-- Additional notes -->
-                        <div class="custom-field-container text-center my-2" id="add-additional-notes">
+                        <div class="custom-field-container text-center my-2" id="add-additional-notes" onclick="showAdditionalNotes()">
                             <i class="bi bi-plus-circle-fill pe-2"></i><span>Add Additional Notes</span>
                         </div>
                         <div class="additional-notes-con text-start d-none" id="additional-notes-con">
-                            <h3 class="pb-2" id="additional-notes">Additional Notes</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae blanditiis quas eius,
+                            <h3 class="pb-2" contentEditable="true" id="additional-notes">Additional Notes</h3>
+                            <p contentEditable="true" id="tersm-and-conditions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae blanditiis quas eius,
                                 voluptate, obcaecati expedita dolor at esse modi nemo quaerat aliquam sint soluta.
                                 Placeat officia eligendi atque incidunt nam?</p>
                         </div>
@@ -396,7 +394,7 @@
                             </div>
                         </div>
                         <!-- discount container -->
-                        <div class="discount-container text-center pb-3">
+                        <div class="discount-container text-center pb-3 d-none" id="discount-con">
                             <div class="discount-text" id="discount">
                                 <h3 id="discount-text">Discount(%)</h3>
                             </div>
@@ -405,7 +403,7 @@
                                         id="discount-amount">3.22</span></span>
                             </div>
                         </div>
-                        <div class="custom-field-container text-center" id="discount-on-total">
+                        <div class="custom-field-container text-center" id="discount-on-total" onclick="showDiscountDiv()">
                             <i class="bi bi-plus-circle-fill pe-2"></i><span>Give Discount</span>
                         </div>
                         <hr>

@@ -189,9 +189,6 @@ small{
 
 }
 
-.invoice-info{
-    display: flex;
-}
 
 .invoice-info-container{
     padding-top: 40px;
@@ -616,4 +613,18 @@ p{
 
 h3 span{
     color: #407BFF;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .custom-field-container{
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .custom-field-container{
+        max-width: 100%;
+    }
+
 }
