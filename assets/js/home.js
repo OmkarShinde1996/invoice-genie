@@ -1,3 +1,5 @@
+
+// Table logic-------------------------------------------------------------------------------------------
 let tableRows = []
 let tableCols = []
 let counter = 0
@@ -6,13 +8,11 @@ let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
-    `<input type="text" value="" id="item" placeholder="Item name">`,
+    `<input type="text" value="" id="item" placeholder="Item name" style="width: 250px;">`,
     `<input type="number" value="" id="quantity" placeholder="Quantity">`,
     `<input type="number" value="" id="rate" placeholder="Rate">`,
     `<input type="number" value="" id="amount" placeholder="Amount">`,
 ]
-
-
 
 function addRow() {
     // itemNo++
@@ -85,3 +85,149 @@ function addCellinRowFromCol(rowId){
 function deleteCellInRowFromCol(rowId){
     rowId.deleteCell(colsLength)
 }
+
+// Table logic ends here----------------------------------------------------------------------------------
+
+// Template show hide fields buttons----------------------------------------------------------------------
+
+let addDueDateDiv = document.querySelector('#due-date-div')
+
+function showDueDateField(){
+    if(addDueDateDiv.classList.contains('d-none')){
+        addDueDateDiv.classList.remove('d-none')
+        document.querySelector('#add-due-date-btn').innerHTML = `<div class="invoice-date invoice-info-det-btn"><i class="bi bi-dash-circle-fill me-2"></i><span>Remove Due Date</span></div>`
+    }else{
+        addDueDateDiv.classList.add('d-none')
+        document.querySelector('#add-due-date-btn').innerHTML = `<div class="invoice-date invoice-info-det-btn"><i
+        class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>`
+    }
+}
+
+let addMoreInfoFieldDiv = document.getElementById('add-new-info')
+let infoFieldCounter = 0
+
+function addNewInfoField(){
+    infoFieldCounter++
+    let mainDiv = document.createElement('div');
+    mainDiv.setAttribute('class','invoice-info py-2')
+    mainDiv.setAttribute('id',`add-info-${infoFieldCounter}`)
+    mainDiv.innerHTML = `<div><input type="text" value="" id="info${infoFieldCounter}" placeholder="Title"></div>
+    <div><input type="text" value="" id="infoInput${infoFieldCounter}" placeholder="Text"></div>`
+    addMoreInfoFieldDiv.appendChild(mainDiv)
+    document.querySelector('#remove-info-field').classList.remove('d-none')
+    console.log(infoFieldCounter)
+}
+
+function removeLastInfoField(){
+    if(infoFieldCounter==1){
+        addMoreInfoFieldDiv.removeChild(addMoreInfoFieldDiv.lastElementChild)
+        document.querySelector('#remove-info-field').classList.add('d-none')
+        return
+    }else{
+        addMoreInfoFieldDiv.removeChild(addMoreInfoFieldDiv.lastElementChild)
+        infoFieldCounter--
+        console.log(infoFieldCounter)
+    }
+    
+}
+
+// Template show hide fields buttons ends here------------------------------------------------------------
+
+// From show hide fields buttons--------------------------------------------------------------------------
+
+let addFromEmailBtn = document.querySelector('#from-email')
+let addFromPhoneBtn = document.querySelector('#from-mobile')
+let addFromGstBtn = document.querySelector('#from-gst')
+let addFromPanBtn = document.querySelector('#from-pan')
+
+function showFromEmailField(){
+    if(addFromEmailBtn.classList.contains('d-none')){
+        addFromEmailBtn.classList.remove('d-none')
+        document.querySelector('#from-add-email').innerText = 'Remove Email Id'
+    }else{
+        addFromEmailBtn.classList.add('d-none')
+        document.querySelector('#from-add-email').innerText = 'Add Email Id'
+    }
+}
+
+function showFromPhoneField(){
+    if(addFromPhoneBtn.classList.contains('d-none')){
+        addFromPhoneBtn.classList.remove('d-none')
+        document.querySelector('#from-add-phone').innerText = 'Remove Phone Number'
+    }else{
+        addFromPhoneBtn.classList.add('d-none')
+        document.querySelector('#from-add-phone').innerText = 'Add Phone Number'
+    }
+}
+
+function showFromGstField(){
+    if(addFromGstBtn.classList.contains('d-none')){
+        addFromGstBtn.classList.remove('d-none')
+        document.querySelector('#from-add-gst').innerText = 'Remove GST No.'
+    }else{
+        addFromGstBtn.classList.add('d-none')
+        document.querySelector('#from-add-gst').innerText = 'Add GST No.'
+    }
+}
+
+function showFromPanField(){
+    if(addFromPanBtn.classList.contains('d-none')){
+        addFromPanBtn.classList.remove('d-none')
+        document.querySelector('#from-add-pan').innerText = 'Remove PAN No.'
+    }else{
+        addFromPanBtn.classList.add('d-none')
+        document.querySelector('#from-add-pan').innerText = 'Add PAN No.'
+    }
+}
+
+
+// From show hide fields buttons ends here----------------------------------------------------------------
+
+// To show hide fields buttons--------------------------------------------------------------------------
+
+let addToEmailBtn = document.querySelector('#to-email')
+let addToPhoneBtn = document.querySelector('#to-mobile')
+let addToGstBtn = document.querySelector('#to-gst')
+let addToPanBtn = document.querySelector('#to-pan')
+
+function showToEmailField(){
+    if(addToEmailBtn.classList.contains('d-none')){
+        addToEmailBtn.classList.remove('d-none')
+        document.querySelector('#to-add-email').innerText = 'Remove Email Id'
+    }else{
+        addToEmailBtn.classList.add('d-none')
+        document.querySelector('#to-add-email').innerText = 'Add Email Id'
+    }
+}
+
+function showToPhoneField(){
+    if(addToPhoneBtn.classList.contains('d-none')){
+        addToPhoneBtn.classList.remove('d-none')
+        document.querySelector('#to-add-phone').innerText = 'Remove Phone Number'
+    }else{
+        addToPhoneBtn.classList.add('d-none')
+        document.querySelector('#to-add-phone').innerText = 'Add Phone Number'
+    }
+}
+
+function showToGstField(){
+    if(addToGstBtn.classList.contains('d-none')){
+        addToGstBtn.classList.remove('d-none')
+        document.querySelector('#to-add-gst').innerText = 'Remove GST No.'
+    }else{
+        addToGstBtn.classList.add('d-none')
+        document.querySelector('#to-add-gst').innerText = 'Add GST No.'
+    }
+}
+
+function showToPanField(){
+    if(addToPanBtn.classList.contains('d-none')){
+        addToPanBtn.classList.remove('d-none')
+        document.querySelector('#to-add-pan').innerText = 'Remove PAN No.'
+    }else{
+        addToPanBtn.classList.add('d-none')
+        document.querySelector('#to-add-pan').innerText = 'Add PAN No.'
+    }
+}
+
+// From show hide fields buttons ends here----------------------------------------------------------------

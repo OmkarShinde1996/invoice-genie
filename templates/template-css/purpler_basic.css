@@ -390,10 +390,11 @@ input[type = "radio"]{
 
 
 
-input{
+td input{
     display: flex;
     justify-content: start;
     margin-top: 8px;
+    width: 100px;
 }
 
 
