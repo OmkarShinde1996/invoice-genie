@@ -103,16 +103,18 @@ function showDueDateField(){
     }
 }
 
-let addMoreInfoFieldDiv = document.getElementById('add-new-info')
+
+let addMoreInfoFieldDiv = document.getElementById('invoice-info-details')
 let infoFieldCounter = 0
 
 function addNewInfoField(){
     infoFieldCounter++
     let mainDiv = document.createElement('div');
     mainDiv.setAttribute('class','invoice-info py-2')
-    mainDiv.setAttribute('id',`add-info-${infoFieldCounter}`)
-    mainDiv.innerHTML = `<div><input type="text" value="" id="info${infoFieldCounter}" placeholder="Title"></div>
-    <div><input type="text" value="" id="infoInput${infoFieldCounter}" placeholder="Text"></div>`
+    mainDiv.setAttribute('id',`added-info-${infoFieldCounter}`)
+    mainDiv.innerHTML = 
+    `<div contentEditable="true" class="invoice-number invoice-info-det" id="invoice-number">Title</div>
+    <div class="invoice-number-input"><input type="text" value="Text" id="invoice-number-value"></div>`
     addMoreInfoFieldDiv.appendChild(mainDiv)
     document.querySelector('#remove-info-field').classList.remove('d-none')
     console.log(infoFieldCounter)
@@ -231,3 +233,57 @@ function showToPanField(){
 }
 
 // From show hide fields buttons ends here----------------------------------------------------------------
+
+// invoice notes container fields buttons-----------------------------------------------------------------
+
+let addBankDetailsDiv = document.querySelector('#bank-details-con')
+let addTermsConditionsDiv = document.querySelector('#terms-con')
+let addAdditionalNotesDiv = document.querySelector('#additional-notes-con')
+
+function showBankDetails(){
+    if(addBankDetailsDiv.classList.contains('d-none')){
+        addBankDetailsDiv.classList.remove('d-none')
+        document.querySelector('#add-bank-details').innerHTML = `<i class="bi bi-dash-circle-fill me-2"></i><span>Remove Bank Details</span>`
+    }else{
+        addBankDetailsDiv.classList.add('d-none')
+        document.querySelector('#add-bank-details').innerHTML = `<i class="bi bi-plus-circle-fill pe-2"></i><span>Add Bank Details</span>`
+    }
+}
+
+function showTermsConditions(){
+    if(addTermsConditionsDiv.classList.contains('d-none')){
+        addTermsConditionsDiv.classList.remove('d-none')
+        document.querySelector('#add-terms-conditions').innerHTML = `<i class="bi bi-dash-circle-fill me-2"></i><span>Remove Terms & Conditions</span>`
+    }else{
+        addTermsConditionsDiv.classList.add('d-none')
+        document.querySelector('#add-terms-conditions').innerHTML = `<i class="bi bi-plus-circle-fill pe-2"></i><span>Add Terms & Conditions</span>`
+    }
+}
+
+function showAdditionalNotes(){
+    if(addAdditionalNotesDiv.classList.contains('d-none')){
+        addAdditionalNotesDiv.classList.remove('d-none')
+        document.querySelector('#add-additional-notes').innerHTML = `<i class="bi bi-dash-circle-fill me-2"></i><span>Remove Additional Notes</span>`
+    }else{
+        addAdditionalNotesDiv.classList.add('d-none')
+        document.querySelector('#add-additional-notes').innerHTML = `<i class="bi bi-plus-circle-fill pe-2"></i><span>Add Additional Notes</span>`
+    }
+}
+
+// invoice notes container fields buttons ends here-------------------------------------------------------
+
+// Give Discount Button-----------------------------------------------------------------------------------
+
+let giveDiscountDiv = document.querySelector('#discount-con')
+
+function showDiscountDiv(){
+    if(giveDiscountDiv.classList.contains('d-none')){
+        giveDiscountDiv.classList.remove('d-none')
+        document.querySelector('#discount-on-total').innerHTML = `<i class="bi bi-dash-circle-fill me-2"></i><span>Remove Discount</span>`
+    }else{
+        giveDiscountDiv.classList.add('d-none')
+        document.querySelector('#discount-on-total').innerHTML = `<i class="bi bi-plus-circle-fill pe-2"></i><span>Give Discount</span>`
+    }
+}
+
+// Give Discount Button ends here-------------------------------------------------------------------------
