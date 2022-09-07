@@ -250,11 +250,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4 col-md-4">
-                        <div class="set-tax px-4">
-                            <div class="button-column" id="add-columns">Add Columns</div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row justify-content-start mx-3">
                     <div class="gst">
@@ -275,62 +270,47 @@
             <div class="container table-responsive table-container justify-content-around py-2">
                 <table class="table">
                     <thead class="table-dark">
-                        <tr>
+                        <tr class="column-header">
                             <th class="text-start" scope="col">#</th>
                             <th class="text-start" scope="col">Items</th>
                             <th class="text-start" scope="col">Quantity</th>
                             <th class="text-start" scope="col">Rate</th>
                             <th class="text-start" scope="col">Amount</th>
-                            <th class="text-start" scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td class="item-name">
-                                <input type="text" value="" id="item" placeholder="Item name">
-                            </td>
-                            <td class="width">
-                                <input type="number" value="" id="quantity" placeholder="Quantity">
-                            </td>
-                            <td class="width">
-                                <input type="number" value="" id="rate" placeholder="Rate">
-                            </td>
-                            <td class="width">
-                                <input type="number" value="" id="amount" placeholder="Amount">
-                            </td>
-                            <td class="width">
-                                <div class="delete-icon"><i class="bi bi-trash3-fill"></i></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td class="item-name">
-                                <input type="text" value="" id="item" placeholder="Item name">
-                            </td>
-                            <td class="width">
-                                <input type="number" value="" id="quantity" placeholder="Quantity">
-                            </td>
-                            <td class="width">
-                                <input type="number" value="" id="rate" placeholder="Rate">
-                            </td>
-                            <td class="width">
-                                <input type="number" value="" id="amount" placeholder="Amount">
-                            </td>
-                            <td class="width">
-                                <div class="delete-icon"><i class="bi bi-trash3-fill"></i></div>
-                            </td>
-                        </tr>
+                    <tbody class="table-row">
+                       
                     </tbody>
                 </table>
 
 
             </div>
             <!-- /Table -->
+            <!-- Add/Delete Row/Column buttons -->
+            <div class="container text-center justify-content-center py-2">
+                <div class="row gy-2 justify-content-center mx-1">
+                    <div class="col-10 col-sm-6 col-md-4">
+                        <div class="set-tax mx-1">
+                            <div class="button-column" id="add-column" onclick='addCol()'>Add Column</div>
+                        </div>
+                    </div>
+                    <div class="col-10 col-sm-6 col-md-4">
+                        <div class="set-tax mx-1">
+                            <div class="button-column" id="delete-column" onclick='deleteCol()'>Delete Column</div>
+                        </div>
+                    </div>
+                    <div class="col-10 col-sm-6 col-md-4">
+                        <div class="set-tax mx-1">
+                            <div class="button-column" id="delete-line" onclick='deleteRow()'>Delete Line</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Add/Delete Row/Column buttons -->
             <!-- Add new line btn -->
             <div class="container text-center justify-content-around">
                 <div class="add-new-line">
-                    <div class="custom-field text-center" id="add-new-item-line">
+                    <div class="custom-field text-center" id="add-new-item-line" onclick='addRow()'>
                         <i class="bi bi-plus-circle-fill pe-2"></i><span>Add New Line</span>
                     </div>
                 </div>

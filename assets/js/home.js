@@ -13,6 +13,7 @@ let definedRowCells = [
 ]
 
 
+
 function addRow() {
     // itemNo++
     definedRowCells[0] = `<div>${itemNo}</div>`
@@ -36,7 +37,7 @@ function deleteRow() {
 function addCol(){
     counter++
     let header = document.querySelector(".column-header")
-    let html = `<th scope="col" id="${counter}">Col</th>`
+    let html = `<th contenteditable="true" class="text-start" scope="col" id="${counter}">Click to edit</th>`
     header.innerHTML += html
     tableCols.push(html)
     colsLength++
@@ -61,13 +62,6 @@ function deleteCol(){
     }
 }
 
-function addColInRows(){
-    for(let i=0; i<tableRows.length; i++){
-        let html = `<th scope="col" id="text${counterToDeleteColRow}">Add text</th>`
-        tableRows[i].innerHTML += html
-        counterToDeleteColRow++
-    }
-}
 
 function totalColRow(){
     console.log(tableRows.length)
