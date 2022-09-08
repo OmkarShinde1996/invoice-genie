@@ -21,6 +21,7 @@ function addRow() {
     var row = table.insertRow();
     addCellInRowFromRow(row)
     tableRows.push(row)
+    // console.log(definedRowCells)
     // console.log(itemNo)
 }
   
@@ -34,14 +35,36 @@ function deleteRow() {
     // console.log(itemNo)
 }
 
+//**************************Code to insert column at the end****************************/
+// function addCol(){
+//     counter++
+//     let header = document.querySelector(".column-header")
+//     let html = `<th contenteditable="true" class="text-start" scope="col" id="${counter}">Click to edit</th>`
+//     header.innerHTML += html
+//     tableCols.push(html)
+//     colsLength++
+//     definedRowCells.push(`<input type="text" value="" id="enter-text" placeholder="Enter text">`)
+//     for(let i=0; i<tableRows.length; i++){
+//         addCellinRowFromCol(tableRows[i])
+//     }
+// }
+
 function addCol(){
     counter++
     let header = document.querySelector(".column-header")
-    let html = `<th contenteditable="true" class="text-start" scope="col" id="${counter}">Click to edit</th>`
-    header.innerHTML += html
-    tableCols.push(html)
+    let itemsHeader = header.querySelector('#items-head')
+    let th = document.createElement('th')
+    th.setAttribute('contenteditable','true')
+    th.setAttribute('class','text-start')
+    th.setAttribute('scope','col')
+    th.setAttribute('id',`${counter}`)
+    th.innerText = 'Click to edit'
+    itemsHeader.after(th)
+    tableCols.push(th)
     colsLength++
-    definedRowCells.push(`<input type="text" value="" id="enter-text" placeholder="Enter text">`)
+    // definedRowCells.push(`<input type="text" value="" id="enter-text" placeholder="Enter text">`)//code for inserting element at last in array
+    definedRowCells.splice(2,0,`<input type="text" value="" id="enter-text" placeholder="Enter text">`)//line rewrited to insert element at 2nd position in array
+    // console.log(definedRowCells)
     for(let i=0; i<tableRows.length; i++){
         addCellinRowFromCol(tableRows[i])
     }
@@ -57,6 +80,8 @@ function deleteCol(){
     counter--
     colsLength--
     // console.log(tableRows)
+    // console.log(definedRowCells)
+    definedRowCells.splice(2,1)//line written to delete 2nd positioned element from array here the syntax is splice(startIndex, deleteCount)
     for(let i=0; i<tableRows.length; i++){
         deleteCellInRowFromCol(tableRows[i])
     }
@@ -78,12 +103,22 @@ function addCellInRowFromRow(rowId){
     
 }
 
+//**************************Code to Add cell at the end****************************/
+// function addCellinRowFromCol(rowId){
+//     rowId.insertCell(colsLength-1).innerHTML = '<input type="text" value="" id="enter-text" placeholder="Enter text">'
+// }
+
 function addCellinRowFromCol(rowId){
-    rowId.insertCell(colsLength-1).innerHTML = '<input type="text" value="" id="enter-text" placeholder="Enter text">'
+    rowId.insertCell(2).innerHTML = '<input type="text" value="" id="enter-text" placeholder="Enter text">'
 }
 
+//**************************Code to delete cell from the end****************************/
+// function deleteCellInRowFromCol(rowId){
+//     rowId.deleteCell(colsLength)
+// }
+
 function deleteCellInRowFromCol(rowId){
-    rowId.deleteCell(colsLength)
+    rowId.deleteCell(2)
 }
 
 // Table logic ends here----------------------------------------------------------------------------------
