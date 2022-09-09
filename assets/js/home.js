@@ -1,4 +1,5 @@
 
+
 // Table logic-------------------------------------------------------------------------------------------
 let tableRows = []
 let tableCols = []
@@ -8,11 +9,13 @@ let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
-    `<input type="text" value="" id="item" placeholder="Item name" style="width: 250px;">`,
-    `<input type="number" value="" id="quantity" placeholder="Quantity">`,
-    `<input type="number" value="" id="rate" placeholder="Rate">`,
-    `<input type="number" value="" id="amount" placeholder="Amount">`,
+    `<input type="text" id="item" placeholder="Item name" style="width: 250px;">`,
+    `<input type="number" id="quantity" placeholder="Quantity">`,
+    `<input type="number" id="rate" placeholder="Rate">`,
+    `<input type="number" id="amount" placeholder="Amount">`,
 ]
+
+
 
 function addRow() {
     // itemNo++
@@ -322,3 +325,23 @@ function showDiscountDiv(){
 }
 
 // Give Discount Button ends here-------------------------------------------------------------------------
+
+
+
+
+//*******************************************************************************************************/
+//                                         Getting calculations done
+//*******************************************************************************************************/
+
+//Calculation subTotal------------------------------------------------------------------------------------
+
+function calculate(){
+    let table = document.querySelector('.table'), sumVal=0;
+    console.log('table rows length = ', table.rows[1])
+    for(let i=1; i<table.rows.length; i++){
+        console.log(table.rows[i].cells[4].innerHTML)
+    }
+}
+
+
+//Calculating subtotal ends here--------------------------------------------------------------------------
