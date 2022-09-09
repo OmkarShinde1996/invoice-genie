@@ -5,6 +5,8 @@ let tableRows = []
 let tableCols = []
 let counter = 0
 let counterToDeleteColRow = 0
+let normalCounter = 1
+let colCount = 1
 let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
@@ -22,10 +24,9 @@ function addRow() {
     definedRowCells[0] = `<div>${itemNo}</div>`
     var table = document.querySelector(".table-row");
     var row = table.insertRow();
-    addCellInRowFromRow(row)
+    console.log({normalCounter})
+    addCellInRowFromRow(row) //insert cells in row
     tableRows.push(row)
-    // console.log(definedRowCells)
-    // console.log(itemNo)
 }
   
 function deleteRow() {
@@ -103,7 +104,7 @@ function addCellInRowFromRow(rowId){
     for(let j=0; j<colsLength;j++){
         rowId.insertCell(j).innerHTML = definedRowCells[j]
     }
-    
+    normalCounter++
 }
 
 //**************************Code to Add cell at the end****************************/
@@ -112,7 +113,8 @@ function addCellInRowFromRow(rowId){
 // }
 
 function addCellinRowFromCol(rowId){
-    rowId.insertCell(2).innerHTML = '<input type="text" value="" id="enter-text" placeholder="Enter text">'
+    rowId.insertCell(2).innerHTML = `<input type="text" value="" id="enter-text" placeholder="Enter text">`
+    colCount++
 }
 
 //**************************Code to delete cell from the end****************************/
@@ -336,11 +338,12 @@ function showDiscountDiv(){
 //Calculation subTotal------------------------------------------------------------------------------------
 
 function calculate(){
-    let table = document.querySelector('.table'), sumVal=0;
-    console.log('table rows length = ', table.rows[1])
-    for(let i=1; i<table.rows.length; i++){
-        console.log(table.rows[i].cells[4].innerHTML)
+    // console.log(document.getElementById('amount').value)
+    let tableBody = document.querySelector('.table-row').children
+    for(let i=0; i<tableBody.length; i++){
+        console.log(tableBody[i].cells[4].children[0].value)
     }
+
 }
 
 
