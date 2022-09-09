@@ -11,10 +11,10 @@ let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
-    `<input type="text" id="item" placeholder="Item name" style="width: 250px;">`,
-    `<input type="number" id="quantity" placeholder="Quantity">`,
-    `<input type="number" id="rate" placeholder="Rate">`,
-    `<input type="number" id="amount" placeholder="Amount">`,
+    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
+    `<input type="number" id="quantity" placeholder="Quantity" value="0" onkeyup="calculateAmount()">`,
+    `<input type="number" id="rate" placeholder="Rate" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
+    `<input type="number" id="amount" placeholder="Amount" value="0">`,
 ]
 
 
@@ -337,12 +337,38 @@ function showDiscountDiv(){
 
 //Calculation subTotal------------------------------------------------------------------------------------
 
-function calculate(){
+function calculateAmount(){
+    let tableBody = document.querySelector('.table-row').children
+    // let totalAmountDiv = document.querySelector('#amount')
+    let totalAmountDiv
+    let totalAmount = 0
+    for(let i=0; i<tableBody.length; i++){
+        // console.log(tableBody[i].cells[4].children[0].value)
+        totalAmountDiv = tableBody[i].cells[tableBody[i].cells.length-1].children[0]
+        let quantity = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
+        let rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
+        
+        totalAmount = quantity*rate
+        totalAmountDiv.value = totalAmount
+    }
+    // totalAmountDiv.value = totalAmount
+}
+//=========================================================================================
+
+
+
+//=========================================================================================
+
+function calculateSubTotal(){
     // console.log(document.getElementById('amount').value)
     let tableBody = document.querySelector('.table-row').children
+    let subTotalDiv = document.querySelector('#sub-total-amount')
+    let subTotal = 0
     for(let i=0; i<tableBody.length; i++){
-        console.log(tableBody[i].cells[4].children[0].value)
+        // console.log(tableBody[i].cells[4].children[0].value)
+        subTotal += Number(tableBody[i].cells[tableBody[i].cells.length-1].children[0].value)
     }
+    subTotalDiv.innerText = subTotal
 
 }
 
