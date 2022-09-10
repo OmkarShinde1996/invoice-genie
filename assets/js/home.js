@@ -425,63 +425,12 @@ function showDiscountDiv(){
         giveDiscountDiv.classList.remove('d-none')
         document.querySelector('#discount-on-total').innerHTML = `<i class="bi bi-dash-circle-fill me-2"></i><span>Remove Discount</span>`
     }else{
+        document.querySelector('#discount-amount').value = 0 //This line will set default discount amount to 0 when user clickes on remove discount button
+        // console.log(document.querySelector('#discount-amount').value)
+        calculateSubTotal() //After setting discount amount we need to again calculate subtotal and total
         giveDiscountDiv.classList.add('d-none')
         document.querySelector('#discount-on-total').innerHTML = `<i class="bi bi-plus-circle-fill pe-2"></i><span>Give Discount</span>`
     }
 }
 
 // Give Discount Button ends here-------------------------------------------------------------------------
-
-
-
-
-//*******************************************************************************************************/
-//                                         Getting calculations done
-//*******************************************************************************************************/
-
-//Calculation subTotal------------------------------------------------------------------------------------
-
-function calculateAmount(){
-    let tableBody = document.querySelector('.table-row').children
-    // let totalAmountDiv = document.querySelector('#amount')
-    let totalAmountDiv
-    let totalAmount = 0
-    let tax = 0
-    let quantity = 0
-    let rate = 0
-    let totalAmountWithTax = 0
-    for(let i=0; i<tableBody.length; i++){
-        // console.log(tableBody[i].cells[4].children[0].value)
-        totalAmountDiv = tableBody[i].cells[tableBody[i].cells.length-1].children[0]
-        tax = Number(tableBody[i].cells[tableBody[i].cells.length-4].children[0].value) //This will give the tax rate value
-        quantity = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
-        rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
-        
-        totalAmount = quantity*rate
-        totalAmountWithTax = (totalAmount+((totalAmount*tax)/100)).toFixed(2)
-        totalAmountDiv.value = totalAmountWithTax
-        // console.log(totalAmountWithTax)
-    }
-    // totalAmountDiv.value = totalAmount
-}
-//=========================================================================================
-
-
-
-//=========================================================================================
-
-function calculateSubTotal(){
-    // console.log(document.getElementById('amount').value)
-    let tableBody = document.querySelector('.table-row').children
-    let subTotalDiv = document.querySelector('#sub-total-amount')
-    let subTotal = 0
-    for(let i=0; i<tableBody.length; i++){
-        // console.log(tableBody[i].cells[4].children[0].value)
-        subTotal += Number(tableBody[i].cells[tableBody[i].cells.length-1].children[0].value)
-    }
-    subTotalDiv.innerText = subTotal.toFixed(2)
-
-}
-
-
-//Calculating subtotal ends here--------------------------------------------------------------------------
