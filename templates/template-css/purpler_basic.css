@@ -632,3 +632,21 @@ h3 span{
     }
 
 }
+
+.discount-amount-edit{
+    width: 80px;
+    font-size: 16px;
+    text-align: end;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

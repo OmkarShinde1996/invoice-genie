@@ -394,11 +394,11 @@
                         <!-- discount container -->
                         <div class="discount-container text-center pb-3 d-none" id="discount-con">
                             <div class="discount-text" id="discount">
-                                <h3 id="discount-text">Discount(%)</h3>
+                                <h3 id="discount-text">Discount(&#8377;)</h3>
                             </div>
                             <div class="discount-amount">
-                                <span class="h4">-&#8377;<span contentEditable="true"
-                                        id="discount-amount">0</span></span>
+                                <span class="h4">-&#8377;<input type="number" class="discount-amount-edit"
+                                        id="discount-amount" value="0" oninput="calculateSubTotal()"></input></span>
                             </div>
                         </div>
                         <div class="custom-field-container text-center" id="discount-on-total" onclick="showDiscountDiv()">
@@ -457,6 +457,7 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/calculations.js"></script>
 </body>
 
 </html>
