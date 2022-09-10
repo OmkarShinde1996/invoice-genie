@@ -456,7 +456,7 @@ function calculateAmount(){
         rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
         
         totalAmount = quantity*rate
-        totalAmountWithTax = totalAmount+((totalAmount*tax)/totalAmount)
+        totalAmountWithTax = (totalAmount+((totalAmount*tax)/100)).toFixed(2)
         totalAmountDiv.value = totalAmountWithTax
         // console.log(totalAmountWithTax)
     }
@@ -477,7 +477,7 @@ function calculateSubTotal(){
         // console.log(tableBody[i].cells[4].children[0].value)
         subTotal += Number(tableBody[i].cells[tableBody[i].cells.length-1].children[0].value)
     }
-    subTotalDiv.innerText = subTotal
+    subTotalDiv.innerText = subTotal.toFixed(2)
 
 }
 
