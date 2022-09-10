@@ -242,6 +242,10 @@ input{
     border-bottom: 1px solid #7e7a7a54;
 }
 
+input:hover{
+    border-bottom: 1px solid #407BFF;
+}
+
 .form-select{
     width: 90%;
     align-items: center;

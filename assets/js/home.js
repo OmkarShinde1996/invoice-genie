@@ -259,17 +259,19 @@ function addNewInfoField(){
     <div class="invoice-number-input"><input type="text" value="Text" id="invoice-number-value"></div>`
     addMoreInfoFieldDiv.appendChild(mainDiv)
     document.querySelector('#remove-info-field').classList.remove('d-none')
-    console.log(infoFieldCounter)
+    // console.log(infoFieldCounter)
 }
 
 function removeLastInfoField(){
-    if(infoFieldCounter==1){
+    infoFieldCounter--
+    // console.log(infoFieldCounter)
+    if(infoFieldCounter==0){
         addMoreInfoFieldDiv.removeChild(addMoreInfoFieldDiv.lastElementChild)
         document.querySelector('#remove-info-field').classList.add('d-none')
         return
     }else{
         addMoreInfoFieldDiv.removeChild(addMoreInfoFieldDiv.lastElementChild)
-        infoFieldCounter--
+        // infoFieldCounter--
         console.log(infoFieldCounter)
     }
     
