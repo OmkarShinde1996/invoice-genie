@@ -4,6 +4,7 @@
 let tableRows = []
 let tableCols = []
 let counter = 0
+let taxCounter = 0
 let counterToDeleteColRow = 0
 let normalCounter = 1
 let colCount = 1
@@ -12,9 +13,9 @@ let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
     `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
-    `<input type="number" id="quantity" placeholder="Quantity" value="0" onkeyup="calculateAmount()">`,
+    `<input type="number" id="quantity" placeholder="Quantity" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
     `<input type="number" id="rate" placeholder="Rate" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
-    `<input type="number" id="amount" placeholder="Amount" value="0">`,
+    `<input type="number" id="amount"  value="0">`,
 ]
 
 
@@ -91,6 +92,93 @@ function deleteCol(){
     }
 }
 
+let selectedTaxIndex
+
+function createTaxCol(){
+    let selectedTax = document.getElementById('set-tax')
+    let selectedValue = selectedTax.selectedIndex
+    // console.log(selectedValue)
+    if(selectedValue == selectedTaxIndex){
+        return
+    }else{
+        if(selectedValue == 0){
+            deleteTaxColumn()
+        }else{
+            // deleteTaxColumn()
+            if(selectedValue == 0){ //selected "set tax" option
+                selectedTaxIndex = 0
+                deleteTaxColumn()
+            }else if(selectedValue == 1){ //selected "GST" option
+                deleteTaxColumn()
+                selectedTaxIndex = 1
+                addTaxColumn('GST')
+            }else if(selectedValue == 2){ //selected "VAT" option
+                deleteTaxColumn()
+                selectedTaxIndex = 2
+                addTaxColumn('VAT')
+            }else if(selectedValue == 3){ //selected "PPN" option
+                deleteTaxColumn()
+                selectedTaxIndex = 3
+                addTaxColumn('PPN')
+            }else if(selectedValue == 4){ //selected "SST" option
+                deleteTaxColumn()
+                selectedTaxIndex = 4
+                addTaxColumn('SST')
+            }else if(selectedValue == 5){ //selected "HST" option
+                deleteTaxColumn()
+                selectedTaxIndex = 5
+                addTaxColumn('HST')
+            }else if(selectedValue == 6){ //selected "TAX" option
+                deleteTaxColumn()
+                selectedTaxIndex = 6
+                addTaxColumn('TAX')
+            }
+        }
+        
+    }
+    
+}
+
+
+function addTaxColumn(taxValue){
+    taxCounter++
+    let header = document.querySelector(".column-header")
+    let quantityHeader = header.querySelector('#quantity-head')
+    let th = document.createElement('th')
+    th.setAttribute('class',`text-start selected-${taxValue}`)
+    th.setAttribute('scope','col')
+    th.setAttribute('id',`tax-${taxCounter}`)
+    th.innerText = `${taxValue}(%)`
+    quantityHeader.before(th)
+    tableCols.push(th)
+    colsLength++
+    // definedRowCells.push(`<input type="text" value="" id="enter-text" placeholder="Enter text">`)//code for inserting element at last in array
+    definedRowCells.splice(definedRowCells.length-3,0,`<input type="number" value="0" id="enter-tax-rate" onkeyup="calculateAmount(),calculateSubTotal()">`)//line rewrited to insert element at 2nd position in array
+    // console.log(definedRowCells)
+    for(let i=0; i<tableRows.length; i++){
+        addCellinRowFromTaxCol(tableRows[i])
+    }
+}
+
+
+function deleteTaxColumn(){
+    if(taxCounter == 0){
+        return
+    }
+    tableCols.pop()
+    let header = document.getElementById(`tax-${taxCounter}`)
+    header.remove()
+    taxCounter--
+    colsLength--
+    // console.log(definedRowCells)
+    definedRowCells.splice((definedRowCells.length-4),1)
+    // console.log('after deleting',definedRowCells)
+    // console.log(definedRowCells)
+    for(let i=0; i<tableRows.length; i++){
+        deleteCellinRowFromTaxCol(tableRows[i])
+    }
+}
+
 
 function totalColRow(){
     console.log(tableRows.length)
@@ -112,6 +200,13 @@ function addCellInRowFromRow(rowId){
 //     rowId.insertCell(colsLength-1).innerHTML = '<input type="text" value="" id="enter-text" placeholder="Enter text">'
 // }
 
+function addCellinRowFromTaxCol(rowId){
+    if(selectedTaxIndex != 0){
+        rowId.insertCell(definedRowCells.length-4).innerHTML = `<input type="number" value="0" id="entered-tax-rate" onkeyup="calculateAmount(),calculateSubTotal()">`
+        colCount++
+    }
+}
+
 function addCellinRowFromCol(rowId){
     rowId.insertCell(2).innerHTML = `<input type="text" value="" id="enter-text" placeholder="Enter text">`
     colCount++
@@ -121,6 +216,10 @@ function addCellinRowFromCol(rowId){
 // function deleteCellInRowFromCol(rowId){
 //     rowId.deleteCell(colsLength)
 // }
+
+function deleteCellinRowFromTaxCol(rowId){
+    rowId.deleteCell(definedRowCells.length-3)
+}
 
 function deleteCellInRowFromCol(rowId){
     rowId.deleteCell(2)
@@ -342,14 +441,21 @@ function calculateAmount(){
     // let totalAmountDiv = document.querySelector('#amount')
     let totalAmountDiv
     let totalAmount = 0
+    let tax = 0
+    let quantity = 0
+    let rate = 0
+    let totalAmountWithTax = 0
     for(let i=0; i<tableBody.length; i++){
         // console.log(tableBody[i].cells[4].children[0].value)
         totalAmountDiv = tableBody[i].cells[tableBody[i].cells.length-1].children[0]
-        let quantity = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
-        let rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
+        tax = Number(tableBody[i].cells[tableBody[i].cells.length-4].children[0].value) //This will give the tax rate value
+        quantity = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
+        rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
         
         totalAmount = quantity*rate
-        totalAmountDiv.value = totalAmount
+        totalAmountWithTax = totalAmount+((totalAmount*tax)/totalAmount)
+        totalAmountDiv.value = totalAmountWithTax
+        // console.log(totalAmountWithTax)
     }
     // totalAmountDiv.value = totalAmount
 }
