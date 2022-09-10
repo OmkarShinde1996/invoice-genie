@@ -225,15 +225,14 @@
                     <div class="col-12 col-sm-4 col-md-4">
                         <div class="set-tax">
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                id="set-tax">
+                                id="set-tax" onchange="createTaxCol()">
                                 <option selected>Set Tax</option>
-                                <option value="1">None</option>
-                                <option value="2">GST</option>
-                                <option value="3">VAT</option>
+                                <option value="1">GST</option>
+                                <option value="2">VAT</option>
                                 <option value="3">PPN</option>
-                                <option value="3">SST</option>
-                                <option value="3">HST</option>
-                                <option value="3">TAX</option>
+                                <option value="4">SST</option>
+                                <option value="5">HST</option>
+                                <option value="6">TAX</option>
                             </select>
                         </div>
                     </div>
@@ -271,7 +270,7 @@
                         <tr class="column-header">
                             <th class="text-start" scope="col">#</th>
                             <th class="text-start" scope="col" id="items-head">Items</th>
-                            <th class="text-start" scope="col">Quantity</th>
+                            <th class="text-start" scope="col" id="quantity-head">Quantity</th>
                             <th class="text-start" scope="col">Rate(&#8377;)</th>
                             <th class="text-start" scope="col">Amount(&#8377;)</th>
                         </tr>
