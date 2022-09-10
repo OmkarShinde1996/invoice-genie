@@ -13,8 +13,8 @@ let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
     `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
-    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
-    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
+    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
+    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
     `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
 ]
 
@@ -84,8 +84,6 @@ function deleteCol(){
     header.remove()
     counter--
     colsLength--
-    // console.log(tableRows)
-    // console.log(definedRowCells)
     definedRowCells.splice(2,1)//line written to delete 2nd positioned element from array here the syntax is splice(startIndex, deleteCount)
     for(let i=0; i<tableRows.length; i++){
         deleteCellInRowFromCol(tableRows[i])
@@ -97,46 +95,46 @@ let selectedTaxIndex
 function createTaxCol(){
     let selectedTax = document.getElementById('set-tax')
     let selectedValue = selectedTax.selectedIndex
-    console.log({selectedValue})
+    // console.log({selectedValue})
     
         if(selectedValue == 0){
             deleteTaxColumn()
+            deleteTaxDiv()
         }else{
-            // deleteTaxColumn()
             if(selectedValue == 0){ //selected "set tax" option
                 selectedTaxIndex = 0
-                // console.log({selectedTaxIndex})
                 deleteTaxColumn()
+                deleteTaxDiv()
             }else if(selectedValue == 1){ //selected "GST" option
                 deleteTaxColumn()
                 selectedTaxIndex = 1
-                // console.log({selectedTaxIndex})
                 addTaxColumn('GST')
+                showTaxDiv('GST')
             }else if(selectedValue == 2){ //selected "VAT" option
                 deleteTaxColumn()
                 selectedTaxIndex = 2
-                // console.log({selectedTaxIndex})
                 addTaxColumn('VAT')
+                showTaxDiv('VAT')
             }else if(selectedValue == 3){ //selected "PPN" option
                 deleteTaxColumn()
                 selectedTaxIndex = 3
-                // console.log({selectedTaxIndex})
                 addTaxColumn('PPN')
+                showTaxDiv('PPN')
             }else if(selectedValue == 4){ //selected "SST" option
                 deleteTaxColumn()
                 selectedTaxIndex = 4
-                // console.log({selectedTaxIndex})
                 addTaxColumn('SST')
+                showTaxDiv('SST')
             }else if(selectedValue == 5){ //selected "HST" option
                 deleteTaxColumn()
                 selectedTaxIndex = 5
-                // console.log({selectedTaxIndex})
                 addTaxColumn('HST')
+                showTaxDiv('HST')
             }else if(selectedValue == 6){ //selected "TAX" option
                 deleteTaxColumn()
                 selectedTaxIndex = 6
-                // console.log({selectedTaxIndex})
                 addTaxColumn('TAX')
+                showTaxDiv('TAX')
             }
         }
     
@@ -156,7 +154,7 @@ function addTaxColumn(taxValue){
     tableCols.push(th)
     colsLength++
     // definedRowCells.push(`<input type="text" value="" id="enter-text" placeholder="Enter text">`)//code for inserting element at last in array
-    definedRowCells.splice(definedRowCells.length-3,0,`<input type="number" value="0" id="enter-tax-rate" onkeyup="calculateAmount(),calculateSubTotal()">`)//line rewrited to insert element at 2nd position in array
+    definedRowCells.splice(definedRowCells.length-3,0,`<input type="number" value="0" id="enter-tax-rate" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`)//line rewrited to insert element at 2nd position in array
     // console.log(definedRowCells)
     for(let i=0; i<tableRows.length; i++){
         addCellinRowFromTaxCol(tableRows[i])
@@ -205,7 +203,7 @@ function addCellInRowFromRow(rowId){
 
 function addCellinRowFromTaxCol(rowId){
     if(selectedTaxIndex != 0){
-        rowId.insertCell(definedRowCells.length-4).innerHTML = `<input type="number" value="0" id="entered-tax-rate" onkeyup="calculateAmount(),calculateSubTotal()">`
+        rowId.insertCell(definedRowCells.length-4).innerHTML = `<input type="number" value="0" id="entered-tax-rate" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`
         colCount++
     }
 }

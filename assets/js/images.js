@@ -1,0 +1,16 @@
+
+
+//**************************************Handeling Logo image***********************************/
+const fileInput = document.querySelector('.file-input'),
+uploadLogoBtn = document.querySelector('.logo-btn'),
+perviewImage = document.querySelector('.invoice-logo img')
+
+
+const loadImage = () => {
+    let file = fileInput.files[0]//Getting user selected file
+    if(!file) return //return if user does not select any file
+    perviewImage.src = URL.createObjectURL(file) //It will create a url of passed image file object
+}
+
+fileInput.addEventListener('change', loadImage)
+uploadLogoBtn.addEventListener('click', () => fileInput.click())
