@@ -15,7 +15,7 @@ let definedRowCells = [
     `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
     `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
     `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
-    `<input type="number" id="amount" placeholder="0" value="0">`,
+    `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
 ]
 
 

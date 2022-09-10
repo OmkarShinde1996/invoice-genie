@@ -650,3 +650,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+#amount{
+    background-color: #7e7a7a1a;
+}
