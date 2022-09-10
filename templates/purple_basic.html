@@ -225,8 +225,8 @@
                     <div class="col-12 col-sm-4 col-md-4">
                         <div class="set-tax">
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                id="set-tax" onchange="createTaxCol()">
-                                <option selected>Set Tax</option>
+                                id="set-tax" onchange="createTaxCol(),calculateAmount(),calculateSubTotal()">
+                                <option value="0" selected>Set Tax</option>
                                 <option value="1">GST</option>
                                 <option value="2">VAT</option>
                                 <option value="3">PPN</option>

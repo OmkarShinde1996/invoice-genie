@@ -13,9 +13,9 @@ let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
     `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
-    `<input type="number" id="quantity" placeholder="Quantity" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
-    `<input type="number" id="rate" placeholder="Rate" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
-    `<input type="number" id="amount"  value="0">`,
+    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
+    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal()">`,
+    `<input type="number" id="amount" placeholder="0" value="0">`,
 ]
 
 
@@ -97,45 +97,48 @@ let selectedTaxIndex
 function createTaxCol(){
     let selectedTax = document.getElementById('set-tax')
     let selectedValue = selectedTax.selectedIndex
-    // console.log(selectedValue)
-    if(selectedValue == selectedTaxIndex){
-        return
-    }else{
+    console.log({selectedValue})
+    
         if(selectedValue == 0){
             deleteTaxColumn()
         }else{
             // deleteTaxColumn()
             if(selectedValue == 0){ //selected "set tax" option
                 selectedTaxIndex = 0
+                // console.log({selectedTaxIndex})
                 deleteTaxColumn()
             }else if(selectedValue == 1){ //selected "GST" option
                 deleteTaxColumn()
                 selectedTaxIndex = 1
+                // console.log({selectedTaxIndex})
                 addTaxColumn('GST')
             }else if(selectedValue == 2){ //selected "VAT" option
                 deleteTaxColumn()
                 selectedTaxIndex = 2
+                // console.log({selectedTaxIndex})
                 addTaxColumn('VAT')
             }else if(selectedValue == 3){ //selected "PPN" option
                 deleteTaxColumn()
                 selectedTaxIndex = 3
+                // console.log({selectedTaxIndex})
                 addTaxColumn('PPN')
             }else if(selectedValue == 4){ //selected "SST" option
                 deleteTaxColumn()
                 selectedTaxIndex = 4
+                // console.log({selectedTaxIndex})
                 addTaxColumn('SST')
             }else if(selectedValue == 5){ //selected "HST" option
                 deleteTaxColumn()
                 selectedTaxIndex = 5
+                // console.log({selectedTaxIndex})
                 addTaxColumn('HST')
             }else if(selectedValue == 6){ //selected "TAX" option
                 deleteTaxColumn()
                 selectedTaxIndex = 6
+                // console.log({selectedTaxIndex})
                 addTaxColumn('TAX')
             }
         }
-        
-    }
     
 }
 
