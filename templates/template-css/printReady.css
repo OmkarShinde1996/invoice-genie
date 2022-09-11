@@ -66,10 +66,19 @@ h5{
     padding-bottom: 5px;
 }
 
+h3{
+    color: #407BFF;
+}
+
 h6{
+    color: #407BFF;
     font-size: 15px;
     font-weight: bold;
     padding-bottom: 2px;
+}
+
+h6 strong{
+    color: black;
 }
 
 p{
@@ -87,7 +96,7 @@ strong{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     /* padding-bottom: 9.05px; */
 }
 
