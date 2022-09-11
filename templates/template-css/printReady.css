@@ -379,3 +379,34 @@ hr{
     
 }
 
+@media only screen  and (min-width: 770px) and (max-width: 990px) {
+    .invoice-details-container{
+        padding: 10px;
+    }
+
+    .invoice-infor-container,.from-invoice-container,.to-invoice-container{
+        padding: 10px;
+    }
+
+    .inline-box-for-info p{
+        font-size: 10px;
+    }
+
+    .inline-box-for-info small{
+        font-size: 10px;
+    }
+
+    .from-invoice-container p small,.to-invoice-container p small{
+        font-size: 10px;
+    }
+
+    .terms-conditions-container{
+        padding: 20px;
+    }
+
+    .bank-details-div-container{
+        padding-top: 20px;
+        padding-left: 5px;
+        padding-right: 20px;
+    }
+}
