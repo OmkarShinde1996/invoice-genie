@@ -1,9 +1,9 @@
 
 /* **********************************Basic template formatting********************************** */
 .invoice-print-form{
-    max-width: 100%;
+    max-width: 80%;
     max-height: 100%;
-    width: 90%;
+    width: 80%;
     height: 100%;
     border-radius: 1px;
     border: 1px solid #7e7a7a;
@@ -326,9 +326,9 @@ hr{
 
     /* ************************************** */
     .invoice-print-form{
-        max-width: 100%;
+        max-width: 90%;
         max-height: 100%;
-        width: 100%;
+        width: 90%;
         /* height: 12.7cm; */
         border-radius: 1px;
         border: 1px solid #7e7a7a;
