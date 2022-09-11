@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./template-css/purpler_basic.css">
+    <link rel="stylesheet" href="./template-css/printReady.css">
+    <title>Generated Invoice</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-4 my-2" href="../index.html#home">
+                <h4>Invoice<span>Genie</span></h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-columns-gap"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link mx-4" aria-current="page" href="../index.html#home">Home</a>
+                    <a class="nav-link mx-4" href="../index.html#features">Features</a>
+                    <a class="nav-link mx-4" href="../index.html#steps">Steps</a>
+                    <a class="nav-link mx-4" href="../index.html#templates">Templates</a>
+                </div>
+                <!-- <div class="btn btn-primary mx-4">Save</div> -->
+            </div>
+        </div>
+    </nav>
+    <!-- /navbar -->
+
+    <!-- Create invoice -->
+    <div class="container text-center justify-content-center pt-5" id="make-invoice">
+        <h1 class="heading display-6 h1 mb-5">Your Invoice is Ready to Download!</h1>
+    </div>
+    <!-- /Create invoice -->
+
+    <!-- *******************************************Div to be converted in PDF******************************************-->
+    <!-- Main container -->
+    <div class="container text-center invoice-form-section">
+        <div class="invoice-print-form">
+            <!-- Header invoice text & logo part -->
+            <div class="invoice-logo-container">
+                <div class="invoice-text text-center">
+                    <h3 class="display-5">Invoice</h3>
+                </div>
+                <div class="invoice-logo-img">
+                    <img src="../assets/images/image-placeholder1.png" alt="">
+                </div>
+            </div>
+            <!-- /Header invoice text & logo part -->
+
+            <!-- Invoice info, From & To part -->
+            <div class="invoice-details-container mt-4">
+                <div class="invoice-infor-container text-start">
+                    <h6 id="invoice-details-text h6"><u>Invoice Details</u></h6>
+                    <div class="inline-box-for-info">
+                        <p>Invoice no.</p>
+                        <small>A0001</small>
+                    </div>
+                    <div class="inline-box-for-info">
+                        <p>Invoice Date</p>
+                        <small>14-09-2022</small>
+                    </div>
+                    <div class="inline-box-for-info">
+                        <p>Due Date</p>
+                        <small>17-09-2022</small>
+                    </div>
+                </div>
+                <div class="from-invoice-container text-start">
+                    <h6 id="from-text h6"><u>From</u></h6>
+                    <h5 id="from-name h6"><strong>Omkar Shinde</strong></h5>
+                    <p><small id="from-add">141/4,Maharashtra Nagar, Mankhurd, Mumbai - 400088</small></p>
+                </div>
+                <div class="to-invoice-container text-start">
+                    <h6 id="to-text h6"><u>To</u></h6>
+                    <h5 id="to-name h5"><strong>Aniket Shinde</strong></h5>
+                    <p><small id="to-add">141/4,Maharashtra Nagar, Mankhurd, Mumbai - 400088</small></p>
+                </div>
+            </div>
+            <!-- /Invoice info, From & To part -->
+
+            <!-- Invoice Table -->
+            <div class="invoice-info-table-container table-responsive mx-4 mt-5">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                      <tr class="text-start">
+                        <th scope="col">Item/Item Description</th>
+                        <th scope="col">GST</th>
+                        <th scope="col">Qty.</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="text-start">
+                        <td>Basic Web Development</td>
+                        <td>9%</td>
+                        <td>2</td>
+                        <td>&#8377;2000</td>
+                        <td>&#8377;4000</td>
+                      </tr>
+                      <tr class="text-start">
+                        <td>Logo Design</td>
+                        <td>18%</td>
+                        <td>5</td>
+                        <td>&#8377;500</td>
+                        <td>&#8377;2500</td>
+                      </tr>
+                      <tr class="text-start">
+                        <td>Web Design</td>
+                        <td>9%</td>
+                        <td>1</td>
+                        <td>&#8377;1000</td>
+                        <td>&#8377;1000</td>
+                      </tr>
+                      <tr class="text-start">
+                        <td>Android App Development</td>
+                        <td>18%</td>
+                        <td>1</td>
+                        <td>&#8377;3000</td>
+                        <td>&#8377;3000</td>
+                      </tr>
+                      <tr class="text-start">
+                        <td>IT Services</td>
+                        <td>9%</td>
+                        <td>2</td>
+                        <td>&#8377;7000</td>
+                        <td>&#8377;14000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <!-- /Invoice Table -->
+
+            <!-- Additional Notes & Total -->
+            <div class="additional-notes-total-container mx-4 mt-3">
+                <div class="additional-notes-container text-start">
+                    <h6 id="to-text h6">Aditional Notes</h6>
+                    <p><small id="to-add">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small></p>
+                </div>
+                <div class="total-div-container">
+                    <div class="inline-box-for-info total pb-3">
+                        <small>Total GST</small>
+                        <p>&#8377;5000</p>
+                    </div>
+                    <div class="inline-box-for-info total pb-3">
+                        <small>Sub Total</small>
+                        <p>&#8377;50000</p>
+                    </div>
+                    <div class="inline-box-for-info total pb-3">
+                        <small>Discount</small>
+                        <p>-&#8377;1000</p>
+                    </div>
+                    <hr>
+                    <div class="inline-box-for-info all-total pb-3">
+                        <small>Total Due</small>
+                        <p>&#8377;49000</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /Additional Notes & Total -->
+            <footer class="invoice-footer-container px-4 py-5">
+                <div class="terms-conditions-container text-start">
+                    <h6 id="to-text h6">Terms and Conditions</h6>
+                    <p><small id="to-add">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small></p>
+                    <p><small id="to-add">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small></p>
+                </div>
+                <div class="bank-details-div-container">
+                    <div class="inline-box-for-info bank pb-2">
+                        <h6 id="from-text h6">Bank & Payment Details</h6>
+                    </div>
+                    <div class="inline-box-for-info bank pb-2">
+                        <small>Account Holder name</small>
+                        <p>Omkar Shinde</p>
+                    </div>
+                    <div class="inline-box-for-info bank pb-2">
+                        <small>Account Number</small>
+                        <p>12321263473673</p>
+                    </div>
+                    <div class="inline-box-for-info bank pb-2">
+                        <small>IFSC</small>
+                        <p>HDFC0000077</p>
+                    </div>
+                    <div class="inline-box-for-info bank pb-2">
+                        <small>Account type</small>
+                        <p>Savings</p>
+                    </div>
+                    <div class="inline-box-for-info bank pb-2">
+                        <small>Bank Name</small>
+                        <p>HDFC Bank</p>
+                    </div>
+                    <div class="inline-box-for-info bank pb-2">
+                        <small>UPI ID</small>
+                        <p>fooler@okicici</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- Terms conditions & Bank details -->
+        </div>
+        
+    </div>
+    </div>
+    <!-- /Main Container -->
+    <!-- *******************************************/Div to be converted in PDF******************************************-->
+    <div class="space-below pt-5"></div>
+    <script></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
