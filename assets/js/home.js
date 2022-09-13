@@ -13,11 +13,16 @@ let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
     `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
-    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
-    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
+    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="allInOne()">`,
+    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="allInOne()">`,
     `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
 ]
 
+function allInOne(){
+    calculateAmount()
+    calculateSubTotal()
+    taxDiv()
+}
 
 
 function addRow() {
@@ -154,7 +159,7 @@ function addTaxColumn(taxValue){
     tableCols.push(th)
     colsLength++
     // definedRowCells.push(`<input type="text" value="" id="enter-text" placeholder="Enter text">`)//code for inserting element at last in array
-    definedRowCells.splice(definedRowCells.length-3,0,`<input type="number" value="0" id="enter-tax-rate" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`)//line rewrited to insert element at 2nd position in array
+    definedRowCells.splice(definedRowCells.length-3,0,`<input type="number" value="0" id="enter-tax-rate" onkeyup="allInOne()">`)//line rewrited to insert element at 2nd position in array
     // console.log(definedRowCells)
     for(let i=0; i<tableRows.length; i++){
         addCellinRowFromTaxCol(tableRows[i])
@@ -203,7 +208,7 @@ function addCellInRowFromRow(rowId){
 
 function addCellinRowFromTaxCol(rowId){
     if(selectedTaxIndex != 0){
-        rowId.insertCell(definedRowCells.length-4).innerHTML = `<input type="number" value="0" id="entered-tax-rate" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`
+        rowId.insertCell(definedRowCells.length-4).innerHTML = `<input type="number" value="0" id="entered-tax-rate" onkeyup="allInOne()">`
         colCount++
     }
 }
@@ -432,3 +437,15 @@ function showDiscountDiv(){
 }
 
 // Give Discount Button ends here-------------------------------------------------------------------------
+
+function taxAllinOne(){
+    createTaxCol()
+    calculateAmount()
+    calculateSubTotal()
+}
+
+function addDeleteButtons(){
+    deleteRow()
+    calculateSubTotal()
+    deleteRowTaxCalculate()
+}

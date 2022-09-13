@@ -107,7 +107,7 @@
                             </div>
                             <div class="col headImage d-flex justify-content-center">
                                 <div class="invoice-logo-container">
-                                    <div class="invoice-logo" onclick="makeObjectOfInvoiceMoreDetails(),makeObjectOfInvoiceDetails(),makeLogoImageObject()">
+                                    <div class="invoice-logo" onclick="allInOnePack()">
                                         <img src="../assets/images/image-placeholder1.png" alt="preview-img">
                                     </div>
                                     <input type="file" class="file-input" accept="image/*" hidden>
@@ -225,7 +225,7 @@
                     <div class="col-12 col-sm-4 col-md-4">
                         <div class="set-tax">
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                id="set-tax" onchange="createTaxCol(),calculateAmount(),calculateSubTotal()">
+                                id="set-tax" onchange="taxAllinOne()">
                                 <option value="0" selected>Set Tax</option>
                                 <option value="1">GST</option>
                                 <option value="2">VAT</option>
@@ -307,7 +307,7 @@
                     </div>
                     <div class="col-10 col-sm-6 col-md-4">
                         <div class="set-tax mx-1">
-                            <div class="button-column" id="delete-line" onclick='deleteRow(),calculateSubTotal(),deleteRowTaxCalculate()'>Delete Line</div>
+                            <div class="button-column" id="delete-line" onclick='addDeleteButtons()'>Delete Line</div>
                         </div>
                     </div>
                 </div>
