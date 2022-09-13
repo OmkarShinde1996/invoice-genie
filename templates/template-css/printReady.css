@@ -105,6 +105,20 @@ strong{
     
 }
 
+.more-details-container{
+    padding-left: 50px;
+}
+
+.more-details-inside-container{
+    display: flex;
+    align-items: center;
+
+}
+
+.more-details-inside-container p{
+    padding-right: 10px;
+}
+
 /* **********************table container************************/
 .table>:not(caption)>*>*{
     border-bottom: none;
@@ -376,7 +390,12 @@ hr{
     h3{
         font-size: 20px !important;
     }
+
+    .more-details-container{
+        padding-left: 20px;
+    }
     
+       
 }
 
 @media only screen  and (min-width: 770px) and (max-width: 990px) {
@@ -409,4 +428,17 @@ hr{
         padding-left: 5px;
         padding-right: 20px;
     }
+
+    .more-details-container{
+        padding-left: 50px;
+    }
+    
+    .more-details-inside-container p{
+        font-size: 10px;
+    }
+
+    .more-details-inside-container small{
+        font-size: 10px;
+    }
+    
 }
