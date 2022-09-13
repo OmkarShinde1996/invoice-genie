@@ -19,6 +19,13 @@ let invoiceMoreDetailsObject = {}
 const previousImgUrl = "http://127.0.0.1:5500/assets/images/image-placeholder1.png"
 let logoImageUrl = {}
 
+///////////////////////////////////////////////////////////////
+function allInOnePack(){
+    makeObjectOfInvoiceDetails()
+    makeObjectOfInvoiceMoreDetails()
+    makeLogoImageObject()
+}
+///////////////////////////////////////////////////////////////
 
 
 
