@@ -92,9 +92,7 @@
                                                 id="due-date-value"></div>
                                     </div>
                                     <!-- show when Add More Fields btn clicked -->
-                                    <div id="invoice-info-details">
-
-                                    </div>
+                                    <div id="invoice-info-details"></div>
                                     <!-- Buttons -->
                                     <div class="invoice-info py-2" onclick="showDueDateField()" id="add-due-date-btn">
                                         <div class="invoice-date invoice-info-det-btn"><i
@@ -109,7 +107,7 @@
                             </div>
                             <div class="col headImage d-flex justify-content-center">
                                 <div class="invoice-logo-container">
-                                    <div class="invoice-logo">
+                                    <div class="invoice-logo" onclick="makeObjectOfInvoiceMoreDetails(),makeObjectOfInvoiceDetails(),makeLogoImageObject()">
                                         <img src="../assets/images/image-placeholder1.png" alt="preview-img">
                                     </div>
                                     <input type="file" class="file-input" accept="image/*" hidden>
@@ -462,6 +460,7 @@
         crossorigin="anonymous"></script>
     <script src="../assets/js/home.js"></script>
     <script src="../assets/js/calculations.js"></script>
+    <script src="../assets/js/calculateData.js"></script>
     <script src="../assets/js/images.js"></script>
 </body>
 
