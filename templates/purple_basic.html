@@ -76,20 +76,18 @@
                                         <div class="invoice-number invoice-info-det"
                                             id="invoice-number">Invoice No.</div>
                                         <div class="invoice-number-input"><input type="text" value="A00001"
-                                                id="invoice-number-value"></div>
+                                                id="invoice-number-value" required></div>
                                     </div>
                                     <div class="invoice-info py-2">
                                         <div class="invoice-date invoice-info-det"
                                             id="invoice-date">Invoice Date</div>
-                                        <div class="invoice-date-input"><input type="date" value="September 04, 2022"
-                                                id="invoice-date-value"></div>
+                                        <div class="invoice-date-input"><input type="date" id="invoice-date-value" required></div>
                                     </div>
                                     
                                     <!-- show when Add Due Date btn clicked -->
                                     <div class="invoice-info py-2 d-none" id="due-date-div">
                                         <div class="due-date invoice-info-det" id="due-date">Due Date</div>
-                                        <div class="due-date-input"><input type="date" value="September 10, 2022"
-                                                id="due-date-value"></div>
+                                        <div class="due-date-input"><input type="date" id="due-date-value"></div>
                                     </div>
                                     <!-- show when Add More Fields btn clicked -->
                                     <div id="invoice-info-details"></div>
@@ -125,14 +123,14 @@
                                     <h3 contentEditable="true" id="from">From</h3>
                                     <div class="from-details pt-2">
                                         <input type="text" value="" placeholder="Your name or Your business name"
-                                            id="from-name">
-                                        <input type="text" value="" placeholder="Address" id="from-address">
-                                        <input type="text" value="" placeholder="Country" id="from-country">
+                                            id="from-name" required>
+                                        <input type="text" value="" placeholder="Address" id="from-address" required>
+                                        <input type="text" value="" placeholder="Country" id="from-country" required>
                                         <div class="city">
-                                            <input class="me-4" type="text" value="" placeholder="City" id="from-city">
-                                            <input type="text" value="" placeholder="Zip" id="from-zip">
+                                            <input class="me-4" type="text" value="" placeholder="City" id="from-city" required>
+                                            <input type="text" value="" placeholder="Zip" id="from-zip" required>
                                         </div>
-                                        <input type="text" value="" placeholder="State" id="from-state">
+                                        <input type="text" value="" placeholder="State" id="from-state" required>
                                         <!-- Email & Phone no. show when btn clicked -->
                                         <input class="d-none" type="email" value="" placeholder="Email Id"
                                             id="from-email">
@@ -173,14 +171,14 @@
                                     <h3 contentEditable="true" id="to">To</h3>
                                     <div class="to-details pt-2">
                                         <input type="text" value="" placeholder="Client's name or Client's business name"
-                                            id="to-name">
-                                        <input type="text" value="" placeholder="Address" id="to-address">
-                                        <input type="text" value="" placeholder="Country" id="to-country">
+                                            id="to-name" required>
+                                        <input type="text" value="" placeholder="Address" id="to-address" required>
+                                        <input type="text" value="" placeholder="Country" id="to-country" required>
                                         <div class="city">
-                                            <input class="me-4" type="text" value="" placeholder="City" id="to-city">
-                                            <input type="text" value="" placeholder="Zip code" id="to-zip">
+                                            <input class="me-4" type="text" value="" placeholder="City" id="to-city" required>
+                                            <input type="text" value="" placeholder="Zip code" id="to-zip" required>
                                         </div>
-                                        <input type="text" value="" placeholder="State" id="to-state">
+                                        <input type="text" value="" placeholder="State" id="to-state" required>
                                         <!-- Email & Phone no. show when btn clicked -->
                                         <input class="d-none" type="email" value="" placeholder="Email Id"
                                             id="to-email">
@@ -425,7 +423,7 @@
             <!-- /total and invoice notes container -->
             <!-- Save and continue button -->
             <div class="container save-and-continue-con py-3">
-                <a href="./printReady.html" target="_blank"><div class="btn btn-primary mx-4" id="save-btn">Save & Continue</div></a>
+                <a href="./printReady.html" target="_blank"><div type="submit" class="btn btn-primary mx-4" id="save-btn">Save & Continue</div></a>
             </div>
             <!-- Save and continue button -->
             </form>
