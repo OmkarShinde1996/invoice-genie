@@ -12,11 +12,13 @@ let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
-    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
-    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="allInOne()">`,
-    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="allInOne()">`,
+    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;">`,
+    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
+    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
     `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
 ]
+
+//calculateAmount(),calculateSubTotal(),taxDiv()
 
 function allInOne(){
     calculateAmount()
@@ -30,7 +32,7 @@ function addRow() {
     definedRowCells[0] = `<div>${itemNo}</div>`
     var table = document.querySelector(".table-row");
     var row = table.insertRow();
-    console.log({normalCounter})
+    // console.log({normalCounter})
     addCellInRowFromRow(row) //insert cells in row
     tableRows.push(row)
 }

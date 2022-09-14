@@ -15,12 +15,18 @@ function calculateAmount(){
     let totalAmountWithTax = 0
     for(let i=0; i<tableBody.length; i++){
         totalAmountDiv = tableBody[i].cells[tableBody[i].cells.length-1].children[0]
-        tax = Number(tableBody[i].cells[tableBody[i].cells.length-4].children[0].value) //This will give the tax rate value
+        if(tableBody[i].cells[tableBody[i].cells.length-4].children[0].type == "number"){
+            tax = Number(tableBody[i].cells[tableBody[i].cells.length-4].children[0].value) //This will give the tax rate value
+        }else{
+            tax = 0
+        }
         quantity = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
         rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
-        
         totalAmount = quantity*rate
+        console.log({tax})
+        console.log({totalAmount})
         totalAmountWithTax = (totalAmount+((totalAmount*tax)/100)).toFixed(2)
+        console.log({totalAmountWithTax})
         totalAmountDiv.value = totalAmountWithTax
     }
 
@@ -126,7 +132,8 @@ function deleteRowTaxCalculate(){
 
 
 function calculateTotalTaxAmount(taxName){
-    let div = document.querySelector(`#${taxName}-total-amount`)
+    if(document.querySelector('.total-tax-container').childElementCount != 0){
+        let div = document.querySelector(`#${taxName}-total-amount`)
     let tableBody = document.querySelector('.table-row').children
 
     for(let i=0; i<tableBody.length; i++){
@@ -140,7 +147,9 @@ function calculateTotalTaxAmount(taxName){
  
     const sum = taxArr.reduce((partialSum, a) => partialSum + a, 0);
     div.textContent = sum
-    
+    }else{
+        return
+    }
 }
 
 //Calculating subtotal ends here--------------------------------------------------------------------------
