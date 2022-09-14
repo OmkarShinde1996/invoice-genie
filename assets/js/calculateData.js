@@ -19,7 +19,18 @@ let invoiceDetailsObject = {}
 const moreInfoFieldContainer = document.getElementById('invoice-info-details')
 let invoiceMoreDetailsObject = {}
 
-
+// From Details elements
+const fromName = document.getElementById('from-name')
+const fromAdd = document.getElementById('from-address')
+const fromCountry = document.getElementById('from-country')
+const fromCity = document.getElementById('from-city')
+const fromZip = document.getElementById('from-zip')
+const fromState = document.getElementById('from-state')
+const fromEmail = document.getElementById('from-email')
+const fromPhone = document.getElementById('from-mobile')
+const fromGst = document.getElementById('from-gst')
+const fromPan = document.getElementById('from-pan')
+let fromDetailsObject = {}
 
 ///////////////////////////////////////////////////////////////
 function allInOnePack(){
@@ -27,6 +38,7 @@ function allInOnePack(){
     makeObjectOfInvoiceDetails()
     makeObjectOfInvoiceMoreDetails()
     makeLogoImageObject()
+    makeFromDetailsObject()
 }
 ///////////////////////////////////////////////////////////////
 
@@ -68,3 +80,39 @@ function makeLogoImageObject(){
     console.log(logoImageUrl)
 }
 
+function makeFromDetailsObject(){
+    let fromText = document.getElementById('from').innerText
+    fromDetailsObject = {
+        fromTitle : `${fromText}`,
+        fromName : `${fromName.value}`,
+        fromAddress : `${fromAdd.value},`,
+        fromCity : `${fromCity.value},`,
+        fromStateCountryZip : `${fromState.value}, ${fromCountry.value} - ${fromZip.value}`,
+    }
+
+    if(fromEmail.classList.contains('d-none') == false){
+        fromDetailsObject.fromEmail = `${fromEmail.value}`
+    }
+    if(fromPhone.classList.contains('d-none') == false){
+        fromDetailsObject.fromPhone = `${fromPhone.value}`
+    }
+    if(fromGst.classList.contains('d-none') == false){
+        fromDetailsObject.fromGst = `${fromGst.value}`
+    }
+    if(fromPan.classList.contains('d-none') == false){
+        fromDetailsObject.fromPan = `${fromPan.value}`
+    }
+
+    console.log(fromDetailsObject)
+}
+
+// const fromName = document.getElementById('from-name')
+// const fromAdd = document.getElementById('from-address')
+// const fromCountry = document.getElementById('from-country')
+// const fromCity = document.getElementById('from-city')
+// const fromZip = document.getElementById('from-zip')
+// const fromState = document.getElementById('from-state')
+// const fromEmail = document.getElementById('from-email')
+// const fromPhone = document.getElementById('from-mobile')
+// const fromGst = document.getElementById('from-gst')
+// const fromPan = document.getElementById('from-pan')
