@@ -1,4 +1,9 @@
+
+// Logo Image and Invoicce Text block element
+let actualInvoiceText
 const invoiceBody = document.querySelector('invoice-logo')
+const previousImgUrl = "http://127.0.0.1:5500/assets/images/image-placeholder1.png"
+let logoImageUrl = {}
 
 // Invoice details block elements
 const invoiceNumber = document.getElementById('invoice-number').innerText
@@ -14,20 +19,21 @@ let invoiceDetailsObject = {}
 const moreInfoFieldContainer = document.getElementById('invoice-info-details')
 let invoiceMoreDetailsObject = {}
 
-// Logo Image block element
 
-const previousImgUrl = "http://127.0.0.1:5500/assets/images/image-placeholder1.png"
-let logoImageUrl = {}
 
 ///////////////////////////////////////////////////////////////
 function allInOnePack(){
+    makeVariableOfActualInvoiceText()
     makeObjectOfInvoiceDetails()
     makeObjectOfInvoiceMoreDetails()
     makeLogoImageObject()
 }
 ///////////////////////////////////////////////////////////////
 
-
+function makeVariableOfActualInvoiceText(){
+    actualInvoiceText = document.querySelector('.invoice-title').innerText
+    console.log(actualInvoiceText)
+}
 
 function makeObjectOfInvoiceDetails(){
     invoiceDetailsObject = {
