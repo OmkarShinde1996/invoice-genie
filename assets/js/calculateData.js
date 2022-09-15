@@ -45,6 +45,22 @@ const toGst = document.getElementById('to-gst')
 const toPan = document.getElementById('to-pan')
 let toDetailsObject = {}
 
+// Totals Details object
+let totalTaxObject = {}
+
+//Bank details element & object
+const bankDetailsVisible = document.getElementById('bank-details-con')
+let bankDetailsObject = {}
+
+//terms & conditions element & object
+const termsAndConditionsVisible = document.getElementById('terms-con')
+let termsAndConditionsObject = {}
+
+//Additional notes element & object
+const additionalNotesVisible = document.getElementById('additional-notes-con')
+let additionalNotesObject = {}
+
+
 ///////////////////////////////////////////////////////////////
 function allInOnePack(){
     makeVariableOfActualInvoiceText()
@@ -53,6 +69,10 @@ function allInOnePack(){
     makeLogoImageObject()
     makeFromDetailsObject()
     makeToDetailsObject()
+    makeTotalTaxObject()
+    makeBankDetailsObject()
+    makeTermsAndConditionsObject()
+    makeAdditionalNotesObject()
 }
 ///////////////////////////////////////////////////////////////
 
@@ -146,5 +166,55 @@ function makeToDetailsObject(){
     console.log(toDetailsObject)
 }
 
+function makeTotalTaxObject(){
+    if(selectedTaxIndex != 0 && selectedTaxIndex != undefined){
+        const totalTaxTitle = document.querySelector('.tax-headline')
+        const totalTaxAmountCalculated = document.querySelector('.tax-total-amount-cal')
+        totalTaxObject[`${totalTaxTitle.innerText}`] = `&#8377;${totalTaxAmountCalculated.innerText}`
+    }
+    const discountText = document.getElementById('discount-text')
+    const discountAmount = document.getElementById('discount-amount')
+    const totalRoundUp = document.getElementById('total')
+    const totalRoundUpAmount = document.getElementById('total-amount')
+    totalTaxObject[`${discountText.innerText}`] = `${discountAmount.value}`
+    totalTaxObject.subTotal = document.getElementById('sub-total-amount').innerText
+    totalTaxObject[`${totalRoundUp.innerText}`] = `${totalRoundUpAmount.innerText}`
+    console.log(totalTaxObject)
+}
 
 
+function makeBankDetailsObject(){
+    if(!bankDetailsVisible.classList.contains('d-none')){
+        bankDetailsObject['Account Holder Name'] = document.getElementById('account-name').value
+        bankDetailsObject['Account Number'] = document.getElementById('account-number').value
+        bankDetailsObject['Bank IFSC'] = document.getElementById('account-ifsc').value
+        bankDetailsObject['Account Type'] = document.getElementById('account-type').value
+        bankDetailsObject['Bank Name'] = document.getElementById('bank-name').value
+        bankDetailsObject['UPI ID'] = document.getElementById('upi-id').value
+    }else{
+        bankDetailsObject = {}
+    }
+    console.log(bankDetailsObject)
+}
+
+
+
+function makeTermsAndConditionsObject(){
+    if(!termsAndConditionsVisible.classList.contains('d-none')){
+        termsAndConditionsObject['Terms & Conditions'] = document.getElementById('terms-conditions').value
+    }else{
+        termsAndConditionsObject = {}
+    }
+    console.log(termsAndConditionsObject)
+}
+
+
+
+function makeAdditionalNotesObject(){
+    if(!additionalNotesVisible.classList.contains('d-none')){
+        additionalNotesObject['Additional Notes'] = document.getElementById('additional-notes-text-area').value
+    }else{
+        additionalNotesObject = {}
+    }
+    console.log(additionalNotesObject)
+}

@@ -92,6 +92,7 @@ function showTaxDiv(taxName){
 
     let taxH = document.createElement('h3')
     taxH.setAttribute('id',`${taxName}-header`)
+    taxH.setAttribute('class','tax-headline')
     taxH.innerText = `Total ${taxName}`
 
     taxHeader.appendChild(taxH)
@@ -106,7 +107,8 @@ function showTaxDiv(taxName){
     taxH2.innerHTML = '&#8377;'
 
     let spanEle = document.createElement('span')
-    spanEle.setAttribute('id',`${taxName}-total-amount`)
+    spanEle.setAttribute('id',`${taxName}-total-amount`)// tax-total-amount-cal
+    spanEle.setAttribute('class','tax-total-amount-cal')
     spanEle.innerText = totalTaxAmount
 
     taxH2.appendChild(spanEle)
@@ -134,19 +136,19 @@ function deleteRowTaxCalculate(){
 function calculateTotalTaxAmount(taxName){
     if(document.querySelector('.total-tax-container').childElementCount != 0){
         let div = document.querySelector(`#${taxName}-total-amount`)
-    let tableBody = document.querySelector('.table-row').children
+        let tableBody = document.querySelector('.table-row').children
 
-    for(let i=0; i<tableBody.length; i++){
-        let taxVal = Number(tableBody[i].cells[tableBody[i].cells.length-4].children[0].value)
-        let quantity1 = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
-        let rate1 = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
-       
-        subTotalTaxAmount = Number(((quantity1*rate1)*taxVal)/100)
-        taxArr[i] = subTotalTaxAmount
-    }
- 
-    const sum = taxArr.reduce((partialSum, a) => partialSum + a, 0);
-    div.textContent = sum
+        for(let i=0; i<tableBody.length; i++){
+            let taxVal = Number(tableBody[i].cells[tableBody[i].cells.length-4].children[0].value)
+            let quantity1 = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
+            let rate1 = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
+        
+            subTotalTaxAmount = Number(((quantity1*rate1)*taxVal)/100)
+            taxArr[i] = subTotalTaxAmount
+        }
+    
+        const sum = taxArr.reduce((partialSum, a) => partialSum + a, 0);
+        div.textContent = sum
     }else{
         return
     }

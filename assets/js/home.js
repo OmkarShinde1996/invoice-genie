@@ -13,8 +13,8 @@ let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
     `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;">`,
-    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
-    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="calculateAmount(),calculateSubTotal(),taxDiv()">`,
+    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="allInOne()">`,
+    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="allInOne()">`,
     `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
 ]
 
