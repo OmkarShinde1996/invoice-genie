@@ -182,7 +182,6 @@ function makeTotalTaxObject(){
     console.log(totalTaxObject)
 }
 
-
 function makeBankDetailsObject(){
     if(!bankDetailsVisible.classList.contains('d-none')){
         bankDetailsObject['Account Holder Name'] = document.getElementById('account-name').value
@@ -197,8 +196,6 @@ function makeBankDetailsObject(){
     console.log(bankDetailsObject)
 }
 
-
-
 function makeTermsAndConditionsObject(){
     if(!termsAndConditionsVisible.classList.contains('d-none')){
         termsAndConditionsObject['Terms & Conditions'] = document.getElementById('terms-conditions').value
@@ -207,8 +204,6 @@ function makeTermsAndConditionsObject(){
     }
     console.log(termsAndConditionsObject)
 }
-
-
 
 function makeAdditionalNotesObject(){
     if(!additionalNotesVisible.classList.contains('d-none')){
