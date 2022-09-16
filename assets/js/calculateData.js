@@ -121,9 +121,11 @@ function makeFromDetailsObject(){
     fromDetailsObject = {
         fromTitle : `${fromText}`,
         fromName : `${fromName.value}`,
-        fromAddress : `${fromAdd.value},`,
-        fromCity : `${fromCity.value},`,
-        fromStateCountryZip : `${fromState.value}, ${fromCountry.value} - ${fromZip.value}`,
+        fromAddress : `${fromAdd.value}`,
+        fromCity : `${fromCity.value}`,
+        fromState : `${fromState.value}`,
+        fromCountry : `${fromCountry.value}`,
+        fromZip : `${fromZip.value}`
     }
 
     if(fromEmail.classList.contains('d-none') == false){
@@ -149,7 +151,9 @@ function makeToDetailsObject(){
         toName : `${toName.value}`,
         toAddress : `${toAdd.value},`,
         toCity : `${toCity.value},`,
-        toStateCountryZip : `${toState.value}, ${toCountry.value} - ${toZip.value}`,
+        toState : `${toState.value}`,
+        toCountry : `${toCountry.value}`,
+        toZip : `${toZip.value}`
     }
 
     if(toEmail.classList.contains('d-none') == false){
