@@ -11,7 +11,7 @@
     <title>Invoice Genie</title>
 </head>
 
-<body onload="addRow()">
+<body onload="addRow(),getRequiredFields()">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -76,12 +76,12 @@
                                         <div class="invoice-number invoice-info-det"
                                             id="invoice-number">Invoice No.</div>
                                         <div class="invoice-number-input"><input type="text" value="A00001"
-                                                id="invoice-number-value" required></div>
+                                                id="invoice-number-value" oninput="getRequiredFields()" required></div>
                                     </div>
                                     <div class="invoice-info py-2">
                                         <div class="invoice-date invoice-info-det"
                                             id="invoice-date">Invoice Date</div>
-                                        <div class="invoice-date-input"><input type="date" id="invoice-date-value" placeholder="Select Data" required></div>
+                                        <div class="invoice-date-input"><input type="date" id="invoice-date-value" placeholder="Select Data" oninput="getRequiredFields()" required></div>
                                     </div>
                                     
                                     <!-- show when Add Due Date btn clicked -->
@@ -123,14 +123,14 @@
                                     <h3 contentEditable="true" id="from">From</h3>
                                     <div class="from-details pt-2">
                                         <input type="text" value="" placeholder="Your name or Your business name"
-                                            id="from-name" required>
-                                        <input type="text" value="" placeholder="Address" id="from-address" required>
-                                        <input type="text" value="" placeholder="Country" id="from-country" required>
+                                            id="from-name" oninput="getRequiredFields()" required>
+                                        <input type="text" value="" placeholder="Address" id="from-address">
+                                        <input type="text" value="" placeholder="Country" id="from-country">
                                         <div class="city">
-                                            <input class="me-4" type="text" value="" placeholder="City" id="from-city" required>
-                                            <input type="text" value="" placeholder="Zip" id="from-zip" required>
+                                            <input class="me-4" type="text" value="" placeholder="City" id="from-city">
+                                            <input type="text" value="" placeholder="Zip" id="from-zip">
                                         </div>
-                                        <input type="text" value="" placeholder="State" id="from-state" required>
+                                        <input type="text" value="" placeholder="State" id="from-state">
                                         <!-- Email & Phone no. show when btn clicked -->
                                         <input class="d-none" type="email" value="" placeholder="Email Id"
                                             id="from-email">
@@ -171,14 +171,14 @@
                                     <h3 contentEditable="true" id="to">To</h3>
                                     <div class="to-details pt-2">
                                         <input type="text" value="" placeholder="Client's name or Client's business name"
-                                            id="to-name" required>
-                                        <input type="text" value="" placeholder="Address" id="to-address" required>
-                                        <input type="text" value="" placeholder="Country" id="to-country" required>
+                                            id="to-name" oninput="getRequiredFields()" required>
+                                        <input type="text" value="" placeholder="Address" id="to-address">
+                                        <input type="text" value="" placeholder="Country" id="to-country">
                                         <div class="city">
-                                            <input class="me-4" type="text" value="" placeholder="City" id="to-city" required>
-                                            <input type="text" value="" placeholder="Zip code" id="to-zip" required>
+                                            <input class="me-4" type="text" value="" placeholder="City" id="to-city">
+                                            <input type="text" value="" placeholder="Zip code" id="to-zip">
                                         </div>
-                                        <input type="text" value="" placeholder="State" id="to-state" required>
+                                        <input type="text" value="" placeholder="State" id="to-state">
                                         <!-- Email & Phone no. show when btn clicked -->
                                         <input class="d-none" type="email" value="" placeholder="Email Id"
                                             id="to-email">
@@ -425,7 +425,7 @@
             <!-- /total and invoice notes container -->
             <!-- Save and continue button -->
             <div class="container save-and-continue-con py-3">
-                <a href="./printReady.html" target="_blank" class="btn btn-primary mx-4 disabled" role="button" id="save-btn" tabindex="-1" aria-disabled="true">Save & Continue</a>
+                <a href="./printReady.html" target="_blank" class="btn btn-primary mx-4" role="button" id="save-btn" tabindex="-1" aria-disabled="true">Save & Continue</a>
                 <!-- <a href="./printReady.html" target="_blank"><div class="btn btn-primary disabled mx-4" id="save-btn">Save & Continue</div></a> -->
             </div>
             <!-- Save and continue button -->

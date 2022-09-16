@@ -12,7 +12,7 @@ let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
-    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
+    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" oninput="getRequiredFields()" required>`,
     `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="allInOne()" required>`,
     `<input type="number" id="rate" placeholder="0" value="0" onkeyup="allInOne()" required>`,
     `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
@@ -24,6 +24,7 @@ function allInOne(){
     calculateAmount()
     calculateSubTotal()
     taxDiv()
+    getRequiredFields()
 }
 
 
