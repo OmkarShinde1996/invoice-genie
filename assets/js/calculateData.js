@@ -73,6 +73,7 @@ function allInOnePack(){
     makeBankDetailsObject()
     makeTermsAndConditionsObject()
     makeAdditionalNotesObject()
+    makeTableJson()
 }
 ///////////////////////////////////////////////////////////////
 
@@ -212,4 +213,34 @@ function makeAdditionalNotesObject(){
         additionalNotesObject = {}
     }
     console.log(additionalNotesObject)
+}
+
+
+/////////////////////////// Function to convert Table to json//////////////////////////
+
+
+function makeTableJson(){
+    function tableToJson(table){
+        let data = []
+        //First Row headers need to be captured
+        let headers = []
+        for(let i=0; i<table.rows[0].cells.length; i++){
+            headers[i] = table.rows[0].cells[i].innerHTML
+        }
+        //Travel through cells
+        for(let t=0,x=1; t<table.rows.length-1; t++,x++){
+            let tableRow = document.querySelector('.table-row').children[t]
+            let rowData = {}
+            rowData[headers[0]] = x
+            for(let j=1; j<tableRow.cells.length; j++){
+                rowData[headers[j]] = tableRow.cells[j].children[0].value
+            }
+            data.push(rowData)
+        }
+        return data
+    }
+
+    let tableJson = JSON.stringify(tableToJson(document.querySelector('.table')))
+
+    console.log(tableJson)
 }

@@ -23,10 +23,10 @@ function calculateAmount(){
         quantity = Number(tableBody[i].cells[tableBody[i].cells.length-3].children[0].value) //This will get quantity value
         rate = Number(tableBody[i].cells[tableBody[i].cells.length-2].children[0].value) //This will get rate value
         totalAmount = quantity*rate
-        console.log({tax})
-        console.log({totalAmount})
+        // console.log({tax})
+        // console.log({totalAmount})
         totalAmountWithTax = (totalAmount+((totalAmount*tax)/100)).toFixed(2)
-        console.log({totalAmountWithTax})
+        // console.log({totalAmountWithTax})
         totalAmountDiv.value = totalAmountWithTax
     }
 
