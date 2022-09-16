@@ -74,6 +74,7 @@ function allInOnePack(){
     makeTermsAndConditionsObject()
     makeAdditionalNotesObject()
     makeTableJson()
+    getRequiredFields()
 }
 ///////////////////////////////////////////////////////////////
 
@@ -243,4 +244,12 @@ function makeTableJson(){
     let tableJson = JSON.stringify(tableToJson(document.querySelector('.table')))
 
     console.log(tableJson)
+}
+
+
+function getRequiredFields(){
+    let requiredFields = {}
+
+    let arrOfRequiredFields = document.querySelector('.invoice-form').querySelectorAll('[required]')
+    console.log(arrOfRequiredFields)
 }

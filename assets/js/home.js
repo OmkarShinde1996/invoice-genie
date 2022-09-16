@@ -12,9 +12,9 @@ let itemNo = 1
 let colsLength = document.querySelector('.column-header').cells.length
 let definedRowCells = [
     `<div>${itemNo}</div>`,
-    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;">`,
-    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="allInOne()">`,
-    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="allInOne()">`,
+    `<input type="text" id="item" placeholder="Item name (Required)" style="width: 250px;" required>`,
+    `<input type="number" id="quantity" placeholder="0" value="0" onkeyup="allInOne()" required>`,
+    `<input type="number" id="rate" placeholder="0" value="0" onkeyup="allInOne()" required>`,
     `<input type="number" id="amount" placeholder="0" value="0" readonly>`,
 ]
 
@@ -235,6 +235,11 @@ function deleteCellInRowFromCol(rowId){
 
 // Table logic ends here----------------------------------------------------------------------------------
 
+function currentDate(){
+    let date = document.getElementById('invoice-date-value')
+    date.value = new Date().toISOString().slice(0, 10);
+}
+
 // Template show hide fields buttons----------------------------------------------------------------------
 
 let addDueDateDiv = document.querySelector('#due-date-div')
@@ -242,10 +247,10 @@ let addDueDateDiv = document.querySelector('#due-date-div')
 function showDueDateField(){
     if(addDueDateDiv.classList.contains('d-none')){
         addDueDateDiv.classList.remove('d-none')
-        document.querySelector('#add-due-date-btn').innerHTML = `<div class="invoice-date invoice-info-det-btn"><i class="bi bi-dash-circle-fill me-2"></i><span>Remove Due Date</span></div>`
+        document.querySelector('#add-due-date-btn').innerHTML = `<div class="invoice-date invoice-info-det-btn" onclick="showDueDateField()"><i class="bi bi-dash-circle-fill me-2"></i><span>Remove Due Date</span></div>`
     }else{
         addDueDateDiv.classList.add('d-none')
-        document.querySelector('#add-due-date-btn').innerHTML = `<div class="invoice-date invoice-info-det-btn"><i
+        document.querySelector('#add-due-date-btn').innerHTML = `<div class="invoice-date invoice-info-det-btn" onclick="showDueDateField()"><i
         class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>`
     }
 }

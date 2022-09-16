@@ -11,7 +11,7 @@
     <title>Invoice Genie</title>
 </head>
 
-<body>
+<body onload="addRow()">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -81,7 +81,7 @@
                                     <div class="invoice-info py-2">
                                         <div class="invoice-date invoice-info-det"
                                             id="invoice-date">Invoice Date</div>
-                                        <div class="invoice-date-input"><input type="date" id="invoice-date-value" required></div>
+                                        <div class="invoice-date-input"><input type="date" id="invoice-date-value" placeholder="Select Data" required></div>
                                     </div>
                                     
                                     <!-- show when Add Due Date btn clicked -->
@@ -92,8 +92,8 @@
                                     <!-- show when Add More Fields btn clicked -->
                                     <div id="invoice-info-details"></div>
                                     <!-- Buttons -->
-                                    <div class="invoice-info py-2" onclick="showDueDateField()" id="add-due-date-btn">
-                                        <div class="invoice-date invoice-info-det-btn"><i
+                                    <div class="invoice-info py-2" id="add-due-date-btn">
+                                        <div class="invoice-date invoice-info-det-btn" onclick="showDueDateField()"><i
                                                 class="bi bi-plus-circle-fill pe-2"></i><span>Add Due Date</span></div>
                                     </div>
                                     <div class="invoice-info py-2" id="add-more-fields-btn">
@@ -267,7 +267,7 @@
                     <thead class="table-dark">
                         <tr class="column-header">
                             <th class="text-start" scope="col">#</th>
-                            <th class="text-start" scope="col" id="items-head">Items</th>
+                            <th class="text-start" scope="col" id="items-head">Item/Item Description</th>
                             <th class="text-start" scope="col" id="quantity-head">Quantity</th>
                             <th class="text-start" scope="col">Rate(&#8377;)</th>
                             <th class="text-start" scope="col">Amount(&#8377;)</th>
@@ -425,7 +425,8 @@
             <!-- /total and invoice notes container -->
             <!-- Save and continue button -->
             <div class="container save-and-continue-con py-3">
-                <a href="./printReady.html" target="_blank"><div type="submit" class="btn btn-primary mx-4" id="save-btn">Save & Continue</div></a>
+                <a href="./printReady.html" target="_blank" class="btn btn-primary mx-4 disabled" role="button" id="save-btn" tabindex="-1" aria-disabled="true">Save & Continue</a>
+                <!-- <a href="./printReady.html" target="_blank"><div class="btn btn-primary disabled mx-4" id="save-btn">Save & Continue</div></a> -->
             </div>
             <!-- Save and continue button -->
             </form>
