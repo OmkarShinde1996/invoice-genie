@@ -252,8 +252,15 @@ function makeTableJson(){
 
 
 function getRequiredFields(){
-    let requiredFields = {}
-
     let arrOfRequiredFields = document.querySelector('.invoice-form').querySelectorAll('[required]')
-    console.log(arrOfRequiredFields)
+
+    if(arrOfRequiredFields[0].value != "" && arrOfRequiredFields[1].value != "" &&
+    arrOfRequiredFields[2].value != "" && arrOfRequiredFields[3].value != "" &&
+    arrOfRequiredFields[4].value != "" && arrOfRequiredFields[5].value != "" &&
+    arrOfRequiredFields[6].value != ""
+    ){
+        document.getElementById('save-btn').classList.remove('disabled')
+    }else{
+        document.getElementById('save-btn').classList.add('disabled')
+    }
 }
