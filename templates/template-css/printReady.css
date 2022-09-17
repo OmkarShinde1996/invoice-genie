@@ -214,6 +214,26 @@ hr{
 }
 
 
+/* footer-section */
+.bi-github{
+    font-size: 25px;
+    color: #1D2433;
+    margin-bottom: 30px;
+    background-color: transparent;
+}
+
+h3{
+    font-weight: 1000;
+    color: #1D2433;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+h3 span{
+    color: #407BFF;
+}
+
+
 /* *******************************Mobile Screen friendly******************************** */
 
 @media only screen and (max-width: 768px) {
