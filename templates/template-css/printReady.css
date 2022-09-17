@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6, p, small, div{
     /* height: 150px; */
     /* background-color: #2df19c15; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -100,8 +100,12 @@ strong{
     /* padding-bottom: 9.05px; */
 }
 
-.invoice-infor-container,.from-invoice-container,.to-invoice-container{
+.invoice-infor-container{
     width: 200px;
+}
+
+.from-invoice-container,.to-invoice-container{
+    width: 370px;
     
 }
 
@@ -270,10 +274,12 @@ h3 span{
         padding-bottom: 0px;
     }
 
-
-    
-    .invoice-infor-container,.from-invoice-container,.to-invoice-container{
+    .invoice-infor-container{
         width: 75px;
+    }
+
+    .from-invoice-container,.to-invoice-container{
+        width: 100px;
     }
 
     .invoice-info-table-container{

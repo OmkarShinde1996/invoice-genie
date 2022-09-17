@@ -73,7 +73,7 @@ function allInOnePack(){
     makeBankDetailsObject()
     makeTermsAndConditionsObject()
     makeAdditionalNotesObject()
-    makeTableJson()
+    makeTableArray()
     getRequiredFields()
     storeDataInSessionStorage()
 }
@@ -178,18 +178,21 @@ function makeToDetailsObject(){
 }
 
 function makeTotalTaxObject(){
-    if(selectedTaxIndex != 0 && selectedTaxIndex != undefined){
-        const totalTaxTitle = document.querySelector('.tax-headline')
+    if(selectedTaxIndex != 0 && selectedTaxIndex != undefined && document.querySelector('.tax-total-amount-cal') != null){
+        // const totalTaxTitle = document.querySelector('.tax-headline')
+        const totalTaxTitle = "Total Deductions(Taxes)"
         const totalTaxAmountCalculated = document.querySelector('.tax-total-amount-cal')
-        totalTaxObject[`${totalTaxTitle.innerText}`] = `&#8377;${totalTaxAmountCalculated.innerText}`
+        console.log(totalTaxAmountCalculated)
+        totalTaxObject[`${totalTaxTitle}`] = `&#8377; ${totalTaxAmountCalculated.innerText}`
     }
     const discountText = document.getElementById('discount-text')
     const discountAmount = document.getElementById('discount-amount')
+    const subTotalAmt = document.getElementById('sub-total-amount').innerText
     const totalRoundUp = document.getElementById('total')
     const totalRoundUpAmount = document.getElementById('total-amount')
-    totalTaxObject[`${discountText.innerText}`] = `${discountAmount.value}`
-    totalTaxObject.subTotal = document.getElementById('sub-total-amount').innerText
-    totalTaxObject[`${totalRoundUp.innerText}`] = `${totalRoundUpAmount.innerText}`
+    totalTaxObject[`${discountText.innerText}`] = `-&#8377; ${discountAmount.value}`
+    totalTaxObject.subTotal = `&#8377; ${subTotalAmt}`
+    totalTaxObject[`${totalRoundUp.innerText}`] = `&#8377; ${totalRoundUpAmount.innerText}`
     console.log(totalTaxObject)
 }
 
@@ -226,36 +229,39 @@ function makeAdditionalNotesObject(){
 }
 
 
-/////////////////////////// Function to convert Table to json//////////////////////////
+/////////////////////////// Function to convert Table to array//////////////////////////
 
-let tableJson
+let tableArray
 
-function makeTableJson(){
-    function tableToJson(table){
+function makeTableArray(){
+    function tableToArray(table){
         let data = []
-        //First Row headers need to be captured
-        let headers = []
-        for(let i=0; i<table.rows[0].cells.length; i++){
-            headers[i] = table.rows[0].cells[i].innerHTML
+        let rowLength = table.rows.length
+        //Cpturing the header titles and storing it in data array on 0th index
+        let headersTitles = []
+        for(let x=0; x<table.rows[0].cells.length; x++){
+            headersTitles[x] = table.rows[0].cells[x].innerText
         }
-        //Travel through cells
-        for(let t=0,x=1; t<table.rows.length-1; t++,x++){
-            let tableRow = document.querySelector('.table-row').children[t]
-            let rowData = {}
-            rowData[headers[0]] = x
-            for(let j=1; j<tableRow.cells.length; j++){
-                rowData[headers[j]] = tableRow.cells[j].children[0].value
+        data.push(headersTitles)
+        //Capturing the row cells values and storing it in data array from 1st index
+        for(let i=1; i<rowLength; i++){
+            let cellsLength = table.rows[i].cells.length
+            let headers = []
+            for(let j=1; j<cellsLength; j++){
+                headers[0] = i
+                headers[j] = table.rows[i].cells[j].children[0].value
             }
-            data.push(rowData)
+            data.push(headers)
         }
         return data
     }
 
-    tableJson = JSON.stringify(tableToJson(document.querySelector('.table')))
+    tableArray = tableToArray(document.querySelector('.table'))
 
-    console.log(tableJson)
+    console.log(tableArray)
 }
 
+/////////////////////////// Function to convert Table to array ends here//////////////////////////
 
 function getRequiredFields(){
     let arrOfRequiredFields = document.querySelector('.invoice-form').querySelectorAll('[required]')
@@ -284,7 +290,7 @@ function storeDataInSessionStorage(){
     const termsAndConditionsObject_serialize = JSON.stringify(termsAndConditionsObject)
     const additionalNotesObject_serialize = JSON.stringify(additionalNotesObject)
 
-    const tableJson_serialize = JSON.stringify(tableJson)
+    const tableArray_serialize = JSON.stringify(tableArray)
 
     localStorage.setItem('actualInvoiceText',actualInvoiceText)
     localStorage.setItem('invoiceDetailsObject',invoiceDetailsObject_serialize)
@@ -297,7 +303,7 @@ function storeDataInSessionStorage(){
     localStorage.setItem('termsAndConditionsObject',termsAndConditionsObject_serialize)
     localStorage.setItem('additionalNotesObject',additionalNotesObject_serialize)
 
-    localStorage.setItem('tableJson',tableJson_serialize)
+    localStorage.setItem('tableArray',tableArray_serialize)
 
     // const tableJson_deSerialize = JSON.parse(localStorage.getItem('tableJson'))
     // console.log(tableJson_deSerialize)

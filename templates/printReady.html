@@ -47,16 +47,11 @@
             <!-- Header invoice text & logo part -->
             <div class="invoice-logo-container">
                 <div class="invoice-text text-center">
-                    <h3 class="display-5" id="Invoice-title">Invoice</h3>
+                    <h3 class="display-6" id="Invoice-title">Invoice</h3>
                 </div>
                 <div class="invoice-logo-img">
                     <img src="../assets/images/image-placeholder1.png" alt="" id="invoice-logo">
                 </div>
-            </div>
-            <!-- /Header invoice text & logo part -->
-
-            <!-- Invoice info, From & To part -->
-            <div class="invoice-details-container mt-4">
                 <div class="invoice-infor-container text-start">
                     <h6 id="invoice-details-text h6"><u>Invoice Details</u></h6>
                     <div class="inline-box-for-info invoice-details">
@@ -67,11 +62,31 @@
                         <p>Invoice Date</p>
                         <small id="invoice-date">14-09-2022</small>
                     </div>
-                    <div class="inline-box-for-info invoice-details">
+                    <div class="inline-box-for-info invoice-details d-none" id="due-date-con">
                         <p>Due Date</p>
                         <small id="due-date">17-09-2022</small>
                     </div>
                 </div>
+            </div>
+            <!-- /Header invoice text & logo part -->
+
+            <!-- Invoice info, From & To part -->
+            <div class="invoice-details-container mt-4">
+                <!-- <div class="invoice-infor-container text-start">
+                    <h6 id="invoice-details-text h6"><u>Invoice Details</u></h6>
+                    <div class="inline-box-for-info invoice-details">
+                        <p>Invoice no.</p>
+                        <small id="invoice-number">A0001</small>
+                    </div>
+                    <div class="inline-box-for-info invoice-details">
+                        <p>Invoice Date</p>
+                        <small id="invoice-date">14-09-2022</small>
+                    </div>
+                    <div class="inline-box-for-info invoice-details d-none" id="due-date-con">
+                        <p>Due Date</p>
+                        <small id="due-date">17-09-2022</small>
+                    </div>
+                </div> -->
                 <div class="from-invoice-container text-start">
                     <h6 id="from-text"><u>From</u></h6>
                     <h6 id="from-name"><strong>Omkar Shinde</strong></h6>
@@ -86,19 +101,8 @@
             <!-- /Invoice info, From & To part -->
 
             <!-- More details container -->
-            <div class="container more-details-container pt-2" id="more-details-con">
-                <div class="more-details-inside-container">
-                    <p>Subject</p>
-                    <small>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</small>
-                </div>
-                <div class="more-details-inside-container">
-                    <p>PO. No.</p>
-                    <small>327837737632</small>
-                </div>
-                <div class="more-details-inside-container">
-                    <p>Order No.</p>
-                    <small>123/131/44455</small>
-                </div>
+            <div class="container more-details-container pt-3" id="more-details-con">
+                
             </div>
             <!-- More details container -->
 
@@ -106,112 +110,73 @@
             <div class="invoice-info-table-container table-responsive">
                 <table class="table table-striped">
                     <thead class="table-dark">
-                      <tr class="text-start">
-                        <th scope="col">Item/Item Description</th>
-                        <th scope="col">GST</th>
-                        <th scope="col">Qty.</th>
-                        <th scope="col">Rate</th>
-                        <th scope="col">Amount</th>
+                      <tr class="text-start" id="thead">
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr class="text-start">
-                        <td>Basic Web Development</td>
-                        <td>9%</td>
-                        <td>2</td>
-                        <td>&#8377;2000</td>
-                        <td>&#8377;4000</td>
-                      </tr>
-                      <tr class="text-start">
-                        <td>Logo Design</td>
-                        <td>18%</td>
-                        <td>5</td>
-                        <td>&#8377;500</td>
-                        <td>&#8377;2500</td>
-                      </tr>
-                      <tr class="text-start">
-                        <td>Web Design</td>
-                        <td>9%</td>
-                        <td>1</td>
-                        <td>&#8377;1000</td>
-                        <td>&#8377;1000</td>
-                      </tr>
-                      <tr class="text-start">
-                        <td>Android App Development</td>
-                        <td>18%</td>
-                        <td>1</td>
-                        <td>&#8377;3000</td>
-                        <td>&#8377;3000</td>
-                      </tr>
-                      <tr class="text-start">
-                        <td>IT Services</td>
-                        <td>9%</td>
-                        <td>2</td>
-                        <td>&#8377;7000</td>
-                        <td>&#8377;14000</td>
-                      </tr>
+                    <tbody id="tbody">
                     </tbody>
                   </table>
             </div>
             <!-- /Invoice Table -->
 
             <!-- Additional Notes & Total -->
-            <div class="additional-notes-total-container" id="additional-notes-con">
+            <div class="additional-notes-total-container">
                 <div class="additional-notes-container text-start">
-                    <h6 id="to-text h6">Aditional Notes</h6>
-                    <p><small class="notes" id="to-add">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small></p>
+                    <p class="mb-3">Total (in words) : FORTY NINE THOUSAND RUPEES ONLY</p>
+                    <h6 id="to-text" class="additional-notes-con d-none">Aditional Notes</h6>
+                    <p><small class="notes d-none" id="to-add"></small></p>
                 </div>
                 <div class="total-div-container">
-                    <div class="inline-box-for-info total" id="total-tax">
-                        <small>Total GST</small>
+                    <div class="inline-box-for-info total d-none" id="total-tax">
+                        <small>Total Deductions(Taxes)</small>
                         <p id="total-tax-amt">&#8377;5000</p>
                     </div>
                     <div class="inline-box-for-info total" id="sub-total">
                         <small>Sub Total</small>
                         <p id="sub-total-amt">&#8377;50000</p>
                     </div>
-                    <div class="inline-box-for-info total" id="total-discout">
-                        <small>Discount</small>
+                    <div class="inline-box-for-info total d-none" id="total-discout">
+                        <small>Discount(&#8377;)</small>
                         <p id="total-discount-amt">-&#8377;1000</p>
                     </div>
                     <hr>
                     <div class="inline-box-for-info all-total pb-3" id="total-due">
-                        <small id="total-text">Total Due</small>
+                        <small id="total-text">Total</small>
                         <p id="total-due-amt">&#8377;49000</p>
                     </div>
                 </div>
             </div>
             <!-- /Additional Notes & Total -->
             <footer class="invoice-footer-container">
-                <div class="terms-conditions-container text-start" id="terms-conditions-con">
+                <div class="terms-conditions-container text-start d-none" id="terms-conditions-con">
                     <h6 id="to-text h6">Terms and Conditions</h6>
                     <p><small class="terms" id="to-add">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small></p>
                 </div>
-                <div class="bank-details-div-container" id="bank-details-con">
+                <div class="bank-details-div-container d-none" id="bank-details-con">
                     <div class="inline-box-for-info bank">
                         <h6 id="from-text h6">Bank & Payment Details</h6>
                     </div>
-                    <div class="inline-box-for-info bank">
+                    <div class="inline-box-for-info bank d-none" id="accHolderName">
                         <small>Account Holder name</small>
                         <p id="acc-holder-name">Omkar Shinde</p>
                     </div>
-                    <div class="inline-box-for-info bank">
+                    <div class="inline-box-for-info bank d-none" id="accNumber">
                         <small>Account Number</small>
                         <p id="acc-number">12321263473673</p>
                     </div>
-                    <div class="inline-box-for-info bank">
+                    <div class="inline-box-for-info bank d-none" id="bankIFSC">
                         <small>IFSC</small>
                         <p id="bank-ifsc">HDFC0000077</p>
                     </div>
-                    <div class="inline-box-for-info bank">
+                    <div class="inline-box-for-info bank d-none" id="accType">
                         <small>Account type</small>
                         <p id="acc-type">Savings</p>
                     </div>
-                    <div class="inline-box-for-info bank">
+                    <div class="inline-box-for-info bank d-none" id="bankName">
                         <small>Bank Name</small>
                         <p id="bank-name">HDFC Bank</p>
                     </div>
-                    <div class="inline-box-for-info bank">
+                    <div class="inline-box-for-info bank d-none" id="upiID">
                         <small>UPI ID</small>
                         <p id="upi-id">fooler@okicici</p>
                     </div>

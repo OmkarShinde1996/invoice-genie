@@ -450,6 +450,7 @@ function taxAllinOne(){
     createTaxCol()
     calculateAmount()
     calculateSubTotal()
+    // makeTotalTaxObject()
 }
 
 function addDeleteButtons(){
