@@ -1,5 +1,5 @@
 
-// Logo Image and Invoicce Text block element
+// Logo Image and Invoice Text block element
 let actualInvoiceText
 const invoiceBody = document.querySelector('invoice-logo')
 const previousImgUrl = "http://127.0.0.1:5500/assets/images/image-placeholder1.png"
@@ -75,12 +75,17 @@ function allInOnePack(){
     makeAdditionalNotesObject()
     makeTableJson()
     getRequiredFields()
+    storeDataInSessionStorage()
 }
 ///////////////////////////////////////////////////////////////
 
 function makeVariableOfActualInvoiceText(){
-    actualInvoiceText = document.querySelector('.invoice-title').innerText
-    console.log(actualInvoiceText)
+    if(document.querySelector('.invoice-title').innerText == ""){
+        actualInvoiceText = 'Invoice'
+    }else{
+        actualInvoiceText = document.querySelector('.invoice-title').innerText
+        console.log(actualInvoiceText)
+    }
 }
 
 function makeObjectOfInvoiceDetails(){
@@ -111,7 +116,7 @@ function makeObjectOfInvoiceMoreDetails(){
 function makeLogoImageObject(){
     const imageUrl = document.querySelector('.invoice-logo img').src
     if(imageUrl != previousImgUrl){
-        logoImageUrl.logUrl = imageUrl
+        logoImageUrl.logoUrl = imageUrl
     }
     console.log(logoImageUrl)
 }
@@ -149,8 +154,8 @@ function makeToDetailsObject(){
     toDetailsObject = {
         toTitle : `${toText}`,
         toName : `${toName.value}`,
-        toAddress : `${toAdd.value},`,
-        toCity : `${toCity.value},`,
+        toAddress : `${toAdd.value}`,
+        toCity : `${toCity.value}`,
         toState : `${toState.value}`,
         toCountry : `${toCountry.value}`,
         toZip : `${toZip.value}`
@@ -223,6 +228,7 @@ function makeAdditionalNotesObject(){
 
 /////////////////////////// Function to convert Table to json//////////////////////////
 
+let tableJson
 
 function makeTableJson(){
     function tableToJson(table){
@@ -245,7 +251,7 @@ function makeTableJson(){
         return data
     }
 
-    let tableJson = JSON.stringify(tableToJson(document.querySelector('.table')))
+    tableJson = JSON.stringify(tableToJson(document.querySelector('.table')))
 
     console.log(tableJson)
 }
@@ -263,4 +269,37 @@ function getRequiredFields(){
     }else{
         document.getElementById('save-btn').classList.add('disabled')
     }
+}
+
+
+function storeDataInSessionStorage(){
+    // const actualInvoiceText_serialize = JSON.stringify(actualInvoiceText)
+    const invoiceDetailsObject_serialize = JSON.stringify(invoiceDetailsObject)
+    const invoiceMoreDetailsObject_serialize = JSON.stringify(invoiceMoreDetailsObject)
+    const logoImageUrl_serialize = JSON.stringify(logoImageUrl)
+    const fromDetailsObject_serialize = JSON.stringify(fromDetailsObject)
+    const toDetailsObject_serialize = JSON.stringify(toDetailsObject)
+    const totalTaxObject_serialize = JSON.stringify(totalTaxObject)
+    const bankDetailsObject_serialize = JSON.stringify(bankDetailsObject)
+    const termsAndConditionsObject_serialize = JSON.stringify(termsAndConditionsObject)
+    const additionalNotesObject_serialize = JSON.stringify(additionalNotesObject)
+
+    const tableJson_serialize = JSON.stringify(tableJson)
+
+    localStorage.setItem('actualInvoiceText',actualInvoiceText)
+    localStorage.setItem('invoiceDetailsObject',invoiceDetailsObject_serialize)
+    localStorage.setItem('invoiceMoreDetailsObject',invoiceMoreDetailsObject_serialize)
+    localStorage.setItem('logoImageUrl',logoImageUrl_serialize)
+    localStorage.setItem('fromDetailsObject',fromDetailsObject_serialize)
+    localStorage.setItem('toDetailsObject',toDetailsObject_serialize)
+    localStorage.setItem('totalTaxObject',totalTaxObject_serialize)
+    localStorage.setItem('bankDetailsObject',bankDetailsObject_serialize)
+    localStorage.setItem('termsAndConditionsObject',termsAndConditionsObject_serialize)
+    localStorage.setItem('additionalNotesObject',additionalNotesObject_serialize)
+
+    localStorage.setItem('tableJson',tableJson_serialize)
+
+    // const tableJson_deSerialize = JSON.parse(localStorage.getItem('tableJson'))
+    // console.log(tableJson_deSerialize)
+
 }
