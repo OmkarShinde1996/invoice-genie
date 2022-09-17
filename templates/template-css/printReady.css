@@ -408,7 +408,7 @@ h3 span{
     }
 
     .invoice-logo-img img{
-        max-width: 100px;
+        max-width: 55px;
         max-height: 50px;
         object-fit: contain;
     }
