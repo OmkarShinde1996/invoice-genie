@@ -148,7 +148,7 @@ function calculateTotalTaxAmount(taxName){
         }
     
         const sum = taxArr.reduce((partialSum, a) => partialSum + a, 0);
-        div.textContent = sum
+        div.innerText = sum.toFixed(2)
     }else{
         return
     }
