@@ -20,36 +20,12 @@ downloadAsPdfBtn.addEventListener('click', function(){
         if(screen.width > 768){
             pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight)
         }else if(screen.width == 768){
-            pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight+178)
+            pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight)
+        }else if(screen.width < 768){
+            pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight)
         }
         
-        
-        // pdf.addImage(base64image,1,1,208, 300)
         pdf.save('downloaded.pdf')
     })
 })
 
-
-
-// downloadAsPdfBtn.addEventListener('click', function () {
-//     const convertDivToPdf = document.getElementById('to-be-printed')
-//     var opt = {
-//         margin: [0, 0, 0, 0],
-//         filename: 'invoice.pdf',
-//         // image: { type: 'PNG', quality: 0.98 },
-//         // html2canvas: { dpi: 192, scale: 5, letterRendering: true, width: convertDivToPdf.offsetWidth, height: convertDivToPdf.offsetHeight},
-//         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', width: convertDivToPdf.offsetWidth, height: convertDivToPdf.offsetHeight }
-//     }
-//     // html2pdf().from(convertDivToPdf).set(opt).save()
-//     // html2pdf().from(convertDivToPdf).save()
-//     // html2pdf(convertDivToPdf,opt)
-//     html2pdf().set(opt).from(convertDivToPdf).toPdf().save()
-// })
-
-
-// $('#download-as-pdf').click(function(){
-//     $('#to-be-printed').printThis({
-//         debug: true,
-//         importCSS: true,
-//     });
-// });
