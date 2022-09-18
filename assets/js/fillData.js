@@ -44,7 +44,7 @@ const termsAndConditionsObject_deSerialize = JSON.parse(localStorage.getItem('te
 const additionalNotesObject_deSerialize = JSON.parse(localStorage.getItem('additionalNotesObject'))
 const tableArray_deSerialize = JSON.parse(localStorage.getItem('tableArray'))
 
-function fillInvoice(){
+window.onload = function fillInvoice(){
 
     //Setting up the Invoice text
     // console.log(actualInvoiceText_deSerialize)
