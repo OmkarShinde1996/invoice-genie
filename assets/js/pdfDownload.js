@@ -6,7 +6,7 @@ let downloadAsPdfBtn = document.getElementById('download-as-pdf')
 
 downloadAsPdfBtn.addEventListener('click', function(){
     html2canvas(document.getElementById('to-be-printed'),{
-        scale : 5
+        scale : 4 //Don't change it will hamper height of the canvas in PDF
     }).then((canvas) => {
         let base64image = canvas.toDataURL('image/png')
         let pdf = new jsPDF()
@@ -16,7 +16,13 @@ downloadAsPdfBtn.addEventListener('click', function(){
         console.log(`Making canvas of ${canvas.width}px x ${canvas.height}px`)
         console.log(`Storing canvas in PDF ${actualWidth}mm x ${actualHeight}mm`)
         console.log({formWidth})
-        pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight)
+        console.log(screen.width)
+        if(screen.width > 768){
+            pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight)
+        }else if(screen.width == 768){
+            pdf.addImage(base64image,'PNG',0,0,formWidth,actualHeight+178)
+        }
+        
         
         // pdf.addImage(base64image,1,1,208, 300)
         pdf.save('downloaded.pdf')
