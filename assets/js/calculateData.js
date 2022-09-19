@@ -2,7 +2,7 @@
 // Logo Image and Invoice Text block element
 let actualInvoiceText
 const invoiceBody = document.querySelector('invoice-logo')
-const previousImgUrl = "http://127.0.0.1:5500/assets/images/image-placeholder1.png"
+const previousImgUrl = "https://omkarshinde1996.github.io/invoice-genie/assets/images/image-placeholder1.png"
 let logoImageUrl = {}
 
 // Invoice details block elements
