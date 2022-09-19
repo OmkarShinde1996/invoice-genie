@@ -1,10 +1,25 @@
 
 
 let downloadAsPdfBtn = document.getElementById('download-as-pdf')
+let spinner = document.querySelector('.spinner-border')
+let check = document.getElementById('check')
+
+
+downloadAsPdfBtn.addEventListener('click', e => {
+    // e.preventDefault();//preventing form from submitting
+    downloadAsPdfBtn.innerText = 'Generating and Downloading PDF...'
+
+    console.log(downloadAsPdfBtn.innerText)
+    downloadFunction()
+    downloadAsPdfBtn.innerText = 'Download as PDF'
+
+    console.log(downloadAsPdfBtn.innerText)
+})
 
 
 
-downloadAsPdfBtn.addEventListener('click', function () {
+function downloadFunction() {
+    spinner.classList.remove('d-none')
     html2canvas(document.getElementById('to-be-printed'), {
         scale: 4 //Don't change it will hamper height of the canvas in PDF
     }).then((canvas) => {
@@ -26,11 +41,10 @@ downloadAsPdfBtn.addEventListener('click', function () {
         }else{
             pdf.save('invoice.pdf')
         } 
-        
-        
-
         // pdf.save('downloaded.pdf')
-        
+        spinner.classList.add('d-none')
+        check.classList.remove('d-none')
+        setTimeout(() => { check.classList.add('d-none') }, 3000) //will show content after 3 sec
     })
-})
+}
 
