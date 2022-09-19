@@ -17,13 +17,15 @@ downloadAsPdfBtn.addEventListener('click', function () {
         console.log(`Storing canvas in PDF ${actualWidth}mm x ${actualHeight}mm`)
         console.log({ formWidth })
         console.log(screen.width)
-        if (screen.width > 768) {
-            pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
-        } else if (screen.width == 768) {
-            pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
-        } else if (screen.width < 768) {
-            pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
-        }
+
+        pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
+        // if (screen.width > 768) {
+        //     pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
+        // } else if (screen.width == 768) {
+        //     pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
+        // } else if (screen.width < 768) {
+        //     pdf.addImage(base64image, 'PNG', 0, 0, formWidth, actualHeight)
+        // }
 
         // let pdfOutput = pdf.output("blob")
         // console.log(pdfOutput)
