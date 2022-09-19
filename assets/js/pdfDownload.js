@@ -6,7 +6,7 @@ let check = document.getElementById('check')
 
 
 downloadAsPdfBtn.addEventListener('click', e => {
-    // e.preventDefault();//preventing form from submitting
+    e.preventDefault();//preventing form from submitting
     downloadAsPdfBtn.innerText = 'Generating and Downloading PDF...'
 
     console.log(downloadAsPdfBtn.innerText)

@@ -45,7 +45,7 @@ const additionalNotesObject_deSerialize = JSON.parse(localStorage.getItem('addit
 const tableArray_deSerialize = JSON.parse(localStorage.getItem('tableArray'))
 
 window.onload = function fillInvoice(){
-
+    numberToWord()
     //Setting up the Invoice text
     // console.log(actualInvoiceText_deSerialize)
     fillInvoiceTitle.innerText = actualInvoiceText_deSerialize
