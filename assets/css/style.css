@@ -235,12 +235,12 @@ h5{
 /* Invoice templates */
 
 #template{
-    border: 1px solid #1D2433;
+    border: 1px solid #49526680;
     width: 250px;
     height: 350px;
     border-radius: 5px;
-    object-fit: cover;
-    padding: 5px;
+    object-fit: fill;
+    padding: 3px;
     margin: 20px;
     background-color: #fff;
     -webkit-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
