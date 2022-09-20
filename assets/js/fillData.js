@@ -5,10 +5,10 @@ let fillInvoiceNo = document.getElementById('invoice-number')
 let fillInvoiceDate = document.getElementById('invoice-date')
 let fillInvoiceDueDateCon = document.getElementById('due-date-con')
 let fillInvoiceDueDate = document.getElementById('due-date')
-let fillInvoiceFromText = document.querySelector('#from-text u')
+let fillInvoiceFromText = document.querySelector('#from-text')
 let fillInvoiceFromName = document.querySelector('#from-name strong')
 let fillInvoiceFromAdd = document.getElementById('from-add')
-let fillInvoiceToText = document.querySelector('#to-text u')
+let fillInvoiceToText = document.querySelector('#to-text')
 let fillInvoiceToName = document.querySelector('#to-name strong')
 let fillInvoiceToAdd = document.getElementById('to-add')
 let fillMoreDetailsContainer = document.getElementById('more-details-con')
@@ -236,13 +236,13 @@ window.onload = function fillInvoice(){
     fillTotalDueAmt.innerHTML = totalTaxObject_deSerialize["Total"]
 
     //Setting visibility for footer container
-    if(Object.keys(termsAndConditionsObject_deSerialize).length == 0 &&
-    Object.keys(bankDetailsObject_deSerialize).length == 0
-    ){
-        termsBankCon.classList.add('d-none')
-    }else{
-        termsBankCon.classList.remove('d-none')
-    }
+    // if(Object.keys(termsAndConditionsObject_deSerialize).length == 0 &&
+    // Object.keys(bankDetailsObject_deSerialize).length == 0
+    // ){
+    //     termsBankCon.classList.add('d-none')
+    // }else{
+    //     termsBankCon.classList.remove('d-none')
+    // }
 
     //Setting up terms & conditions values
     if(Object.keys(termsAndConditionsObject_deSerialize).length != 0){
