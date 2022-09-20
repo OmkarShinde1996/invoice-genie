@@ -78,19 +78,19 @@ window.onload = function fillInvoice(){
     let actualFromEmail1 = ""
     let actualFromGST1 = ""
     let actualFromPAN1 = ""
-    if(fromDetailsObject_deSerialize["fromAddress"] != undefined){
+    if(fromDetailsObject_deSerialize["fromAddress"] != undefined && fromDetailsObject_deSerialize["fromAddress"] != ""){
         let fromAddress1 = fromDetailsObject_deSerialize["fromAddress"]
         actualFromAddress1 = `${fromAddress1},`
     }
-    if(fromDetailsObject_deSerialize["fromCity"] != undefined){
+    if(fromDetailsObject_deSerialize["fromCity"] != undefined && fromDetailsObject_deSerialize["fromCity"] != ""){
         let fromCity1 = fromDetailsObject_deSerialize["fromCity"]
         actualFromCity1 = `${fromCity1},`
     }
-    if(fromDetailsObject_deSerialize["fromState"] != undefined){
+    if(fromDetailsObject_deSerialize["fromState"] != undefined && fromDetailsObject_deSerialize["fromState"] != ""){
         let fromState1 = fromDetailsObject_deSerialize["fromState"]
         actualFromState1 = `${fromState1},`
     }
-    if(fromDetailsObject_deSerialize["fromCountry"] != undefined){
+    if(fromDetailsObject_deSerialize["fromCountry"] != undefined && fromDetailsObject_deSerialize["fromCountry"] != ""){
         let fromCountry1 = fromDetailsObject_deSerialize["fromCountry"]
         actualFromCountry1 = `${fromCountry1} - `
     }
@@ -141,19 +141,19 @@ window.onload = function fillInvoice(){
     let actualToEmail1 = ""
     let actualToGST1 = ""
     let actualToPAN1 = ""
-    if(toDetailsObject_deSerialize["toAddress"] != undefined){
+    if(toDetailsObject_deSerialize["toAddress"] != undefined && toDetailsObject_deSerialize["toAddress"] != ""){
         let toAddress1 = toDetailsObject_deSerialize["toAddress"]
         actualToAddress1 = `${toAddress1},`
     }
-    if(toDetailsObject_deSerialize["toCity"] != undefined){
+    if(toDetailsObject_deSerialize["toCity"] != undefined && toDetailsObject_deSerialize["toCity"] != ""){
         let toCity1 = toDetailsObject_deSerialize["toCity"]
         actualToCity1 = `${toCity1},`
     }
-    if(toDetailsObject_deSerialize["toState"] != undefined){
+    if(toDetailsObject_deSerialize["toState"] != undefined && toDetailsObject_deSerialize["toState"] != ""){
         let toState1 = toDetailsObject_deSerialize["toState"]
         actualToState1 = `${toState1},`
     }
-    if(toDetailsObject_deSerialize["toCountry"] != undefined){
+    if(toDetailsObject_deSerialize["toCountry"] != undefined && toDetailsObject_deSerialize["toCountry"] != ""){
         let toCountry1 = toDetailsObject_deSerialize["toCountry"]
         actualToCountry1 = `${toCountry1} - `
     }
