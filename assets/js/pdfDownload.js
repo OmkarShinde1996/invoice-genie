@@ -9,11 +9,11 @@ downloadAsPdfBtn.addEventListener('click', e => {
     e.preventDefault();//preventing form from submitting
     downloadAsPdfBtn.innerText = 'Generating and Downloading PDF...'
 
-    console.log(downloadAsPdfBtn.innerText)
+    // console.log(downloadAsPdfBtn.innerText)
     downloadFunction()
     downloadAsPdfBtn.innerText = 'Download as PDF'
 
-    console.log(downloadAsPdfBtn.innerText)
+    // console.log(downloadAsPdfBtn.innerText)
 })
 
 
@@ -66,7 +66,7 @@ function downloadFunction(){
     html2canvas($("#to-be-printed")[0],{scale:5}).then(function(canvas) {
         canvas.getContext('2d');
         
-        console.log(canvas.height+"  "+canvas.width);
+        // console.log(canvas.height+"  "+canvas.width);
         
         
         var imgData = canvas.toDataURL("image/jpeg", 1.0);

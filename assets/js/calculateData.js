@@ -84,7 +84,7 @@ function makeVariableOfActualInvoiceText(){
         actualInvoiceText = 'Invoice'
     }else{
         actualInvoiceText = document.querySelector('.invoice-title').innerText
-        console.log(actualInvoiceText)
+        // console.log(actualInvoiceText)
     }
 }
 
@@ -97,7 +97,7 @@ function makeObjectOfInvoiceDetails(){
     if(dueDateDivCheck.classList.contains('d-none') == false){
         invoiceDetailsObject[`${dueDate}`] = `${dueDateValue.value}`
     }
-    console.log(invoiceDetailsObject)
+    // console.log(invoiceDetailsObject)
 }
 
 function makeObjectOfInvoiceMoreDetails(){
@@ -110,7 +110,7 @@ function makeObjectOfInvoiceMoreDetails(){
         }
 
     }
-    console.log(invoiceMoreDetailsObject)
+    // console.log(invoiceMoreDetailsObject)
 }
 
 function makeLogoImageObject(){
@@ -118,7 +118,7 @@ function makeLogoImageObject(){
     if(imageUrl != previousImgUrl){
         logoImageUrl.logoUrl = imageUrl
     }
-    console.log(logoImageUrl)
+    // console.log(logoImageUrl)
 }
 
 function makeFromDetailsObject(){
@@ -146,7 +146,7 @@ function makeFromDetailsObject(){
         fromDetailsObject.fromPan = `${fromPan.value}`
     }
 
-    console.log(fromDetailsObject)
+    // console.log(fromDetailsObject)
 }
 
 function makeToDetailsObject(){
@@ -174,7 +174,7 @@ function makeToDetailsObject(){
         toDetailsObject.toPan = `${toPan.value}`
     }
 
-    console.log(toDetailsObject)
+    // console.log(toDetailsObject)
 }
 
 function makeTotalTaxObject(){
@@ -182,7 +182,7 @@ function makeTotalTaxObject(){
         // const totalTaxTitle = document.querySelector('.tax-headline')
         const totalTaxTitle = "Total Deductions(Taxes)"
         const totalTaxAmountCalculated = document.querySelector('.tax-total-amount-cal')
-        console.log(totalTaxAmountCalculated)
+        // console.log(totalTaxAmountCalculated)
         totalTaxObject[`${totalTaxTitle}`] = `&#8377; ${totalTaxAmountCalculated.innerText}`
     }
     const discountText = document.getElementById('discount-text')
@@ -193,7 +193,7 @@ function makeTotalTaxObject(){
     totalTaxObject[`${discountText.innerText}`] = `-&#8377; ${discountAmount.value}`
     totalTaxObject.subTotal = `&#8377; ${subTotalAmt}`
     totalTaxObject[`${totalRoundUp.innerText}`] = `&#8377; ${totalRoundUpAmount.innerText}`
-    console.log(totalTaxObject)
+    // console.log(totalTaxObject)
 }
 
 function makeBankDetailsObject(){
@@ -207,7 +207,7 @@ function makeBankDetailsObject(){
     }else{
         bankDetailsObject = {}
     }
-    console.log(bankDetailsObject)
+    // console.log(bankDetailsObject)
 }
 
 function makeTermsAndConditionsObject(){
@@ -216,7 +216,7 @@ function makeTermsAndConditionsObject(){
     }else{
         termsAndConditionsObject = {}
     }
-    console.log(termsAndConditionsObject)
+    // console.log(termsAndConditionsObject)
 }
 
 function makeAdditionalNotesObject(){
@@ -225,7 +225,7 @@ function makeAdditionalNotesObject(){
     }else{
         additionalNotesObject = {}
     }
-    console.log(additionalNotesObject)
+    // console.log(additionalNotesObject)
 }
 
 
@@ -258,7 +258,7 @@ function makeTableArray(){
 
     tableArray = tableToArray(document.querySelector('.table'))
 
-    console.log(tableArray)
+    // console.log(tableArray)
 }
 
 /////////////////////////// Function to convert Table to array ends here//////////////////////////
