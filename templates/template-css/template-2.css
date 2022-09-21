@@ -43,14 +43,6 @@ p{
 }
 
 
-/* .invoice-logo-img{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    align-items: center;
-} */
-
-
 .invoice-details, .more-details-inside-container{
     display: flex;
     align-items: center;
