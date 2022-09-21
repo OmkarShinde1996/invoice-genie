@@ -262,6 +262,13 @@ function makeTableArray(){
 }
 
 /////////////////////////// Function to convert Table to array ends here//////////////////////////
+let saveAndContinueBtn = document.querySelector('.save-and-continue-con a')
+window.onload = function(){
+    addRow()
+    getRequiredFields()
+    let templateURL = sessionStorage.getItem('templateURL')
+    saveAndContinueBtn.href = templateURL
+}
 
 function getRequiredFields(){
     let arrOfRequiredFields = document.querySelector('.invoice-form').querySelectorAll('[required]')
