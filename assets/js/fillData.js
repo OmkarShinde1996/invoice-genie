@@ -322,10 +322,10 @@ window.onload = function fillInvoice(){
             td.innerText = tableArray_deSerialize[j][x]
             tr.appendChild(td)
         }
-        console.log(tr)
+        // console.log(tr)
         tableBody.appendChild(tr)
         
     }
-    console.log(tableBody)
+    // console.log(tableBody)
 }
 

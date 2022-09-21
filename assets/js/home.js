@@ -283,7 +283,7 @@ function removeLastInfoField(){
     }else{
         addMoreInfoFieldDiv.removeChild(addMoreInfoFieldDiv.lastElementChild)
         // infoFieldCounter--
-        console.log(infoFieldCounter)
+        // console.log(infoFieldCounter)
     }
     
 }
