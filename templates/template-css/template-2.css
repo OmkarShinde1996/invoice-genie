@@ -26,6 +26,7 @@ small {
     font-weight: 200;
     margin-left: 0;
     color: #332C23;
+    line-height: unset;
 }
 
 p{
@@ -202,4 +203,14 @@ hr{
 
 #check{
     color: #407BFF;
+}
+
+#from-add p, #to-add p{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#from-add small, #to-add small{
+    font-size: 12px;
+    font-weight: 500;
 }
