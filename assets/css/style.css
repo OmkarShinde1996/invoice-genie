@@ -234,7 +234,7 @@ h5{
 
 /* Invoice templates */
 
-#template{
+.template{
     border: 1px solid #49526680;
     width: 250px;
     height: 350px;
@@ -249,7 +249,7 @@ h5{
     transition: transform 0.4s;
 }
 
-#template:hover{
+.template:hover{
     transform: scale(1.05);
     border-color: #407BFF;
 }
