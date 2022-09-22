@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./template-css/purpler_basic.css">
-    <link rel="stylesheet" href="./template-css/template-3.css">
+    <link rel="stylesheet" href="./template-css/template-4.css">
     <title>Generated Invoice</title>
 </head>
 <body>
@@ -49,6 +49,26 @@
                     <div class="col-2">
                         <h3 class="display-6" id="Invoice-title">Invoice</h3>
                     </div>
+                </div>
+
+                <div class="row mx-2 my-1">
+                    <div class="col-7">
+                        <div class="invoice-infor-container text-start">
+                            <h6 id="invoice-details-text">Invoice Details</h6>
+                            <div class="row inline-box-for-info invoice-details">
+                                <div class="col-3 invoice"><p>Invoice no.</p></div>
+                                <div class="col invoice"><small id="invoice-number">A0001</small></div>
+                            </div>
+                            <div class="row inline-box-for-info invoice-details">
+                                <div class="col-3 invoice"><p>Invoice Date</p></div>
+                                <div class="col invoice"><small id="invoice-date">14-09-2022</small></div>
+                            </div>
+                            <div class="row inline-box-for-info invoice-details d-none" id="due-date-con">
+                                <div class="col-3 invoice"><p>Due Date</p></div>
+                                <div class="col invoice"><small id="due-date">17-09-2022</small></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col logo-col">
                         <div class="invoice-logo-img">
                             <img class="rounded" src="../assets/images/image-placeholder1.png" alt="" id="invoice-logo">
@@ -56,23 +76,13 @@
                     </div>
                 </div>
 
-                <div class="row mx-2 my-1">
-                    <div class="col-4">
-                        <div class="invoice-infor-container text-start">
-                            <h6 id="invoice-details-text">Invoice Details</h6>
-                            <div class="row inline-box-for-info invoice-details">
-                                <div class="col invoice"><p>Invoice no.</p></div>
-                                <div class="col invoice"><small id="invoice-number">A0001</small></div>
-                            </div>
-                            <div class="row inline-box-for-info invoice-details">
-                                <div class="col invoice"><p>Invoice Date</p></div>
-                                <div class="col invoice"><small id="invoice-date">14-09-2022</small></div>
-                            </div>
-                            <div class="row inline-box-for-info invoice-details d-none" id="due-date-con">
-                                <div class="col invoice"><p>Due Date</p></div>
-                                <div class="col invoice"><small id="due-date">17-09-2022</small></div>
-                            </div>
-                        </div>
+                <div class="row mx-2">
+                    <hr>
+                    <div class="more-details-container text-start" id="more-details-con">
+                        <!-- <div class="more-details-inside-container">
+                                <p>Subject</p>
+                                <small>Hired Vehicle bill for E.E. (Admin) vashi zone for the month of AUGUST 2022</small>
+                             </div> -->
                     </div>
                 </div>
 
@@ -89,16 +99,6 @@
                             <h6 id="to-text">To</h6>
                             <h6 id="to-name"><strong>Aniket Shinde</strong></h6>
                             <small id="to-add">Maharashtra Nagar, Mankhurd, Mumbai - 400088</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col more-details">
-                        <div class="more-details-container text-start" id="more-details-con">
-                            <!-- <div class="more-details-inside-container">
-                                <p>Subject</p>
-                                <small>Hired Vehicle bill for E.E. (Admin) vashi zone for the month of AUGUST 2022</small>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -123,13 +123,60 @@
                     <div class="additional-notes-total-container my-4">
                         <div class="additional-notes-container text-start">
                             <p class="title mb-3">TOTAL (IN WORDS): <span id="number-to-word">FORTY NINE THOUSAND RUPEES ONLY</span></p>
-                            <p class="title additional-notes-con mb-1 d-none">Aditional Notes</p>
-                            <small class="notes d-none"></small>
+                            <div class="bank-details-div-container d-none" id="bank-details-con">
+                                <div class="inline-box-for-info bank">
+                                    <p class="title mb-1 mt-3">Bank & Payment Details</p>
+                                </div>
+                                <div class="row inline-box-for-info bank bank-details d-none" id="accHolderName">
+                                    <div class="col-5 text-start">
+                                        <small>Account Holder name</small>
+                                    </div>
+                                    <div class="col-7 text-start">
+                                        <p id="acc-holder-name"></p>
+                                    </div>
+                                </div>
+                                <div class="row inline-box-for-info bank bank-details d-none" id="accNumber"">
+                                    <div class="col-5 text-start">
+                                        <small>Account Number</small>
+                                    </div>
+                                    <div class="col-7 text-start">
+                                        <p id="acc-number"></p>
+                                    </div>
+                                </div>
+                                <div class="row inline-box-for-info bank bank-details d-none" id="bankIFSC">
+                                    <div class="col-5 text-start">
+                                        <small>IFSC</small>
+                                    </div>
+                                    <div class="col-7 text-start">
+                                        <p id="bank-ifsc"></p>
+                                    </div>
+                                </div>
+                                <div class="row inline-box-for-info bank bank-details d-none" id="accType">
+                                    <div class="col-5 text-start">
+                                        <small>Account type</small>
+                                    </div>
+                                    <div class="col-7 text-start">
+                                        <p id="acc-type"></p>
+                                    </div>
+                                </div>
+                                <div class="row inline-box-for-info bank bank-details d-none" id="bankName">
+                                    <div class="col-5 text-start">
+                                        <small>Bank Name</small>
+                                    </div>
+                                    <div class="col-7 text-start">
+                                        <p id="bank-name"></p>
+                                    </div>
+                                </div>
+                                <div class="row inline-box-for-info bank bank-details d-none" id="upiID">
+                                    <div class="col-5 text-start">
+                                        <small>UPI ID</small>
+                                    </div>
+                                    <div class="col-7 text-start">
+                                        <p id="upi-id"></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="terms-conditions-container text-start d-none" id="terms-conditions-con">
-                        <p class="title mb-1 mt-3">Terms and Conditions</p>
-                        <small class="terms">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small>
                     </div>
                 </div>
                 <div class="col-6">
@@ -153,57 +200,16 @@
                         </div>
                         <hr>
                     </div>
-                    <div class="bank-details-div-container d-none" id="bank-details-con">
-                        <div class="inline-box-for-info bank">
-                            <p class="title mb-1 mt-3">Bank & Payment Details</p>
+                </div>
+                <div class="row">
+                    <div class="col-11">
+                        <div class="terms-conditions-container text-start d-none" id="terms-conditions-con">
+                            <p class="title mb-1 mt-3">Terms and Conditions</p>
+                            <small class="terms">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere animi cum, recusandae quas voluptatem <br><br> voluptas voluptates repudiandae at facilis atque molestiae doloribus neque deserunt praesentium, nobis, enim voluptatum? Voluptate.</small>
                         </div>
-                        <div class="row inline-box-for-info bank bank-details d-none" id="accHolderName">
-                            <div class="col-5 text-start">
-                                <small>Account Holder name</small>
-                            </div>
-                            <div class="col-7 text-start">
-                                <p id="acc-holder-name"></p>
-                            </div>
-                        </div>
-                        <div class="row inline-box-for-info bank bank-details d-none" id="accNumber"">
-                            <div class="col-5 text-start">
-                                <small>Account Number</small>
-                            </div>
-                            <div class="col-7 text-start">
-                                <p id="acc-number"></p>
-                            </div>
-                        </div>
-                        <div class="row inline-box-for-info bank bank-details d-none" id="bankIFSC">
-                            <div class="col-5 text-start">
-                                <small>IFSC</small>
-                            </div>
-                            <div class="col-7 text-start">
-                                <p id="bank-ifsc"></p>
-                            </div>
-                        </div>
-                        <div class="row inline-box-for-info bank bank-details d-none" id="accType">
-                            <div class="col-5 text-start">
-                                <small>Account type</small>
-                            </div>
-                            <div class="col-7 text-start">
-                                <p id="acc-type"></p>
-                            </div>
-                        </div>
-                        <div class="row inline-box-for-info bank bank-details d-none" id="bankName">
-                            <div class="col-5 text-start">
-                                <small>Bank Name</small>
-                            </div>
-                            <div class="col-7 text-start">
-                                <p id="bank-name"></p>
-                            </div>
-                        </div>
-                        <div class="row inline-box-for-info bank bank-details d-none" id="upiID">
-                            <div class="col-5 text-start">
-                                <small>UPI ID</small>
-                            </div>
-                            <div class="col-7 text-start">
-                                <p id="upi-id"></p>
-                            </div>
+                        <div class="text-start py-2">
+                            <p class="title additional-notes-con mb-1 d-none">Aditional Notes</p>
+                            <small class="notes d-none"></small>
                         </div>
                     </div>
                 </div>
@@ -251,5 +257,6 @@
     <script src="../assets/js/pdfDownload.js"></script>
     <script src="../assets/js/numberToWord.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </body>
 </html>
