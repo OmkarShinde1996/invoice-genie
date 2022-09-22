@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *,body{
-    background: #F8FAFF;
+    /* background: #F8FAFF; */
     /* background-color: aqua; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    background-color: white;
 }
 
 .navbar-toggler{
@@ -34,7 +38,7 @@ hr{
 /* Navigation bar */
 
 .nav-link{
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -210,13 +214,16 @@ h5{
     padding: 30px;
     border-radius: 30px;
     background-color: #fff;
-    -webkit-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+    -webkit-box-shadow: 0px 0px 33px -6px rgba(125,203,245,0.52);
+    -moz-box-shadow: 0px 0px 33px -6px rgba(125,203,245,0.52);
+    box-shadow: 0px 0px 33px -6px rgba(125,203,245,0.52);
+    /* -webkit-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
     -moz-box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
-    box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52);
+    box-shadow: -18px 13px 58px -29px rgba(125,203,245,0.52); */
 }
 
-.bi-1-circle,.bi-2-circle,.bi-3-circle{
-    font-size: 500%;
+.bi-collection,.bi-file-text,.bi-cloud-arrow-down{
+    font-size: 400%;
     background-color: #fff;
     color: #1D2433;
 }
@@ -289,4 +296,11 @@ h5{
 
 h3 span{
     color: #407BFF;
+}
+
+@media only screen and (max-width: 320px) {
+    .logo-img{
+        width: 150px;
+        height: 30px;
+    }
 }

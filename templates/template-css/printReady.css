@@ -489,3 +489,10 @@ h3 span {
 #check {
     color: #407BFF;
 }
+
+/* @media only screen and (max-width: 320px) {
+    .logo-img{
+        width: 150px;
+        height: 30px;
+    }
+} */
