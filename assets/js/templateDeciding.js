@@ -25,7 +25,7 @@ template4.addEventListener('click',() => {
 })
 
 template5.addEventListener('click',() => {
-    sessionStorage.setItem('templateURL','./template-2.html')
+    sessionStorage.setItem('templateURL','./template-5.html')
 })
 
 template6.addEventListener('click',() => {
