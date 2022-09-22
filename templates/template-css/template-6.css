@@ -14,13 +14,12 @@ h1, h2, h3, h4, h5, h6, p, small, div{
 }
 
 /* **********************************Basic template formatting********************************** */
-
 #Invoice-title{
     font-size: 30px;
-    padding-left: 10px;
     padding-bottom: 20px;
     padding-top: 10px;
     color: #4F3824;
+    margin-left: 20px;
 }
 
 p{
@@ -31,6 +30,21 @@ p{
 small{
     margin-left: 0;
     color: #4F3824;
+    font-weight: 200;
+}
+
+.invoice-logo-img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.invoice-logo-img img{
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    margin: 10px;
+    margin-right: 20px;
 }
 
 .more-details-inside-container{
@@ -42,24 +56,24 @@ small{
     color: #4F3824;
 }
 
-.invoice-logo-img{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.invoice-details-bkg{
+    background-color: #20a39f44;
+    padding: 15px;
+    border-radius: 8px;
+    /* padding-left: 0; */
 }
 
-.invoice-logo-img img{
-    max-width: 80%;
-    max-height: 90px;
-    object-fit: contain;
-    margin: 10px;
-    margin-right: 20px;
+#more-details-con{
+    margin-top: 10px;
 }
+
 
 .from-col, .to-col{
-    background-color: #7e7e7e23;
+    /* border: 1px dashed #7e7e7e; */
+    background-color: #20a39f44;
     padding: 10px;
     border-radius: 8px;
+    color: #4F3824;
 }
 
 #from-text, #to-text{
@@ -77,12 +91,12 @@ h6 strong{
 small{
     margin: 0;
     font-weight: 400;
-    /* line-height: 8px; */
 }
 
 p{
     margin-bottom: 0 !important;
 }
+
 
 /* **********************table container************************/
 .table>:not(caption)>*>*{
@@ -91,19 +105,17 @@ p{
 }
 
 .table-dark{
-    --bs-table-bg: #7e7e7e23;
+    --bs-table-bg: #20a39f44;
     --bs-table-color: #4F3824;
 }
 
-.table-striped>tbody>tr:nth-of-type(odd)>*{
-    --bs-table-accent-bg : #7e7e7e23;
-}
 
 .table{
-    border: 1px solid #7e7e7e23;
-    border-bottom: none;
+    border: 1px solid #7e7e7e46;
     border-radius: 10px;
     color: #4F3824;
+    border-bottom: none;
+    /* --bs-table-bg: #20a39f13; */
 }
 
 th{
@@ -115,18 +127,18 @@ th{
     margin-left: 27px;
     margin-right: 27px;
 }
+/* **********************table container************************/
 
 .notes-container-border{
-    border: 1px solid #7e7e7e23;
+    border: 1px solid #7e7e7e46;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     margin-left: 27px;
     margin-right: 27px;
     margin-top: -17px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding-bottom: 30px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
 }
-
 
 
 .inline-box-for-info{
@@ -156,6 +168,7 @@ th{
 
 hr{
     color: #4F3824;
+    margin: 0;
 }
 
 #number-to-word{
@@ -164,10 +177,12 @@ hr{
 }
 
 #total-due{
-    background-color: #7e7e7e23;
+    margin-top: 10px;
+    background-color: #20a39f44;
+    /* border: 1px dashed #7e7e7e; */
     align-items: center;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .inline-box-for-info .title{
@@ -185,25 +200,35 @@ hr{
     max-width: 100%;
 }
 
+.total-in-words{
+    background-color: #20a39f44;
+    /* border: 1px dashed #7e7e7e; */
+    padding: 10px;
+    margin-right: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
 #bank-details-con{
-    background-color: #7e7e7e23;
+    background-color: #20a39f44;
+    /* border: 1px dashed #7e7e7e; */
     padding: 10px;
     padding-top: 0;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     border-radius: 8px;
 }
 
-.row>*{
-    padding-right: 0 !important;
-}
 
 .invoice p{
     font-size: 14px;
+    color: #4F3824;
 }
 
 .invoice small{
     font-size: 13px;
+    color: #4F3824;
 }
+
 
 #check{
     color: #407BFF;
