@@ -1,11 +1,7 @@
 # Invoice Genie
 
-Creating an app that let's you create invoices on the go within just 3 steps
+`This project was completed on 23rd SEPT 2022`
 
-Currently in development stage
+### Demo Url :point_down:
 
-Form to fill invoice details is ready
-
-Invoice  template is ready
-
-collecting data from form is pending
+[Invoice Genie](https://omkarshinde1996.github.io/invoice-genie/)
